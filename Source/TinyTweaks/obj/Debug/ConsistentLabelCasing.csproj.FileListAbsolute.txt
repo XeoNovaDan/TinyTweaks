@@ -1,0 +1,7 @@
+E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelling\1.0\Assemblies\ConsistentLabelCasing.dll
+E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelling\Source\ConsistentLabelling\obj\Debug\ConsistentLabelCasing.csproj.CoreCompileInputs.cache
+E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelling\Source\ConsistentLabelling\obj\Debug\ConsistentLabelCasing.dll
+E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelCasing\1.0\Assemblies\ConsistentLabelCasing.dll
+E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelCasing\Source\ConsistentLabelling\obj\Debug\ConsistentLabelCasing.csprojAssemblyReference.cache
+E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelCasing\Source\ConsistentLabelling\obj\Debug\ConsistentLabelCasing.csproj.CoreCompileInputs.cache
+E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelCasing\Source\ConsistentLabelling\obj\Debug\ConsistentLabelCasing.dll
