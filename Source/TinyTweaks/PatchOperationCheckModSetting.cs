@@ -19,7 +19,12 @@ namespace TinyTweaks
         protected override bool ApplyWorker(XmlDocument xml)
         {
             var settingInfo = typeof(TinyTweaksSettings).GetField(settingName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-            return settingInfo != null && (bool)settingInfo.GetValue(null);
+            if (settingInfo == null)
+            {
+                Log.Error($"Error with PatchOperationCheckModSetting in {sourceFile}: {settingName} could not be found");
+                return false;
+            }
+            return (bool)settingInfo.GetValue(null);
         }
 
     }

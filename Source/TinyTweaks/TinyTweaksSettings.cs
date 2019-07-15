@@ -13,9 +13,7 @@ namespace TinyTweaks
     {
 
         public static bool changeDefLabels = true;
-        public static bool condenseThingDefDesignationCategories = true;
-
-        public static bool renameLampTest = true;
+        public static bool condenseBuildableDefDesignationCategories = true;
 
         public void DoWindowContents(Rect wrect)
         {
@@ -32,7 +30,7 @@ namespace TinyTweaks
 
             // Condense ThingDef designation categories
             options.Gap();
-            options.CheckboxLabeled("TinyTweaks.CondenseThingDefDesignationCategories".Translate(), ref condenseThingDefDesignationCategories, "TinyTweaks.CondenseThingDefDesignationCategories_ToolTip".Translate());
+            options.CheckboxLabeled("TinyTweaks.CondenseBuildableDefDesignationCategories".Translate(), ref condenseBuildableDefDesignationCategories, "TinyTweaks.CondenseBuildableDefDesignationCategories_ToolTip".Translate());
 
             // Finish
             options.End();
@@ -43,7 +41,7 @@ namespace TinyTweaks
         public override void ExposeData()
         {
             Scribe_Values.Look(ref changeDefLabels, "changeDefLabels", true);
-            Scribe_Values.Look(ref condenseThingDefDesignationCategories, "condenseThingDefDesignationCategories", true);
+            Scribe_Values.Look(ref condenseBuildableDefDesignationCategories, "condenseBuildableDefDesignationCategories", true);
         }
 
     }

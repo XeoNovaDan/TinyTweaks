@@ -19,7 +19,7 @@ namespace TinyTweaks
             if (TinyTweaksSettings.changeDefLabels)
                 ChangeDefLabels();
 
-            if (TinyTweaksSettings.condenseThingDefDesignationCategories)
+            if (TinyTweaksSettings.condenseBuildableDefDesignationCategories)
                 UpdateDesignationCategories();
         }
 
@@ -55,17 +55,35 @@ namespace TinyTweaks
             if (bDef.designationCategory == null)
                 return;
 
+            var mod = bDef.modContentPack;
+
             // Furniture+ => Furniture
             if (TT_DesignationCategoryDefOf.ANON2MF != null && bDef.designationCategory == TT_DesignationCategoryDefOf.ANON2MF)
                 bDef.designationCategory = TT_DesignationCategoryDefOf.Furniture;
 
             // More Floors => Floors
-            if (TT_DesignationCategoryDefOf.MoreFloors != null && bDef.designationCategory == TT_DesignationCategoryDefOf.MoreFloors)
+            else if (TT_DesignationCategoryDefOf.MoreFloors != null && bDef.designationCategory == TT_DesignationCategoryDefOf.MoreFloors)
                 bDef.designationCategory = TT_DesignationCategoryDefOf.Floors;
 
-            // Hygiene/Misc => Hygiene
-            if (TT_DesignationCategoryDefOf.HygieneMisc != null && bDef.designationCategory == TT_DesignationCategoryDefOf.HygieneMisc)
-                bDef.designationCategory = TT_DesignationCategoryDefOf.Hygiene;
+            // Dubs Bad Hygiene
+            else if (mod.Name == "Dubs Bad Hygiene")
+            {
+                // Temperature stuff gets moved to Temperature category
+                if (bDef.researchPrerequisites?.Any(r => r.defName == "CentralHeating" || r.defName == "PoweredHeating" || r.defName == "MultiSplitAirCon") ?? false)
+                    bDef.designationCategory = TT_DesignationCategoryDefOf.Temperature;
+
+                // Rest gets moved from Hygiene/Misc => Hygiene
+                else if (bDef.designationCategory == TT_DesignationCategoryDefOf.HygieneMisc)
+                        bDef.designationCategory = TT_DesignationCategoryDefOf.Hygiene;
+            }  
+
+            // Furniture => Storage (Deep Storage)
+            else if (mod.Name == "LWM's Deep Storage")
+                bDef.designationCategory = TT_DesignationCategoryDefOf.Storage;
+
+            // Defenses => Security
+            else if (TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null && bDef.designationCategory == TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory)
+                bDef.designationCategory = DesignationCategoryDefOf.Security;
         }
 
         private static IEnumerable<DesignationCategoryDef> CategoriesToRemove
@@ -78,6 +96,8 @@ namespace TinyTweaks
                     yield return TT_DesignationCategoryDefOf.MoreFloors;
                 if (TT_DesignationCategoryDefOf.HygieneMisc != null)
                     yield return TT_DesignationCategoryDefOf.HygieneMisc;
+                if (TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null)
+                    yield return TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory;
             }
         }
 

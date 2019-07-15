@@ -17,7 +17,7 @@ namespace TinyTweaks
         // Vanilla defs
         public static DesignationCategoryDef Furniture;
         public static DesignationCategoryDef Floors;
-
+        public static DesignationCategoryDef Temperature;
 
         public static DesignationCategoryDef ANON2MF => DefDatabase<DesignationCategoryDef>.GetNamedSilentFail("ANON2MF");
 
@@ -26,6 +26,10 @@ namespace TinyTweaks
         public static DesignationCategoryDef HygieneMisc => DefDatabase<DesignationCategoryDef>.GetNamedSilentFail("HygieneMisc");
 
         public static DesignationCategoryDef Hygiene => DefDatabase<DesignationCategoryDef>.GetNamedSilentFail("Hygiene");
+
+        public static DesignationCategoryDef Storage => DefDatabase<DesignationCategoryDef>.GetNamedSilentFail("Storage");
+
+        public static DesignationCategoryDef DefensesExpanded_CustomCategory => DefDatabase<DesignationCategoryDef>.GetNamedSilentFail("DefensesExpanded_CustomCategory");
 
     }
 

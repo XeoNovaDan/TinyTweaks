@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>LWM's Deep Storage</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+                <li Class="TinyTweaks.PatchOperationCheckModSetting">
+                    <settingName>condenseBuildableDefDesignationCategories</settingName>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>/Defs</xpath>
+                    <value>
+                        <DesignationCategoryDef>
+                            <defName>Storage</defName>
+                            <label>storage</label>
+                            <order>495</order>
+                            <specialDesignatorClasses>
+                                <li>Designator_Cancel</li>
+                                <li>Designator_Deconstruct</li>
+                            </specialDesignatorClasses>
+                        </DesignationCategoryDef>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+
+</Patch>
