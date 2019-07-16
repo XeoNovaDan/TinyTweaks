@@ -59,47 +59,47 @@ namespace TinyTweaks
                     switch(relevantSkillLevel)
                     {
                         case 0:
-                            return 0.2f;
+                            return 0.2f; // 0.7 => 0 (Awful)
                         case 1:
-                            return 0.5f;
+                            return 0.5f; // 1.1 => 0.33
                         case 2:
-                            return 0.8f;
+                            return 0.8f; // 1.5 => 0.67
                         case 3:
-                            return 1; // Poor
+                            return 1; // 1.8 => 1 (Poor)
                         case 4:
-                            return 1.4f;
+                            return 1.4f; // 2 => 1.33
                         case 5:
-                            return 1.7f;
+                            return 1.7f; // 2.2 => 1.67
                         case 6:
-                            return 2; // Normal
+                            return 2; // 2.4 => 2 (Normal)
                         case 7:
-                            return 2.3f;
+                            return 2.25f; // 2.6 => 2.25
                         case 8:
-                            return 2.6f;
+                            return 2.5f; // 2.8 => 2.5
                         case 9:
-                            return 2.8f;
+                            return 2.75f; // 2.95 => 2.75
                         case 10:
-                            return 3; // Good
+                            return 3; // 3.1 => 3 (Good)
                         case 11:
-                            return 3.3f;
+                            return 3.25f; // 3.25 => 3.25
                         case 12:
-                            return 3.55f;
+                            return 3.5f; // 3.4 => 3.5
                         case 13:
-                            return 3.8f;
+                            return 3.75f; // 3.5 => 3.75
                         case 14:
-                            return 4; // Excellent
+                            return 4; // 3.6 => 4 (Excellent)
                         case 15:
-                            return 4.15f;
+                            return 4.15f; // 3.7 => 4.15
                         case 16:
-                            return 4.3f;
+                            return 4.3f; // 3.8 => 4.3
                         case 17:
-                            return 4.45f;
+                            return 4.45f; // 3.9 => 4.45
                         case 18:
-                            return 4.6f;
+                            return 4.6f; // 4 => 4.6
                         case 19:
-                            return 4.75f;
+                            return 4.75f; // 4.1 => 4.75
                         case 20:
-                            return 5; // Masterwork
+                            return 5; // 4.2 => 5 (Masterwork)
                     }
                 }
                 return originalQuality;
