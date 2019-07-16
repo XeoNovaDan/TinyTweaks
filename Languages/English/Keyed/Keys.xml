@@ -2,11 +2,28 @@
 <LanguageData>
 
     <TinyTweaks.SettingsCategory>Tiny Tweaks</TinyTweaks.SettingsCategory>
+    <TinyTweaks.NextPage>Next Page</TinyTweaks.NextPage>
+    <TinyTweaks.PreviousPage>Previous Page</TinyTweaks.PreviousPage>
+
+    <!-- Startup Settings -->
+
+    <TinyTweaks.StartupSettingsHeading>Startup Settings</TinyTweaks.StartupSettingsHeading>
+    <TinyTweaks.StartupSettingsNote>Note: Game restart required in order for any changes to these settings to take effect.</TinyTweaks.StartupSettingsNote>
 
     <TinyTweaks.ChangeDefLabels>Consistent label casing</TinyTweaks.ChangeDefLabels>
-    <TinyTweaks.ChangeDefLabels_ToolTip>When enabled, labels of things such as items and recipe bills will be cased just like vanilla (e.g. Wooden Water Tower => Wooden water tower).</TinyTweaks.ChangeDefLabels_ToolTip>
+    <TinyTweaks.ChangeDefLabels_ToolTip>When enabled, the labels of things such as items and recipe bills will be cased just like vanilla (e.g. White Composite Water Tower => White composite water tower).</TinyTweaks.ChangeDefLabels_ToolTip>
 
-    <TinyTweaks.CondenseBuildableDefDesignationCategories>Condense architect menu tabs</TinyTweaks.CondenseBuildableDefDesignationCategories>
-    <TinyTweaks.CondenseBuildableDefDesignationCategories_ToolTip></TinyTweaks.CondenseBuildableDefDesignationCategories_ToolTip>
+    <TinyTweaks.ChangeBuildableDefDesignationCategories>Change architect menu tabs</TinyTweaks.ChangeBuildableDefDesignationCategories>
+    <TinyTweaks.ChangeBuildableDefDesignationCategories_ToolTip>When enabled, certain architect menu tabs from certain mods will be merged with vanilla architect tabs (e.g. 'Furniture+' from More Furniture merged into 'Furniture'). In some cases, new architect tabs may be added too (e.g. buildings from LWM Deep Storage will get their own 'Storage' tab).</TinyTweaks.ChangeBuildableDefDesignationCategories_ToolTip>
+
+    <TinyTweaks.TweakDubsBadHygiene>Tweak Dubs Bad Hygiene</TinyTweaks.TweakDubsBadHygiene>
+
+    <!-- General Settings -->
+
+    <TinyTweaks.GeneralSettingsHeading>General Settings</TinyTweaks.GeneralSettingsHeading>
+    <TinyTweaks.GeneralSettingsNote>Note: Changes made to these settings will be applied instantly - a game restart is not required.</TinyTweaks.GeneralSettingsNote>
+
+    <TinyTweaks.ArtilleryCopyPasteGizmos>Copy/Paste buttons on artillery</TinyTweaks.ArtilleryCopyPasteGizmos>
+    <TinyTweaks.ArtilleryCopyPasteGizmos_ToolTip>When enabled, artillery (e.g. mortars) will have copy/paste storage settings buttons just like stockpiles. Allows for easy bulk changing of shells to use.</TinyTweaks.ArtilleryCopyPasteGizmos_ToolTip>
 
 </LanguageData>

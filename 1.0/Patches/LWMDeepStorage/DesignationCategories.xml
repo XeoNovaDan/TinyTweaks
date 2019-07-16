@@ -9,7 +9,7 @@
             <success>Always</success>
             <operations>
                 <li Class="TinyTweaks.PatchOperationCheckModSetting">
-                    <settingName>condenseBuildableDefDesignationCategories</settingName>
+                    <settingName>changeBuildableDefDesignationCategories</settingName>
                 </li>
                 <li Class="PatchOperationAdd">
                     <xpath>/Defs</xpath>

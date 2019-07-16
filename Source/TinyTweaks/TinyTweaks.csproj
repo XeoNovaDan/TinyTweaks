@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\Patch_Building_TurretGun.cs" />
     <Compile Include="HarmonyPatches\Patch_RaceProperties.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />

@@ -19,7 +19,7 @@ namespace TinyTweaks
             if (TinyTweaksSettings.changeDefLabels)
                 ChangeDefLabels();
 
-            if (TinyTweaksSettings.condenseBuildableDefDesignationCategories)
+            if (TinyTweaksSettings.changeBuildableDefDesignationCategories)
                 UpdateDesignationCategories();
         }
 
