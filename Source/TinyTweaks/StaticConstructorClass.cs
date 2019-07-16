@@ -21,6 +21,9 @@ namespace TinyTweaks
 
             if (TinyTweaksSettings.changeBuildableDefDesignationCategories)
                 UpdateDesignationCategories();
+
+            // Go through each ThingDef that has CompLaunchable, add CompLaunchableAutoRebuild to it
+            DefDatabase<ThingDef>.AllDefs.Where(t => t.HasComp(typeof(CompLaunchable))).ToList().ForEach(t => t.comps.Add(new CompProperties(typeof(CompLaunchableAutoRebuild))));
         }
 
         private static void UpdateDesignationCategories()

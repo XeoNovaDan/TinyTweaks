@@ -52,15 +52,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompLaunchableAutoRebuild.cs" />
+    <Compile Include="Dialogs\Dialog_AssignCaravanFoodRestrictions.cs" />
+    <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
+    <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
+    <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
+    <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Items.cs" />
+    <Compile Include="HarmonyPatches\Patch_ThingDef.cs" />
+    <Compile Include="HarmonyPatches\Patch_CompLaunchable.cs" />
     <Compile Include="HarmonyPatches\Patch_Building_TurretGun.cs" />
+    <Compile Include="HarmonyPatches\Patch_QualityUtility.cs" />
     <Compile Include="HarmonyPatches\Patch_RaceProperties.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />
+    <Compile Include="PlaySettings\ExtraPlaySettings.cs" />
     <Compile Include="TinyTweaks.cs" />
     <Compile Include="TinyTweaksSettings.cs" />
-    <Compile Include="TT_DesignationCategoryDefOf.cs" />
+    <Compile Include="Defs\TT_DesignationCategoryDefOf.cs" />
     <Compile Include="StaticConstructorClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

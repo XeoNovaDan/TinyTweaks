@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <TinyTweaks.SettingsCategory>Tiny Tweaks</TinyTweaks.SettingsCategory>
+    <TinyTweaks.NextPage>Next Page</TinyTweaks.NextPage>
+    <TinyTweaks.PreviousPage>Previous Page</TinyTweaks.PreviousPage>
+    <TinyTweaks.BalanceChanges>Balance changes</TinyTweaks.BalanceChanges>
+
+    <!-- Startup Settings -->
+
+    <TinyTweaks.StartupSettingsHeading>Startup Settings</TinyTweaks.StartupSettingsHeading>
+    <TinyTweaks.StartupSettingsNote>Note: Game restart required in order for any changes to these settings to take effect.</TinyTweaks.StartupSettingsNote>
+
+    <TinyTweaks.ChangeBuildableDefDesignationCategories>Change architect menu tabs</TinyTweaks.ChangeBuildableDefDesignationCategories>
+    <TinyTweaks.ChangeBuildableDefDesignationCategories_ToolTip>When enabled, certain architect menu tabs from certain mods will be merged with vanilla architect tabs (e.g. 'Furniture+' from More Furniture merged into 'Furniture'). In some cases, new architect tabs may be added too (e.g. buildings from LWM Deep Storage will get their own 'Storage' tab).</TinyTweaks.ChangeBuildableDefDesignationCategories_ToolTip>
+
+    <TinyTweaks.ChangeDefLabels>Consistent label casing</TinyTweaks.ChangeDefLabels>
+    <TinyTweaks.ChangeDefLabels_ToolTip>When enabled, the labels of things such as items and recipe bills will be cased just like vanilla (e.g. White Composite Water Tower => White composite water tower).</TinyTweaks.ChangeDefLabels_ToolTip>
+
+    <TinyTweaks.TweakVanilla>Vanilla</TinyTweaks.TweakVanilla>
+    <TinyTweaks.TweakVanilla_ToolTip>Normalises construction and smoothing speed to 100% like all other speed stats.</TinyTweaks.TweakVanilla_ToolTip>
+
+    <TinyTweaks.TweakDubsBadHygiene>Dubs Bad Hygiene</TinyTweaks.TweakDubsBadHygiene>
+    <TinyTweaks.TweakDubsBadHygiene_ToolTip>Reduces the steel requirement for building log boilers from 200 to 100.</TinyTweaks.TweakDubsBadHygiene_ToolTip>
+
+    <!-- General Settings -->
+
+    <TinyTweaks.GeneralSettingsHeading>General Settings</TinyTweaks.GeneralSettingsHeading>
+    <TinyTweaks.GeneralSettingsNote>Note: Changes made to these settings will be applied instantly - a game restart is not required.</TinyTweaks.GeneralSettingsNote>
+
+    <TinyTweaks.AutoRemoveTerrainPumpDry>Automatically remove finished moisture pumps</TinyTweaks.AutoRemoveTerrainPumpDry>
+    <TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip>When enabled, moisture pumps that have finished pumping will be automatically designated to be uninstalled or deconstructed, whichever is appropriate.</TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip>
+
+    <TinyTweaks.ArtilleryCopyPasteGizmos>Copy/Paste buttons on artillery</TinyTweaks.ArtilleryCopyPasteGizmos>
+    <TinyTweaks.ArtilleryCopyPasteGizmos_ToolTip>When enabled, artillery (e.g. mortars) will have copy/paste storage settings buttons just like stockpiles. Allows for easy bulk changing of shells to use.</TinyTweaks.ArtilleryCopyPasteGizmos_ToolTip>
+
+    <TinyTweaks.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.AlphabeticalBillList>
+    <TinyTweaks.AlphabeticalBillList_ToolTip>When enabled, the drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.AlphabeticalBillList_ToolTip>
+
+    <TinyTweaks.ChangeQualityDistribution>Change quality distribution</TinyTweaks.ChangeQualityDistribution>
+    <TinyTweaks.ChangeQualityDistribution_ToolTip>When enabled, skill will matter significantly more when producing items that have quality. Quality distribution is also centred around level 6 instead of level 4.</TinyTweaks.ChangeQualityDistribution_ToolTip>
+
+</LanguageData>
