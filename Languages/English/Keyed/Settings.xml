@@ -37,6 +37,9 @@
     <TinyTweaks.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.AlphabeticalBillList>
     <TinyTweaks.AlphabeticalBillList_ToolTip>When enabled, the drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.AlphabeticalBillList_ToolTip>
 
+    <TinyTweaks.BloodPumpingAffectsBleeding>Blood pumping affects bleeding</TinyTweaks.BloodPumpingAffectsBleeding>
+    <TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>When enabled, character bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>
+
     <TinyTweaks.ChangeQualityDistribution>Change quality distribution</TinyTweaks.ChangeQualityDistribution>
     <TinyTweaks.ChangeQualityDistribution_ToolTip>When enabled, skill will matter significantly more when producing items that have quality. Quality distribution is also centred around level 6 instead of level 4.</TinyTweaks.ChangeQualityDistribution_ToolTip>
 

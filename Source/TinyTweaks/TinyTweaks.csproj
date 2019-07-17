@@ -57,6 +57,7 @@
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
     <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
     <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
+    <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
     <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Items.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingDef.cs" />
     <Compile Include="HarmonyPatches\Patch_CompLaunchable.cs" />

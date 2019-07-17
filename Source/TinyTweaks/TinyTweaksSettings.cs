@@ -41,6 +41,7 @@ namespace TinyTweaks
         public static bool autoRemoveMoisturePumps = true;
 
         public static bool changeQualityDistribution = false;
+        public static bool bloodPumpingAffectsBleeding = true;
         #endregion
 
         public void DoWindowContents(Rect wrect)
@@ -112,6 +113,10 @@ namespace TinyTweaks
                 options.Gap();
                 options.Label("TinyTweaks.BalanceChanges".Translate());
 
+                // Blood pumping affects bleeding
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.BloodPumpingAffectsBleeding".Translate(), ref bloodPumpingAffectsBleeding, "TinyTweaks.BloodPumpingAffectsBleeding_ToolTip".Translate());
+
                 // Change quality distribution
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.ChangeQualityDistribution".Translate(), ref changeQualityDistribution, "TinyTweaks.ChangeQualityDistribution_ToolTip".Translate());
@@ -149,6 +154,7 @@ namespace TinyTweaks
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
             Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", false);
+            Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", true);
         }
 
     }
