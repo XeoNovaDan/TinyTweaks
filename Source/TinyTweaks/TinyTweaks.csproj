@@ -52,9 +52,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompSkillTrackerCache.cs" />
     <Compile Include="Comps\CompLaunchableAutoRebuild.cs" />
     <Compile Include="Dialogs\Dialog_AssignCaravanFoodRestrictions.cs" />
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
+    <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
     <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
     <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
     <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />
     <Compile Include="PlaySettings\ExtraPlaySettings.cs" />
+    <Compile Include="TinyTweaksUtility.cs" />
     <Compile Include="TinyTweaks.cs" />
     <Compile Include="TinyTweaksSettings.cs" />
     <Compile Include="Defs\TT_DesignationCategoryDefOf.cs" />

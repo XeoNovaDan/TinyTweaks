@@ -21,7 +21,7 @@ namespace TinyTweaks
         public static class Patch_AdjustedArmorPenetration
         {
 
-            public static void Postfix(VerbProperties __instance, Tool tool, Thing equipment, ref float __result)
+            public static void Postfix(VerbProperties __instance, Tool tool, Pawn attacker, Thing equipment, HediffComp_VerbGiver hediffCompSource, ref float __result)
             {
                 // Not gated behind an option since it is a bug fix :3
                 // Scale forced AP with quality and stuff like everything else
@@ -31,6 +31,8 @@ namespace TinyTweaks
                     if (equipment.Stuff != null && __instance.meleeDamageDef != null && __instance.meleeDamageDef.armorCategory.multStat != null)
                         __result *= equipment.Stuff.GetStatValueAbstract(__instance.meleeDamageDef.armorCategory.multStat);
                 }
+                if (attacker != null)
+                    __result *= __instance.GetDamageFactorFor(tool, attacker, hediffCompSource);
             }
 
         }

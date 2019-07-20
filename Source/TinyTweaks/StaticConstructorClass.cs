@@ -22,8 +22,22 @@ namespace TinyTweaks
             if (TinyTweaksSettings.changeBuildableDefDesignationCategories)
                 UpdateDesignationCategories();
 
-            // Go through each ThingDef that has CompLaunchable, add CompLaunchableAutoRebuild to it
-            DefDatabase<ThingDef>.AllDefs.Where(t => t.HasComp(typeof(CompLaunchable))).ToList().ForEach(t => t.comps.Add(new CompProperties(typeof(CompLaunchableAutoRebuild))));
+            // Patch defs
+            PatchThingDefs();
+        }
+
+        private static void PatchThingDefs()
+        {
+            foreach (var tDef in DefDatabase<ThingDef>.AllDefs)
+            {
+                // If the def has CompLaunchable, add CompLaunchableAutoRebuild to it
+                if (tDef.HasComp(typeof(CompLaunchable)))
+                    tDef.AddComp(typeof(CompLaunchableAutoRebuild));
+
+                // If the def has RaceProps and RaceProps are humanlike, add CompSkillTrackerCache to it
+                if (tDef.race != null && tDef.race.Humanlike)
+                    tDef.AddComp(typeof(CompSkillRecordCache));
+            }
         }
 
         private static void UpdateDesignationCategories()

@@ -12,12 +12,9 @@ namespace TinyTweaks
     public class TinyTweaksSettings : ModSettings
     {
 
-        private const float PageButtonSpacing = 250;
         private const float PageButtonWidth = 150;
         private const float PageButtonHeight = 35;
-
-        //[TweakValue("aPageButtonXPosOffset", -100, 100)]
-        private static float PageButtonXPosOffset = -75;
+        private const float PageButtonPosOffsetFromCentre = 60;
 
         private const int MaxPageIndex = 2;
         private static int _pageIndex = 1;
@@ -31,17 +28,17 @@ namespace TinyTweaks
         public static bool changeDefLabels = true;
         public static bool changeBuildableDefDesignationCategories = true;
 
-        public static bool tweakVanilla = false;
-        public static bool tweakDubsBadHygiene = false;
+        public static bool tweakVanilla = true;
+        public static bool tweakDubsBadHygiene = true;
         #endregion
 
         #region General Settings
-        public static bool artilleryCopyPasteGizmos = true;
         public static bool alphabeticalBillList = true;
         public static bool autoRemoveMoisturePumps = true;
 
-        public static bool changeQualityDistribution = false;
+        public static bool changeQualityDistribution = true;
         public static bool bloodPumpingAffectsBleeding = true;
+        public static bool delayedSkillDecay = true;
         #endregion
 
         public void DoWindowContents(Rect wrect)
@@ -100,10 +97,6 @@ namespace TinyTweaks
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip".Translate());
 
-                // Copy/Paste buttons on artillery
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ArtilleryCopyPasteGizmos".Translate(), ref artilleryCopyPasteGizmos, "TinyTweaks.ArtilleryCopyPasteGizmos_ToolTip".Translate());
-
                 // Sort workbench bill list alphabetically
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.AlphabeticalBillList_ToolTip".Translate());
@@ -120,21 +113,28 @@ namespace TinyTweaks
                 // Change quality distribution
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.ChangeQualityDistribution".Translate(), ref changeQualityDistribution, "TinyTweaks.ChangeQualityDistribution_ToolTip".Translate());
+
+                // Delayed skill decay
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.DelayedSkillDecay_ToolTip".Translate());
             }
             #endregion
 
             #region Page Buttons
-            // This involved a crap ton of trial and error
-            var leftButtonRect = new Rect((wrect.width / 2) - ((PageButtonSpacing / 2) - PageButtonXPosOffset), wrect.height - (PageButtonHeight + 20), PageButtonWidth, PageButtonHeight);
+            float halfRectWidth = wrect.width / 2;
+            float xOffset = (halfRectWidth - PageButtonWidth) / 2;
+            var leftButtonRect = new Rect(xOffset + PageButtonPosOffsetFromCentre, wrect.height - PageButtonHeight, PageButtonWidth, PageButtonHeight);
             if (Widgets.ButtonText(leftButtonRect, "TinyTweaks.PreviousPage".Translate()))
                 PageIndex--;
 
-            var rightButtonRect = new Rect((wrect.width / 2) + ((PageButtonSpacing / 2) + PageButtonXPosOffset), wrect.height - (PageButtonHeight + 20), PageButtonWidth, PageButtonHeight);
+            var rightButtonRect = new Rect(halfRectWidth + xOffset - PageButtonPosOffsetFromCentre, wrect.height - PageButtonHeight, PageButtonWidth, PageButtonHeight); ;
             if (Widgets.ButtonText(rightButtonRect, "TinyTweaks.NextPage".Translate()))
                 PageIndex++;
 
-            var pageNumberRect = new Rect((wrect.width / 2) - 15, wrect.height - (PageButtonHeight + 15), 120, PageButtonHeight);
+            Text.Anchor = TextAnchor.MiddleCenter;
+            var pageNumberRect = new Rect(0, wrect.height - PageButtonHeight, wrect.width, PageButtonHeight);
             Widgets.Label(pageNumberRect, $"{PageIndex} / {MaxPageIndex}");
+            Text.Anchor = TextAnchor.UpperLeft;
             #endregion
 
             // Finish
@@ -147,14 +147,14 @@ namespace TinyTweaks
         {
             Scribe_Values.Look(ref changeDefLabels, "changeDefLabels", true);
             Scribe_Values.Look(ref changeBuildableDefDesignationCategories, "changeBuildableDefDesignationCategories", true);
-            Scribe_Values.Look(ref tweakVanilla, "tweakVanilla", false);
-            Scribe_Values.Look(ref tweakDubsBadHygiene, "tweakDubsBadHygiene", false);
+            Scribe_Values.Look(ref tweakVanilla, "tweakVanilla", true);
+            Scribe_Values.Look(ref tweakDubsBadHygiene, "tweakDubsBadHygiene", true);
 
-            Scribe_Values.Look(ref artilleryCopyPasteGizmos, "artilleryCopyPasteGizmos", true);
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
-            Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", false);
+            Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", true);
             Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", true);
+            Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", true);
         }
 
     }

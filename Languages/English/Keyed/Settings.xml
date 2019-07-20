@@ -31,14 +31,14 @@
     <TinyTweaks.AutoRemoveTerrainPumpDry>Automatically remove finished moisture pumps</TinyTweaks.AutoRemoveTerrainPumpDry>
     <TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip>When enabled, moisture pumps that have finished pumping will be automatically designated to be uninstalled or deconstructed, whichever is appropriate.</TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip>
 
-    <TinyTweaks.ArtilleryCopyPasteGizmos>Copy/Paste buttons on artillery</TinyTweaks.ArtilleryCopyPasteGizmos>
-    <TinyTweaks.ArtilleryCopyPasteGizmos_ToolTip>When enabled, artillery (e.g. mortars) will have copy/paste storage settings buttons just like stockpiles. Allows for easy bulk changing of shells to use.</TinyTweaks.ArtilleryCopyPasteGizmos_ToolTip>
+    <TinyTweaks.DelayedSkillDecay>Delayed skill decay</TinyTweaks.DelayedSkillDecay>
+    <TinyTweaks.DelayedSkillDecay_ToolTip>When enabled, 8 in-game hours must pass since a pawn last gained at least 2000 experience in a given skill before skill decay kicks in.</TinyTweaks.DelayedSkillDecay_ToolTip>
 
     <TinyTweaks.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.AlphabeticalBillList>
     <TinyTweaks.AlphabeticalBillList_ToolTip>When enabled, the drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.AlphabeticalBillList_ToolTip>
 
     <TinyTweaks.BloodPumpingAffectsBleeding>Blood pumping affects bleeding</TinyTweaks.BloodPumpingAffectsBleeding>
-    <TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>When enabled, character bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>
+    <TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>When enabled, pawn bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>
 
     <TinyTweaks.ChangeQualityDistribution>Change quality distribution</TinyTweaks.ChangeQualityDistribution>
     <TinyTweaks.ChangeQualityDistribution_ToolTip>When enabled, skill will matter significantly more when producing items that have quality. Quality distribution is also centred around level 6 instead of level 4.</TinyTweaks.ChangeQualityDistribution_ToolTip>

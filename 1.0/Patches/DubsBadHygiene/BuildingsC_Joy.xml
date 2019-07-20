@@ -12,11 +12,11 @@
                     <settingName>tweakDubsBadHygiene</settingName>
                 </li>
 
-                <!-- Reduce Log Boiler's steel cost from 200 to 100 -->
+                <!-- Reduce beauty bonus of hot tubs from 25 to 4 -->
                 <li Class="PatchOperationReplace">
-                    <xpath>/Defs/ThingDef[defName="LogBoiler"]/costList/Steel</xpath>
+                    <xpath>/Defs/ThingDef[@Name="DubsHotTubBase"]/statBases/Beauty</xpath>
                     <value>
-                        <Steel>100</Steel>
+                        <Beauty>4</Beauty>
                     </value>
                 </li>
 

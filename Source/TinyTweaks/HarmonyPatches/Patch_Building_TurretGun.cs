@@ -23,7 +23,7 @@ namespace TinyTweaks
             public static void Postfix(Building_TurretGun __instance, ref IEnumerable<Gizmo> __result)
             {
                 // If the turret's gun has CompChangeableProjectile and is controlled by the player, add copy/paste storage setting gizmos for the comp
-                if (TinyTweaksSettings.artilleryCopyPasteGizmos && __instance.gun?.TryGetComp<CompChangeableProjectile>() is CompChangeableProjectile changeableProjectileComp)
+                if (__instance.gun?.TryGetComp<CompChangeableProjectile>() is CompChangeableProjectile changeableProjectileComp)
                 {
                     bool playerControlled = (bool)typeof(Building_TurretGun).GetProperty("PlayerControlled", BindingFlags.NonPublic | BindingFlags.Instance).GetGetMethod(true).Invoke(__instance, null);
                     if (playerControlled)
