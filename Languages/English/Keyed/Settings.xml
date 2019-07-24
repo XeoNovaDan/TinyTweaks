@@ -12,6 +12,9 @@
 
     <TinyTweaks.QualityOfLifeChangesHeading>Quality-of-Life Changes</TinyTweaks.QualityOfLifeChangesHeading>
 
+    <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>Automatically assign animals to follow their master</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>
+    <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>Animals that have been trained in obedience will automatically be assigned to follow their master when drafted or doing fieldwork.</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>
+
     <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>Automatically remove finished moisture pumps</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>
     <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>Moisture pumps that have finished pumping will be automatically designated to be uninstalled or deconstructed, whichever is appropriate.</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>
 
@@ -30,7 +33,7 @@
     <TinyTweaks.BugFixesHeading>Bug Fixes</TinyTweaks.BugFixesHeading>
 
     <TinyTweaks.BugFixes.MeleeArmourPenetration>Melee armour penetration</TinyTweaks.BugFixes.MeleeArmourPenetration>
-    <TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>When enabled, pawn bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>
+    <TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>Preset armour penetration values for melee weapons such as spears will scale with the weapon's quality and stuff it's made out of.</TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>
 
     <!-- Balance Changes -->
 

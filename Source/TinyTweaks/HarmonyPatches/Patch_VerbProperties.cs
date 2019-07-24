@@ -23,16 +23,18 @@ namespace TinyTweaks
 
             public static void Postfix(VerbProperties __instance, Tool tool, Pawn attacker, Thing equipment, HediffComp_VerbGiver hediffCompSource, ref float __result)
             {
-                // Not gated behind an option since it is a bug fix :3
-                // Scale forced AP with quality and stuff like everything else
-                if (tool != null && __result == tool.armorPenetration && equipment != null)
+                // Scale defined AP with quality and stuff like everything else
+                if (TinyTweaksSettings.meleeArmourPenetrationFix)
                 {
-                    __result *= equipment.GetStatValue(StatDefOf.MeleeWeapon_DamageMultiplier);
-                    if (equipment.Stuff != null && __instance.meleeDamageDef != null && __instance.meleeDamageDef.armorCategory.multStat != null)
-                        __result *= equipment.Stuff.GetStatValueAbstract(__instance.meleeDamageDef.armorCategory.multStat);
+                    if (tool != null && __result == tool.armorPenetration && equipment != null)
+                    {
+                        __result *= equipment.GetStatValue(StatDefOf.MeleeWeapon_DamageMultiplier);
+                        if (equipment.Stuff != null && __instance.meleeDamageDef != null && __instance.meleeDamageDef.armorCategory.multStat != null)
+                            __result *= equipment.Stuff.GetStatValueAbstract(__instance.meleeDamageDef.armorCategory.multStat);
+                    }
+                    if (attacker != null)
+                        __result *= __instance.GetDamageFactorFor(tool, attacker, hediffCompSource);
                 }
-                if (attacker != null)
-                    __result *= __instance.GetDamageFactorFor(tool, attacker, hediffCompSource);
             }
 
         }

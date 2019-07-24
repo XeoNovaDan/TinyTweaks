@@ -29,6 +29,7 @@ namespace TinyTweaks
         }
 
         #region QoL Changes
+        public static bool autoAssignAnimalFollowSettings = true;
         public static bool autoRemoveMoisturePumps = true;
         public static bool changeDefLabels = true;
 
@@ -38,6 +39,7 @@ namespace TinyTweaks
         #endregion
 
         #region Bug Fixes
+        public static bool meleeArmourPenetrationFix = true;
         #endregion
 
         #region Balance Changes
@@ -58,14 +60,15 @@ namespace TinyTweaks
             {
                 case QoLPageIndex:
                     headingTranslationKey += "QualityOfLifeChangesHeading";
-                    return;
+                    goto WriteHeader;
                 case BugFixPageIndex:
                     headingTranslationKey += "BugFixesHeading";
-                    return;
+                    goto WriteHeader;
                 case BalancePageIndex:
                     headingTranslationKey += "BalanceChangesHeading";
-                    return;
+                    goto WriteHeader;
             }
+            WriteHeader:
             Text.Font = font + 1;
             listing.Label(headingTranslationKey.Translate());
             Text.Font = font;
@@ -101,6 +104,10 @@ namespace TinyTweaks
                 // 'Game restart not required' note
                 GameRestartNotRequired(options);
 
+                // Automatically assign animals to follow their master
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings".Translate(), ref autoAssignAnimalFollowSettings, "TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip".Translate());
+
                 // Automatically remove finished moisture pumps
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip".Translate());
@@ -129,7 +136,12 @@ namespace TinyTweaks
             else if (PageIndex == BugFixPageIndex)
             {
                 // 'Game restart not required' note
-                
+                GameRestartNotRequired(options);
+
+                // Melee weapon AP fix
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.BugFixes.MeleeArmourPenetration".Translate(), ref meleeArmourPenetrationFix, "TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip".Translate());
+
             }
             #endregion
 

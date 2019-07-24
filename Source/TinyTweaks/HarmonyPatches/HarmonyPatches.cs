@@ -20,6 +20,9 @@ namespace TinyTweaks
         {
             var h = HarmonyInstance.Create("XeoNovaDan.TinyTweaks");
             h.PatchAll();
+
+            // Pawn_PlayerSettings ctor
+            h.Patch(typeof(Pawn_PlayerSettings).GetConstructor(new Type[] { typeof(Pawn) }), postfix: new HarmonyMethod(typeof(Patch_Pawn_PlayerSettings.ManualPatch_Ctor), "Postfix"));
         }
 
     }

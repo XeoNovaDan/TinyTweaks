@@ -56,6 +56,7 @@
     <Compile Include="Comps\CompLaunchableAutoRebuild.cs" />
     <Compile Include="Dialogs\Dialog_AssignCaravanFoodRestrictions.cs" />
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
+    <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
     <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
     <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
     <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
