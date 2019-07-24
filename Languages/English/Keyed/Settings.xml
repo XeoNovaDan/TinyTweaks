@@ -4,43 +4,52 @@
     <TinyTweaks.SettingsCategory>Tiny Tweaks</TinyTweaks.SettingsCategory>
     <TinyTweaks.NextPage>Next Page</TinyTweaks.NextPage>
     <TinyTweaks.PreviousPage>Previous Page</TinyTweaks.PreviousPage>
-    <TinyTweaks.BalanceChanges>Balance changes</TinyTweaks.BalanceChanges>
 
-    <!-- Startup Settings -->
+    <TinyTweaks.GameRestartNotRequired>Note: Changes made to these settings will be applied instantly - a game restart is not required.</TinyTweaks.GameRestartNotRequired>
+    <TinyTweaks.GameRestartRequired>Note: Game restart required in order for any changes to these settings to take effect.</TinyTweaks.GameRestartRequired>
 
-    <TinyTweaks.StartupSettingsHeading>Startup Settings</TinyTweaks.StartupSettingsHeading>
-    <TinyTweaks.StartupSettingsNote>Note: Game restart required in order for any changes to these settings to take effect.</TinyTweaks.StartupSettingsNote>
+    <!-- QoL Changes -->
 
-    <TinyTweaks.ChangeBuildableDefDesignationCategories>Change architect menu tabs</TinyTweaks.ChangeBuildableDefDesignationCategories>
-    <TinyTweaks.ChangeBuildableDefDesignationCategories_ToolTip>When enabled, certain architect menu tabs from certain mods will be merged with vanilla architect tabs (e.g. 'Furniture+' from More Furniture merged into 'Furniture'). In some cases, new architect tabs may be added too (e.g. buildings from LWM Deep Storage will get their own 'Storage' tab).</TinyTweaks.ChangeBuildableDefDesignationCategories_ToolTip>
+    <TinyTweaks.QualityOfLifeChangesHeading>Quality-of-Life Changes</TinyTweaks.QualityOfLifeChangesHeading>
 
-    <TinyTweaks.ChangeDefLabels>Consistent label casing</TinyTweaks.ChangeDefLabels>
-    <TinyTweaks.ChangeDefLabels_ToolTip>When enabled, the labels of things such as items and recipe bills will be cased just like vanilla (e.g. White Composite Water Tower => White composite water tower).</TinyTweaks.ChangeDefLabels_ToolTip>
+    <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>Automatically remove finished moisture pumps</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>
+    <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>Moisture pumps that have finished pumping will be automatically designated to be uninstalled or deconstructed, whichever is appropriate.</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>
 
-    <TinyTweaks.TweakVanilla>Vanilla</TinyTweaks.TweakVanilla>
-    <TinyTweaks.TweakVanilla_ToolTip>Normalises construction and smoothing speed to 100% like all other speed stats.</TinyTweaks.TweakVanilla_ToolTip>
+    <TinyTweaks.QoLChanges.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.QoLChanges.AlphabeticalBillList>
+    <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>The drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
 
-    <TinyTweaks.TweakDubsBadHygiene>Dubs Bad Hygiene</TinyTweaks.TweakDubsBadHygiene>
-    <TinyTweaks.TweakDubsBadHygiene_ToolTip>Reduces the steel requirement for building log boilers from 200 to 100.</TinyTweaks.TweakDubsBadHygiene_ToolTip>
 
-    <!-- General Settings -->
+    <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>Change architect menu tabs</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>
+    <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>Certain architect menu tabs from certain mods will be merged with vanilla architect tabs (e.g. 'Furniture+' from More Furniture merged into 'Furniture'). In some cases, new architect tabs may be added too (e.g. buildings from LWM Deep Storage will get their own 'Storage' tab).</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>
 
-    <TinyTweaks.GeneralSettingsHeading>General Settings</TinyTweaks.GeneralSettingsHeading>
-    <TinyTweaks.GeneralSettingsNote>Note: Changes made to these settings will be applied instantly - a game restart is not required.</TinyTweaks.GeneralSettingsNote>
+    <TinyTweaks.QoLChanges.ChangeDefLabels>Consistent label casing</TinyTweaks.QoLChanges.ChangeDefLabels>
+    <TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>The labels of things such as items and recipe bills will be cased just like vanilla (e.g. White Composite Water Tower => White composite water tower).</TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>
 
-    <TinyTweaks.AutoRemoveTerrainPumpDry>Automatically remove finished moisture pumps</TinyTweaks.AutoRemoveTerrainPumpDry>
-    <TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip>When enabled, moisture pumps that have finished pumping will be automatically designated to be uninstalled or deconstructed, whichever is appropriate.</TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip>
+    <!-- Bug Fixes -->
 
-    <TinyTweaks.DelayedSkillDecay>Delayed skill decay</TinyTweaks.DelayedSkillDecay>
-    <TinyTweaks.DelayedSkillDecay_ToolTip>When enabled, 8 in-game hours must pass since a pawn last gained at least 2000 experience in a given skill before skill decay kicks in.</TinyTweaks.DelayedSkillDecay_ToolTip>
+    <TinyTweaks.BugFixesHeading>Bug Fixes</TinyTweaks.BugFixesHeading>
 
-    <TinyTweaks.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.AlphabeticalBillList>
-    <TinyTweaks.AlphabeticalBillList_ToolTip>When enabled, the drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.AlphabeticalBillList_ToolTip>
+    <TinyTweaks.BugFixes.MeleeArmourPenetration>Melee armour penetration</TinyTweaks.BugFixes.MeleeArmourPenetration>
+    <TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>When enabled, pawn bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>
 
-    <TinyTweaks.BloodPumpingAffectsBleeding>Blood pumping affects bleeding</TinyTweaks.BloodPumpingAffectsBleeding>
-    <TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>When enabled, pawn bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BloodPumpingAffectsBleeding_ToolTip>
+    <!-- Balance Changes -->
 
-    <TinyTweaks.ChangeQualityDistribution>Change quality distribution</TinyTweaks.ChangeQualityDistribution>
-    <TinyTweaks.ChangeQualityDistribution_ToolTip>When enabled, skill will matter significantly more when producing items that have quality. Quality distribution is also centred around level 6 instead of level 4.</TinyTweaks.ChangeQualityDistribution_ToolTip>
+    <TinyTweaks.BalanceChangesHeading>Balance Changes</TinyTweaks.BalanceChangesHeading>
+
+    <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>Blood pumping affects bleeding</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>
+    <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>Pawn bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>
+
+    <TinyTweaks.BalanceChanges.ChangeQualityDistribution>Change quality distribution</TinyTweaks.BalanceChanges.ChangeQualityDistribution>
+    <TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>Skill matters significantly more when producing items that have quality. Quality distribution is also centred around level 6 instead of level 4.</TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>
+
+    <TinyTweaks.BalanceChanges.DelayedSkillDecay>Delayed skill decay</TinyTweaks.BalanceChanges.DelayedSkillDecay>
+    <TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>8 in-game hours must pass since a pawn last gained at least 2000 experience in a given skill before skill decay kicks in.</TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>
+
+
+    <TinyTweaks.BalanceChanges.Vanilla>Vanilla</TinyTweaks.BalanceChanges.Vanilla>
+    <TinyTweaks.BalanceChanges.Vanilla_ToolTip>Normalises construction and smoothing speed to 100% like all other speed stats.</TinyTweaks.BalanceChanges.Vanilla_ToolTip>
+
+    <TinyTweaks.BalanceChanges.DubsBadHygiene>Dubs Bad Hygiene</TinyTweaks.BalanceChanges.DubsBadHygiene>
+    <TinyTweaks.BalanceChanges.DubsBadHygiene_ToolTip>Reduces the steel requirement for building log boilers from 200 to 100 and reduces the beauty values of all fixtures.</TinyTweaks.BalanceChanges.DubsBadHygiene_ToolTip>
 
 </LanguageData>

@@ -16,7 +16,11 @@ namespace TinyTweaks
         private const float PageButtonHeight = 35;
         private const float PageButtonPosOffsetFromCentre = 60;
 
-        private const int MaxPageIndex = 2;
+        private const int QoLPageIndex = 1;
+        private const int BugFixPageIndex = 2;
+        private const int BalancePageIndex = 3;
+
+        private const int MaxPageIndex = 3;
         private static int _pageIndex = 1;
         private static int PageIndex
         {
@@ -24,22 +28,61 @@ namespace TinyTweaks
             set => _pageIndex = Mathf.Clamp(value, 1, MaxPageIndex);
         }
 
-        #region Startup Settings
+        #region QoL Changes
+        public static bool autoRemoveMoisturePumps = true;
         public static bool changeDefLabels = true;
-        public static bool changeBuildableDefDesignationCategories = true;
 
+        // Restart
+        public static bool alphabeticalBillList = true;
+        public static bool changeBuildableDefDesignationCategories = true;
+        #endregion
+
+        #region Bug Fixes
+        #endregion
+
+        #region Balance Changes
+        public static bool changeQualityDistribution = true;
+        public static bool bloodPumpingAffectsBleeding = true;
+        public static bool delayedSkillDecay = true;
+
+        // Restart
         public static bool tweakVanilla = true;
         public static bool tweakDubsBadHygiene = true;
         #endregion
 
-        #region General Settings
-        public static bool alphabeticalBillList = true;
-        public static bool autoRemoveMoisturePumps = true;
+        private void DoHeading(Listing_Standard listing, GameFont font)
+        {
+            listing.Gap();
+            string headingTranslationKey = "TinyTweaks.";
+            switch(PageIndex)
+            {
+                case QoLPageIndex:
+                    headingTranslationKey += "QualityOfLifeChangesHeading";
+                    return;
+                case BugFixPageIndex:
+                    headingTranslationKey += "BugFixesHeading";
+                    return;
+                case BalancePageIndex:
+                    headingTranslationKey += "BalanceChangesHeading";
+                    return;
+            }
+            Text.Font = font + 1;
+            listing.Label(headingTranslationKey.Translate());
+            Text.Font = font;
+            listing.GapLine(24);
+        }
 
-        public static bool changeQualityDistribution = true;
-        public static bool bloodPumpingAffectsBleeding = true;
-        public static bool delayedSkillDecay = true;
-        #endregion
+        private void GameRestartNotRequired(Listing_Standard listing)
+        {
+            listing.Gap();
+            listing.Label("TinyTweaks.GameRestartNotRequired".Translate());
+        }
+
+        private void GameRestartRequired(Listing_Standard listing)
+        {
+            listing.Gap();
+            listing.Label("TinyTweaks.GameRestartRequired".Translate());
+        }
 
         public void DoWindowContents(Rect wrect)
         {
@@ -47,76 +90,78 @@ namespace TinyTweaks
             var defaultColor = GUI.color;
             options.Begin(wrect);
             GUI.color = defaultColor;
-            Text.Font = GameFont.Medium;
+            Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
 
-            options.Gap();
+            DoHeading(options, Text.Font);
 
-            #region Startup Settings
-            if (PageIndex == 1)
+            #region QoL Changes
+            if (PageIndex == QoLPageIndex)
             {
-                // Heading
-                options.Label("TinyTweaks.StartupSettingsHeading".Translate());
-                Text.Font = GameFont.Small;
-                options.Label("TinyTweaks.StartupSettingsNote".Translate());
-                options.GapLine(24);
-
-                // Change architect menu tabs
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ChangeBuildableDefDesignationCategories".Translate(), ref changeBuildableDefDesignationCategories, "TinyTweaks.ChangeBuildableDefDesignationCategories_ToolTip".Translate());
-
-                // Consistent label casing
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ChangeDefLabels".Translate(), ref changeDefLabels, "TinyTweaks.ChangeDefLabels_ToolTip".Translate());
-
-                // Balance changes
-                options.GapLine(24);
-                options.Gap();
-                options.Label("TinyTweaks.BalanceChanges".Translate());
-
-                // Vanilla
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.TweakVanilla".Translate(), ref tweakVanilla, "TinyTweaks.TweakVanilla_ToolTip".Translate());
-
-                // Dubs Bad Hygiene
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.TweakDubsBadHygiene".Translate(), ref tweakDubsBadHygiene, "TinyTweaks.TweakDubsBadHygiene_ToolTip".Translate());
-            }
-            #endregion
-
-            #region General Settings
-            if (PageIndex == 2)
-            {
-                // Heading
-                options.Label("TinyTweaks.GeneralSettingsHeading".Translate());
-                Text.Font = GameFont.Small;
-                options.Label("TinyTweaks.GeneralSettingsNote".Translate());
-                options.GapLine(24);
+                // 'Game restart not required' note
+                GameRestartNotRequired(options);
 
                 // Automatically remove finished moisture pumps
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.AutoRemoveTerrainPumpDry_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip".Translate());
 
                 // Sort workbench bill list alphabetically
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.AlphabeticalBillList_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip".Translate());
 
-                // Balance changes
+                // 'Game restart required' note
                 options.GapLine(24);
+                GameRestartRequired(options);
+
+                // Change architect menu tabs
                 options.Gap();
-                options.Label("TinyTweaks.BalanceChanges".Translate());
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories".Translate(), ref changeBuildableDefDesignationCategories, "TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip".Translate());
+
+                // Consistent label casing
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.ChangeDefLabels".Translate(), ref changeDefLabels, "TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip".Translate());
+
+
+            }
+            #endregion
+
+            #region Bug Fixes
+            else if (PageIndex == BugFixPageIndex)
+            {
+                // 'Game restart not required' note
+                
+            }
+            #endregion
+
+            #region Balance Changes
+            else if (PageIndex == BalancePageIndex)
+            {
+                // 'Game restart not required' note
+                GameRestartNotRequired(options);
 
                 // Blood pumping affects bleeding
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BloodPumpingAffectsBleeding".Translate(), ref bloodPumpingAffectsBleeding, "TinyTweaks.BloodPumpingAffectsBleeding_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding".Translate(), ref bloodPumpingAffectsBleeding, "TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip".Translate());
 
                 // Change quality distribution
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ChangeQualityDistribution".Translate(), ref changeQualityDistribution, "TinyTweaks.ChangeQualityDistribution_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.BalanceChanges.ChangeQualityDistribution".Translate(), ref changeQualityDistribution, "TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip".Translate());
 
                 // Delayed skill decay
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.DelayedSkillDecay_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.BalanceChanges.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip".Translate());
+
+                // 'Game restart required' note
+                options.GapLine(24);
+                GameRestartRequired(options);
+
+                // Vanilla
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.BalanceChanges.Vanilla".Translate(), ref tweakVanilla, "TinyTweaks.BalanceChanges.Vanilla_ToolTip".Translate());
+
+                // Dubs Bad Hygiene
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.BalanceChanges.DubsBadHygiene".Translate(), ref tweakDubsBadHygiene, "TinyTweaks.BalanceChanges.DubsBadHygiene_ToolTip".Translate());
             }
             #endregion
 
@@ -145,16 +190,27 @@ namespace TinyTweaks
 
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref changeDefLabels, "changeDefLabels", true);
-            Scribe_Values.Look(ref changeBuildableDefDesignationCategories, "changeBuildableDefDesignationCategories", true);
-            Scribe_Values.Look(ref tweakVanilla, "tweakVanilla", true);
-            Scribe_Values.Look(ref tweakDubsBadHygiene, "tweakDubsBadHygiene", true);
-
-            Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
+            #region QoL Changes
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
+            Scribe_Values.Look(ref changeDefLabels, "changeDefLabels", true);
+
+            // Restart
+            Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
+            Scribe_Values.Look(ref changeBuildableDefDesignationCategories, "changeBuildableDefDesignationCategories", true);
+            #endregion
+
+            #region Bug Fixes
+            #endregion
+
+            #region Balance Changes
             Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", true);
             Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", true);
             Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", true);
+
+            // Restart
+            Scribe_Values.Look(ref tweakVanilla, "tweakVanilla", true);
+            Scribe_Values.Look(ref tweakDubsBadHygiene, "tweakDubsBadHygiene", true);
+            #endregion
         }
 
     }
