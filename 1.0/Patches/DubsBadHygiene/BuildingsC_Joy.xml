@@ -9,6 +9,7 @@
             <success>Always</success>
             <operations>
                 <li Class="TinyTweaks.PatchOperationCheckModSetting">
+                    <settingsType>TinyTweaks.TinyTweaksSettings</settingsType>
                     <settingName>tweakDubsBadHygiene</settingName>
                 </li>
 

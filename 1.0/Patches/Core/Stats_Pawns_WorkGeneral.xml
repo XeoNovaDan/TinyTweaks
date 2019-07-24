@@ -6,6 +6,8 @@
         <operations>
 
             <li Class="TinyTweaks.PatchOperationCheckModSetting">
+                <modNamespace></modNamespace>
+                <settingsType>TinyTweaks.TinyTweaksSettings</settingsType>
                 <settingName>tweakVanilla</settingName>
             </li>
 
