@@ -42,6 +42,17 @@ namespace TinyTweaks
             listing.Gap(listing.verticalSpacing);
         }
 
+        public static IEnumerable<T> Split<T>(this IEnumerable<T> sequence, Predicate<T> validator)
+        {
+            foreach (T obj in sequence)
+            {
+                if (validator(obj))
+                {
+                    yield return obj;
+                }
+            }
+        }
+
     }
 
 }
