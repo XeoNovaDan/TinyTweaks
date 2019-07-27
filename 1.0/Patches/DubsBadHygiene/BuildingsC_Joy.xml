@@ -10,7 +10,7 @@
             <operations>
                 <li Class="TinyTweaks.PatchOperationCheckModSetting">
                     <settingsType>TinyTweaks.TinyTweaksSettings</settingsType>
-                    <settingName>tweakDubsBadHygiene</settingName>
+                    <settingName>nerfFixtureBeauty</settingName>
                 </li>
 
                 <!-- Reduce beauty bonus of hot tubs from 25 to 4 -->

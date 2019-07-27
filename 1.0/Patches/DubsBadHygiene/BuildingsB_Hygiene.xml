@@ -10,7 +10,7 @@
             <operations>
                 <li Class="TinyTweaks.PatchOperationCheckModSetting">
                     <settingsType>TinyTweaks.TinyTweaksSettings</settingsType>
-                    <settingName>tweakDubsBadHygiene</settingName>
+                    <settingName>nerfFixtureBeauty</settingName>
                 </li>
 
                 <!-- Increase beauty penalty of pit latrines from 5 to 8 -->

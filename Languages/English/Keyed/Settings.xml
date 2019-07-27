@@ -4,13 +4,18 @@
     <TinyTweaks.SettingsCategory>Tiny Tweaks</TinyTweaks.SettingsCategory>
     <TinyTweaks.NextPage>Next Page</TinyTweaks.NextPage>
     <TinyTweaks.PreviousPage>Previous Page</TinyTweaks.PreviousPage>
-
+    <TinyTweaks.Expand>Expand</TinyTweaks.Expand>
+    <TinyTweaks.Collapse>Collapse</TinyTweaks.Collapse>
+ 
     <TinyTweaks.GameRestartNotRequired>Note: Changes made to these settings will be applied instantly - a game restart is not required.</TinyTweaks.GameRestartNotRequired>
     <TinyTweaks.GameRestartRequired>Note: Game restart required in order for any changes to these settings to take effect.</TinyTweaks.GameRestartRequired>
 
     <!-- QoL Changes -->
 
     <TinyTweaks.QualityOfLifeChangesHeading>Quality-of-Life Changes</TinyTweaks.QualityOfLifeChangesHeading>
+
+    <TinyTweaks.QoLChanges.CaravanFoodRestrictions>Assign food restrictions for caravans</TinyTweaks.QoLChanges.CaravanFoodRestrictions>
+    <TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>When selecting one of your caravans on the world map and going to the 'Items' tab, there will be an 'assign food restrictions' button next to the 'assign drug policies' button.</TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>
 
     <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>Automatically assign animals to follow their master</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>
     <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>Animals that have been trained in obedience will automatically be assigned to follow their master when drafted or doing fieldwork.</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>
@@ -49,10 +54,36 @@
     <TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>8 in-game hours must pass since a pawn last gained at least 2000 experience in a given skill before skill decay kicks in.</TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>
 
 
-    <TinyTweaks.BalanceChanges.Vanilla>Vanilla</TinyTweaks.BalanceChanges.Vanilla>
-    <TinyTweaks.BalanceChanges.Vanilla_ToolTip>Normalises construction and smoothing speed to 100% like all other speed stats.</TinyTweaks.BalanceChanges.Vanilla_ToolTip>
+    <TinyTweaks.BalanceChanges.NormaliseConstructionSpeed>Normalise construction speed</TinyTweaks.BalanceChanges.NormaliseConstructionSpeed>
+    <TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip>Normalises construction and smoothing speed to 100% like all other speed stats.</TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip>
 
-    <TinyTweaks.BalanceChanges.DubsBadHygiene>Dubs Bad Hygiene</TinyTweaks.BalanceChanges.DubsBadHygiene>
-    <TinyTweaks.BalanceChanges.DubsBadHygiene_ToolTip>Reduces the steel requirement for building log boilers from 200 to 100 and reduces the beauty values of all fixtures.</TinyTweaks.BalanceChanges.DubsBadHygiene_ToolTip>
+    <!-- Mod Tweaks -->
+
+    <TinyTweaks.ModTweaksHeading>Mod Tweaks</TinyTweaks.ModTweaksHeading>
+
+
+    <TinyTweaks.ModTweaks.DubsBadHygiene>Dubs Bad Hygiene</TinyTweaks.ModTweaks.DubsBadHygiene>
+
+    <TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste>Dumping stockpiles automatically accept 'Waste' items</TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste>
+    <TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste_Tooltip>Newly created dumping stockpile zones will automatically accept bed pans, biosolids and fecal sludge.</TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste_Tooltip>
+
+    <TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers>Cheaper log boilers - restart required</TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers>
+    <TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers_Tooltip>Reduces the steel requirement for building log boilers from 200 to 100 - more in line with the 80 cost for other boilers.</TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers_Tooltip>
+
+    <TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty>Nerf fixture beauty values - restart required</TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty>
+    <TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty_Tooltip>Reduces the beauty values of all fixtures (e.g. toilets, bathtubs) to 0, with primitive fixtures being reduced to -8.</TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty_Tooltip>
+
+
+    <TinyTweaks.ModTweaks.FertileFields>Fertile Fields</TinyTweaks.ModTweaks.FertileFields>
+
+    <TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw>Compost bills exclude raw food - restart required</TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw>
+    <TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip>The 'Make compost' bills at a butcher's table will no longer default to also accepting raw food that is perfectly good for use in cooking.</TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip>
+
+    <!-- Tiny Additions -->
+
+    <TinyTweaks.TinyAdditionsHeading>Tiny Additions</TinyTweaks.TinyAdditionsHeading>
+
+    <TinyTweaks.TinyAdditions.RandomStartingSeason>Random starting season option</TinyTweaks.TinyAdditions.RandomStartingSeason>
+    <TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>When opening the advanced settings upon generating a new planet, there will also be an option to have a random starting season.</TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>
 
 </LanguageData>

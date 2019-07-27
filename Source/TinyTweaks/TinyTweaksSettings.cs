@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 using RimWorld;
 
 namespace TinyTweaks
@@ -12,6 +13,7 @@ namespace TinyTweaks
     public class TinyTweaksSettings : ModSettings
     {
 
+        #region Consts and Fields
         private const float PageButtonWidth = 150;
         private const float PageButtonHeight = 35;
         private const float PageButtonPosOffsetFromCentre = 60;
@@ -19,16 +21,20 @@ namespace TinyTweaks
         private const int QoLPageIndex = 1;
         private const int BugFixPageIndex = 2;
         private const int BalancePageIndex = 3;
+        private const int ModPageIndex = 4;
+        private const int AdditionsPageIndex = 5;
 
-        private const int MaxPageIndex = 3;
+        private const int MaxPageIndex = AdditionsPageIndex;
         private static int _pageIndex = 1;
         private static int PageIndex
         {
             get => _pageIndex;
             set => _pageIndex = Mathf.Clamp(value, 1, MaxPageIndex);
         }
+        #endregion
 
         #region QoL Changes
+        public static bool caravanFoodRestrictions = true;
         public static bool autoAssignAnimalFollowSettings = true;
         public static bool autoRemoveMoisturePumps = true;
         public static bool changeDefLabels = true;
@@ -48,8 +54,25 @@ namespace TinyTweaks
         public static bool delayedSkillDecay = true;
 
         // Restart
-        public static bool tweakVanilla = true;
-        public static bool tweakDubsBadHygiene = true;
+        public static bool normaliseConstructionSpeed = true;
+        #endregion
+
+        #region Mod Tweaks
+        // Dubs Bad Hygiene
+        public static bool dumpingStockpilesAcceptWaste = true;
+        public static bool cheaperLogBoilers = true;
+        public static bool nerfFixtureBeauty = true;
+
+        // Fertile fields
+        public static bool compostBillsExcludeRaw = true;
+
+        // Subheadings
+        private static bool showDubsBadHygieneSettings;
+        public static bool showFertileFieldsSettings;
+        #endregion
+
+        #region Tiny Additions
+        public static bool randomStartingSeason = true;
         #endregion
 
         private void DoHeading(Listing_Standard listing, GameFont font)
@@ -66,6 +89,12 @@ namespace TinyTweaks
                     goto WriteHeader;
                 case BalancePageIndex:
                     headingTranslationKey += "BalanceChangesHeading";
+                    goto WriteHeader;
+                case ModPageIndex:
+                    headingTranslationKey += "ModTweaksHeading";
+                    goto WriteHeader;
+                case AdditionsPageIndex:
+                    headingTranslationKey += "TinyAdditionsHeading";
                     goto WriteHeader;
             }
             WriteHeader:
@@ -104,6 +133,10 @@ namespace TinyTweaks
                 // 'Game restart not required' note
                 GameRestartNotRequired(options);
 
+                // Assign food restrictions for caravans
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.CaravanFoodRestrictions".Translate(), ref caravanFoodRestrictions, "TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip".Translate());
+
                 // Automatically assign animals to follow their master
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings".Translate(), ref autoAssignAnimalFollowSettings, "TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip".Translate());
@@ -127,7 +160,6 @@ namespace TinyTweaks
                 // Consistent label casing
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.QoLChanges.ChangeDefLabels".Translate(), ref changeDefLabels, "TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip".Translate());
-
 
             }
             #endregion
@@ -167,13 +199,57 @@ namespace TinyTweaks
                 options.GapLine(24);
                 GameRestartRequired(options);
 
-                // Vanilla
+                // Normalise construction speed
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BalanceChanges.Vanilla".Translate(), ref tweakVanilla, "TinyTweaks.BalanceChanges.Vanilla_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.BalanceChanges.NormaliseConstructionSpeed".Translate(), ref normaliseConstructionSpeed, "TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip".Translate());
+            }
+            #endregion
 
-                // Dubs Bad Hygiene
+            #region Mod Tweaks
+            else if (PageIndex == ModPageIndex)
+            {
+                #region Dubs Bad Hygiene
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BalanceChanges.DubsBadHygiene".Translate(), ref tweakDubsBadHygiene, "TinyTweaks.BalanceChanges.DubsBadHygiene_ToolTip".Translate());
+                options.CollapsibleSubheading("TinyTweaks.ModTweaks.DubsBadHygiene".Translate(), ref showDubsBadHygieneSettings);
+                if (showDubsBadHygieneSettings)
+                {
+                    // Dumping stockpiles automatically accept 'Waste' items
+                    options.Gap();
+                    options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste_Tooltip".Translate());
+
+                    // Cheaper log boilers
+                    options.Gap();
+                    options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers_Tooltip".Translate());
+
+                    // Nerf fixture beauty values
+                    options.Gap();
+                    options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty".Translate(), ref nerfFixtureBeauty, "TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty_Tooltip".Translate());
+                }
+                #endregion
+
+                #region Fertile Fields
+                options.Gap();
+                options.CollapsibleSubheading("TinyTweaks.ModTweaks.FertileFields".Translate(), ref showFertileFieldsSettings);
+                if (showFertileFieldsSettings)
+                {
+                    // Dumping stockpiles automatically accept 'Waste' items
+                    options.Gap();
+                    options.CheckboxLabeled("TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw".Translate(), ref compostBillsExcludeRaw, "TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip".Translate());
+                }
+                #endregion
+            }
+            #endregion
+
+            #region Tiny Additions
+            else if (PageIndex == AdditionsPageIndex)
+            {
+                // 'Game restart not required' note
+                GameRestartNotRequired(options);
+
+                // Melee weapon AP fix
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.TinyAdditions.RandomStartingSeason".Translate(), ref randomStartingSeason, "TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip".Translate());
+
             }
             #endregion
 
@@ -182,11 +258,17 @@ namespace TinyTweaks
             float xOffset = (halfRectWidth - PageButtonWidth) / 2;
             var leftButtonRect = new Rect(xOffset + PageButtonPosOffsetFromCentre, wrect.height - PageButtonHeight, PageButtonWidth, PageButtonHeight);
             if (Widgets.ButtonText(leftButtonRect, "TinyTweaks.PreviousPage".Translate()))
+            {
+                SoundDefOf.Click.PlayOneShot(null);
                 PageIndex--;
+            }  
 
             var rightButtonRect = new Rect(halfRectWidth + xOffset - PageButtonPosOffsetFromCentre, wrect.height - PageButtonHeight, PageButtonWidth, PageButtonHeight); ;
             if (Widgets.ButtonText(rightButtonRect, "TinyTweaks.NextPage".Translate()))
+            {
+                SoundDefOf.Click.PlayOneShot(null);
                 PageIndex++;
+            }
 
             Text.Anchor = TextAnchor.MiddleCenter;
             var pageNumberRect = new Rect(0, wrect.height - PageButtonHeight, wrect.width, PageButtonHeight);
@@ -203,6 +285,8 @@ namespace TinyTweaks
         public override void ExposeData()
         {
             #region QoL Changes
+            Scribe_Values.Look(ref caravanFoodRestrictions, "caravanFoodRestrictions", true);
+            Scribe_Values.Look(ref autoAssignAnimalFollowSettings, "autoAssignAnimalFollowSettings", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
             Scribe_Values.Look(ref changeDefLabels, "changeDefLabels", true);
 
@@ -212,6 +296,7 @@ namespace TinyTweaks
             #endregion
 
             #region Bug Fixes
+            Scribe_Values.Look(ref meleeArmourPenetrationFix, "meleeArmourPenetrationFix", true);
             #endregion
 
             #region Balance Changes
@@ -220,8 +305,21 @@ namespace TinyTweaks
             Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", true);
 
             // Restart
-            Scribe_Values.Look(ref tweakVanilla, "tweakVanilla", true);
-            Scribe_Values.Look(ref tweakDubsBadHygiene, "tweakDubsBadHygiene", true);
+            Scribe_Values.Look(ref normaliseConstructionSpeed, "normaliseConstructionSpeed", true);
+            #endregion
+
+            #region Mod Tweaks
+            // Dubs Bad Hygiene
+            Scribe_Values.Look(ref dumpingStockpilesAcceptWaste, "dumpingStockpilesAcceptWaste", true);
+            Scribe_Values.Look(ref cheaperLogBoilers, "cheaperLogBoilers", true);
+            Scribe_Values.Look(ref nerfFixtureBeauty, "nerfFixtureBeauty", true);
+
+            // Fertile Fields
+            Scribe_Values.Look(ref compostBillsExcludeRaw, "compostBillsExcludeRaw", true);
+            #endregion
+
+            #region Tiny Additions
+            Scribe_Values.Look(ref randomStartingSeason, "randomStartingSeason", true);
             #endregion
         }
 

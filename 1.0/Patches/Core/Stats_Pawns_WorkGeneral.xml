@@ -7,7 +7,7 @@
 
             <li Class="TinyTweaks.PatchOperationCheckModSetting">
                 <settingsType>TinyTweaks.TinyTweaksSettings</settingsType>
-                <settingName>tweakVanilla</settingName>
+                <settingName>normaliseConstructionSpeed</settingName>
             </li>
 
             <!-- Normalise Smoothing speed and Construction speed to 100% at level 8 -->

@@ -3,22 +3,19 @@
 
     <Operation Class="PatchOperationFindMod">
         <mods>
-            <li>Dubs Bad Hygiene</li>
+            <li>[RF] Fertile Fields [1.0]</li>
         </mods>
         <match Class="PatchOperationSequence">
             <success>Always</success>
             <operations>
+            
                 <li Class="TinyTweaks.PatchOperationCheckModSetting">
                     <settingsType>TinyTweaks.TinyTweaksSettings</settingsType>
-                    <settingName>cheaperLogBoilers</settingName>
+                    <settingName>compostBillsExcludeRaw</settingName>
                 </li>
 
-                <!-- Reduce Log Boiler's steel cost from 200 to 100 -->
-                <li Class="PatchOperationReplace">
-                    <xpath>/Defs/ThingDef[defName="LogBoiler"]/costList/Steel</xpath>
-                    <value>
-                        <Steel>100</Steel>
-                    </value>
+                <li Class="PatchOperationRemove">
+                    <xpath>/Defs/RecipeDef[defName="MakeCompost" or defName="MakeCompost5"]/defaultIngredientFilter/categories</xpath>
                 </li>
 
             </operations>
