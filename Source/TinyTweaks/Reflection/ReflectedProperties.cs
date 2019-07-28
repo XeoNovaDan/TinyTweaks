@@ -12,6 +12,7 @@ using RimWorld.Planet;
 namespace TinyTweaks
 {
 
+    [StaticConstructorOnStartup]
     public static class ReflectedProperties
     {
 

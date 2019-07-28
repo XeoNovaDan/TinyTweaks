@@ -76,6 +76,7 @@
     <Compile Include="PlaySettings\ExtraPlaySettings.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />
     <None Include="Reflection\ReflectedFields.cs" />
+    <Compile Include="Reflection\ReflectedMethods.cs" />
     <Compile Include="Reflection\ReflectedProperties.cs" />
     <Compile Include="StatParts\StatPart_MannedReplace.cs" />
     <Compile Include="TinyTweaksUtility.cs" />

@@ -5,6 +5,8 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using Harmony;
+using System.Reflection;
 
 namespace TinyTweaks
 {
@@ -17,7 +19,10 @@ namespace TinyTweaks
         public TinyTweaks(ModContentPack content) : base(content)
         {
             GetSettings<TinyTweaksSettings>();
+            HarmonyInstance = HarmonyInstance.Create("XeoNovaDan.TinyTweaks");
         }
+
+        public static HarmonyInstance HarmonyInstance;
 
         public override string SettingsCategory() => "TinyTweaks.SettingsCategory".Translate();
 

@@ -53,14 +53,17 @@ namespace TinyTweaks
             {
                 if (TinyTweaksSettings.smarterMedicalBedSelection && originalResult)
                 {
+                    Log.Message("1");
                     // If the player has any pawns queued up for surgery who aren't resting
                     int pawnsDueForSurgeryCount = pawn.Map.mapPawns.AllPawnsSpawned.Count(p => p.BillStack.AnyShouldDoNow);
                     if (pawnsDueForSurgeryCount > 0)
                     {
+                        Log.Message("2");
                         var freeBeds = pawn.Map.listerBuildings.AllBuildingsColonistOfClass<Building_Bed>();
                         int bedCount = freeBeds.Count();
                         if (pawnsDueForSurgeryCount < bedCount)
                         {
+                            Log.Message("3");
                             freeBeds = freeBeds.OrderByDescending(b => b.GetStatValue(StatDefOf.SurgerySuccessChanceFactor));
                             return (pawn.BillStack.AnyShouldDoNow ? freeBeds.Take(bedCount) : freeBeds.Skip(bedCount - pawnsDueForSurgeryCount)).Any(b => b == t);
                         }
