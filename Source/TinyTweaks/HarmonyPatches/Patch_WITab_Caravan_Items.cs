@@ -30,8 +30,7 @@ namespace TinyTweaks
                     // Add a button to assign food restrictions
                     if (Widgets.ButtonText(new Rect(tabRect.x + 220, tabRect.y + 10, 200, 27), "TinyTweaks.AssignFoodRestrictions".Translate()))
                     {
-                        //var selCaravan = (Caravan)__instance.GetType().GetProperty("SelCaravan", BindingFlags.Instance | BindingFlags.NonPublic).GetGetMethod(true).Invoke(__instance, null);
-                        Find.WindowStack.Add(new Dialog_AssignCaravanFoodRestrictions(ReflectedProperties.WITab_SelCaravan_Getter(__instance)));
+                        Find.WindowStack.Add(new Dialog_AssignCaravanFoodRestrictions(ReflectedProperties.WITab_get_SelCaravan(__instance)));
                     }
                 }
             }

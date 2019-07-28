@@ -17,11 +17,16 @@ namespace TinyTweaks
 
         static ReflectedProperties()
         {
-            WITab_SelCaravan_Getter = (Func<WITab, Caravan>)Delegate.CreateDelegate(typeof(Func<WITab, Caravan>), null,
+            Building_TurretGun_get_PlayerControlled = (Func<Building_TurretGun, bool>)Delegate.CreateDelegate(typeof(Func<Building_TurretGun, bool>), null,
+                typeof(Building_TurretGun).GetProperty("PlayerControlled", BindingFlags.Instance | BindingFlags.NonPublic).GetGetMethod(true));
+
+            WITab_get_SelCaravan = (Func<WITab, Caravan>)Delegate.CreateDelegate(typeof(Func<WITab, Caravan>), null,
                 typeof(WITab).GetProperty("SelCaravan", BindingFlags.Instance | BindingFlags.NonPublic).GetGetMethod(true));
         }
 
-        public static Func<WITab, Caravan> WITab_SelCaravan_Getter;
+        public static Func<Building_TurretGun, bool> Building_TurretGun_get_PlayerControlled;
+
+        public static Func<WITab, Caravan> WITab_get_SelCaravan;
 
     }
 

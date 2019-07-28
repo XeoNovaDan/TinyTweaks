@@ -39,6 +39,7 @@ namespace TinyTweaks
         public static bool autoRemoveMoisturePumps = true;
         public static bool smarterMedicalBedSelection = true;
         public static bool alphabeticalBillList = true;
+        public static bool viewableTurretStats = true;
 
         // Restart
         public static bool changeDefLabels = true;
@@ -53,6 +54,7 @@ namespace TinyTweaks
         public static bool changeQualityDistribution = true;
         public static bool bloodPumpingAffectsBleeding = true;
         public static bool delayedSkillDecay = true;
+        public static bool mannedTurretsUsePawnStats = true;
 
         // Restart
         public static bool normaliseConstructionSpeed = true;
@@ -67,9 +69,14 @@ namespace TinyTweaks
         // Fertile fields
         public static bool compostBillsExcludeRaw = true;
 
+        // Turret Extensions
+        public static bool overrideMannedTurretFunctionality = true;
+        public static bool overrideTurretStatsFunctionality;
+
         // Subheadings
         private static bool showDubsBadHygieneSettings;
-        public static bool showFertileFieldsSettings;
+        private static bool showFertileFieldsSettings;
+        private static bool showTurretExtensionsSettings;
         #endregion
 
         #region Tiny Additions
@@ -154,6 +161,10 @@ namespace TinyTweaks
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.QoLChanges.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip".Translate());
 
+                // Viewable turret weapon stats
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.ViewableTurretStats".Translate(), ref viewableTurretStats, "TinyTweaks.QoLChanges.ViewableTurretStats_ToolTip".Translate());
+
                 // 'Game restart required' note
                 options.GapLine(24);
                 GameRestartRequired(options);
@@ -200,6 +211,10 @@ namespace TinyTweaks
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.BalanceChanges.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip".Translate());
 
+                // Manned turrets use the pawn's stats
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats".Translate(), ref mannedTurretsUsePawnStats, "TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats_ToolTip".Translate());
+
                 // 'Game restart required' note
                 options.GapLine(24);
                 GameRestartRequired(options);
@@ -240,6 +255,21 @@ namespace TinyTweaks
                     // Dumping stockpiles automatically accept 'Waste' items
                     options.Gap();
                     options.CheckboxLabeled("TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw".Translate(), ref compostBillsExcludeRaw, "TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip".Translate());
+                }
+                #endregion
+
+                #region Turret Extensions
+                options.Gap();
+                options.CollapsibleSubheading("TinyTweaks.ModTweaks.TurretExtensions".Translate(), ref showTurretExtensionsSettings);
+                if (showTurretExtensionsSettings)
+                {
+                    // Override manned turrets functionality
+                    options.Gap();
+                    options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality".Translate(), ref overrideMannedTurretFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip".Translate());
+
+                    // Override stat display functionality
+                    options.Gap();
+                    options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality".Translate(), ref overrideTurretStatsFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip".Translate());
                 }
                 #endregion
             }
@@ -295,6 +325,7 @@ namespace TinyTweaks
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
             Scribe_Values.Look(ref smarterMedicalBedSelection, "smarterMedicalBedSelection", true);
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
+            Scribe_Values.Look(ref viewableTurretStats, "viewableTurretStats", true);
 
             // Restart
             Scribe_Values.Look(ref changeDefLabels, "changeDefLabels", true);
@@ -309,6 +340,7 @@ namespace TinyTweaks
             Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", true);
             Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", true);
             Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", true);
+            Scribe_Values.Look(ref mannedTurretsUsePawnStats, "mannedTurretsUsePawnStats", true);
 
             // Restart
             Scribe_Values.Look(ref normaliseConstructionSpeed, "normaliseConstructionSpeed", true);
@@ -322,6 +354,10 @@ namespace TinyTweaks
 
             // Fertile Fields
             Scribe_Values.Look(ref compostBillsExcludeRaw, "compostBillsExcludeRaw", true);
+
+            // Turret Extensions
+            Scribe_Values.Look(ref overrideMannedTurretFunctionality, "overrideMannedTurretFunctionality", true);
+            Scribe_Values.Look(ref overrideTurretStatsFunctionality, "overrideTurretStatsFunctionality");
             #endregion
 
             #region Tiny Additions

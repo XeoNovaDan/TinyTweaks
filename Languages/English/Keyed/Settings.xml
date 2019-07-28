@@ -29,6 +29,9 @@
     <TinyTweaks.QoLChanges.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.QoLChanges.AlphabeticalBillList>
     <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>The drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
 
+    <TinyTweaks.QoLChanges.ViewableTurretStats>Viewable turret weapon stats</TinyTweaks.QoLChanges.ViewableTurretStats>
+    <TinyTweaks.QoLChanges.ViewableTurretStats_ToolTip>When viewing a turret's stats through its info card, you will also be able to see the stats of the weapon that is mounted on top.</TinyTweaks.QoLChanges.ViewableTurretStats_ToolTip>
+
 
     <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>Change architect menu tabs</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>
     <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>Certain architect menu tabs from certain mods will be merged with vanilla architect tabs (e.g. 'Furniture+' from More Furniture merged into 'Furniture'). In some cases, new architect tabs may be added too (e.g. buildings from LWM Deep Storage will get their own 'Storage' tab).</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>
@@ -56,6 +59,9 @@
     <TinyTweaks.BalanceChanges.DelayedSkillDecay>Delayed skill decay</TinyTweaks.BalanceChanges.DelayedSkillDecay>
     <TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>8 in-game hours must pass since a pawn last gained at least 2000 experience in a given skill before skill decay kicks in.</TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>
 
+    <TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats>Manned turrets use the pawn's stats</TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats>
+    <TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats_ToolTip>Manned turrets will use the manning pawn's shooting accuracy and aiming speed stats.</TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats_ToolTip>
+
 
     <TinyTweaks.BalanceChanges.NormaliseConstructionSpeed>Normalise construction speed</TinyTweaks.BalanceChanges.NormaliseConstructionSpeed>
     <TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip>Normalises construction and smoothing speed to 100% like all other speed stats.</TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip>
@@ -81,6 +87,15 @@
 
     <TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw>Compost bills exclude raw food - restart required</TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw>
     <TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip>The 'Make compost' bills at a butcher's table will no longer default to also accepting raw food that is perfectly good for use in cooking.</TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip>
+
+
+    <TinyTweaks.ModTweaks.TurretExtensions>Turret Extensions</TinyTweaks.ModTweaks.TurretExtensions>
+
+    <TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality>Override manned turrets functionality</TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality>
+    <TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip>All manned turrets will use the manning pawn's shooting accuracy, rather than just those that have been patched for Turret Extensions.</TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip>
+
+    <TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality>Override stat display functionality</TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality>
+    <TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip>When viewing the stats of a turret, use this mod's code for doing so instead of Turret Extensions'. Do note that while Turret Extensions goes into more specifics (hence this being disabled by default), this mod has been more efficiently coded.</TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip>
 
     <!-- Tiny Additions -->
 

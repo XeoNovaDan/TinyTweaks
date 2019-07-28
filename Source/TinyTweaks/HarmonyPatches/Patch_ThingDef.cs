@@ -29,6 +29,24 @@ namespace TinyTweaks
 
         }
 
+        [HarmonyPatch(typeof(ThingDef))]
+        [HarmonyPatch(nameof(ThingDef.SpecialDisplayStats))]
+        public static class Patch_SpecialDisplayStats
+        {
+
+            public static void Postfix(ThingDef __instance, StatRequest req, ref IEnumerable<StatDrawEntry> __result)
+            {
+                // Add the turret's weapons stats to the list of SpecialDisplayStats
+                if (!ModCompatibilityCheck.TurretExtensions || TinyTweaksSettings.overrideTurretStatsFunctionality)
+                {
+                    var buildingProps = __instance.building;
+                    if (buildingProps != null && buildingProps.IsTurret)
+                        __result = __result.Concat(buildingProps.turretGunDef.SpecialDisplayStats(req).Where(s => s.category == StatCategoryDefOf.Weapon));
+                }
+            }
+
+        }
+
     }
 
 }

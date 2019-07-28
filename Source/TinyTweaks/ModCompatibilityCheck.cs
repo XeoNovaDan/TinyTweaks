@@ -13,7 +13,11 @@ namespace TinyTweaks
     public static class ModCompatibilityCheck
     {
 
-        public static bool DubsBadHygiene => ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "Dubs Bad Hygiene");
+        private static bool ModLoaded(string name) => ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == name);
+
+        public static bool DubsBadHygiene => ModLoaded("Dubs Bad Hygiene");
+
+        public static bool TurretExtensions => ModLoaded("[XND] Turret Extensions");
 
     }
 

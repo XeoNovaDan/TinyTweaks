@@ -62,7 +62,7 @@ namespace TinyTweaks
                         if (pawnsDueForSurgeryCount < bedCount)
                         {
                             freeBeds = freeBeds.OrderByDescending(b => b.GetStatValue(StatDefOf.SurgerySuccessChanceFactor));
-                            return (pawn.BillStack.AnyShouldDoNow ? freeBeds.Skip(bedCount - pawnsDueForSurgeryCount) : freeBeds.Take(bedCount)).Any(b => b == t);
+                            return (pawn.BillStack.AnyShouldDoNow ? freeBeds.Take(bedCount) : freeBeds.Skip(bedCount - pawnsDueForSurgeryCount)).Any(b => b == t);
                         }
                     }
                 }
