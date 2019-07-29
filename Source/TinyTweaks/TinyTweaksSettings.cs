@@ -37,7 +37,6 @@ namespace TinyTweaks
         public static bool caravanFoodRestrictions = true;
         public static bool autoAssignAnimalFollowSettings = true;
         public static bool autoRemoveMoisturePumps = true;
-        public static bool smarterMedicalBedSelection = true;
         public static bool alphabeticalBillList = true;
         public static bool viewableTurretStats = true;
 
@@ -152,10 +151,6 @@ namespace TinyTweaks
                 // Automatically remove finished moisture pumps
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip".Translate());
-
-                // Smarter medical bed selection
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.SmarterMedicalBedSelection".Translate(), ref smarterMedicalBedSelection, "TinyTweaks.QoLChanges.SmarterMedicalBedSelection_ToolTip".Translate());
 
                 // Sort workbench bill list alphabetically
                 options.Gap();
@@ -323,7 +318,6 @@ namespace TinyTweaks
             Scribe_Values.Look(ref caravanFoodRestrictions, "caravanFoodRestrictions", true);
             Scribe_Values.Look(ref autoAssignAnimalFollowSettings, "autoAssignAnimalFollowSettings", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
-            Scribe_Values.Look(ref smarterMedicalBedSelection, "smarterMedicalBedSelection", true);
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
             Scribe_Values.Look(ref viewableTurretStats, "viewableTurretStats", true);
 

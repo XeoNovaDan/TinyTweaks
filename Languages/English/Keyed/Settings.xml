@@ -23,9 +23,6 @@
     <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>Automatically remove finished moisture pumps</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>
     <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>Moisture pumps that have finished pumping will be automatically designated to be uninstalled or deconstructed, whichever is appropriate.</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>
 
-    <TinyTweaks.QoLChanges.SmarterMedicalBedSelection>Smarter medical bed selection</TinyTweaks.QoLChanges.SmarterMedicalBedSelection>
-    <TinyTweaks.QoLChanges.SmarterMedicalBedSelection_ToolTip>Note: This setting may affect performance.\n\nPawns who are assigned to receive surgery will prefer beds with higher surgery success chance, while pawns who have illnesses will try to avoid using those beds whenever appropriate and possible.</TinyTweaks.QoLChanges.SmarterMedicalBedSelection_ToolTip>
-
     <TinyTweaks.QoLChanges.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.QoLChanges.AlphabeticalBillList>
     <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>The drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
 
