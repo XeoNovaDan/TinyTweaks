@@ -37,6 +37,7 @@ namespace TinyTweaks
         public static bool caravanFoodRestrictions = true;
         public static bool autoAssignAnimalFollowSettings = true;
         public static bool autoRemoveMoisturePumps = true;
+        public static bool medBedMedicalAlert = true;
         public static bool alphabeticalBillList = true;
         public static bool viewableTurretStats = true;
 
@@ -151,6 +152,10 @@ namespace TinyTweaks
                 // Automatically remove finished moisture pumps
                 options.Gap();
                 options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip".Translate());
+
+                // Show 'colonist needs treatment' alerts for pawns in medical beds
+                options.Gap();
+                options.CheckboxLabeled("TinyTweaks.QoLChanges.MedBedMedicalAlert".Translate(), ref medBedMedicalAlert, "TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip".Translate());
 
                 // Sort workbench bill list alphabetically
                 options.Gap();
@@ -318,6 +323,7 @@ namespace TinyTweaks
             Scribe_Values.Look(ref caravanFoodRestrictions, "caravanFoodRestrictions", true);
             Scribe_Values.Look(ref autoAssignAnimalFollowSettings, "autoAssignAnimalFollowSettings", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
+            Scribe_Values.Look(ref medBedMedicalAlert, "medBedMedicalAlert", true);
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
             Scribe_Values.Look(ref viewableTurretStats, "viewableTurretStats", true);
 

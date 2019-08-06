@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(HediffSet))]
         [HarmonyPatch("CalculateBleedRate")]
-        public static class Patch_CalculateBleedRate
+        public static class CalculateBleedRate
         {
 
             public static void Postfix(HediffSet __instance, ref float __result)

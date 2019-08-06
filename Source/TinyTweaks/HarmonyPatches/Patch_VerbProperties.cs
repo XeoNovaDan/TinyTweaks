@@ -18,7 +18,7 @@ namespace TinyTweaks
         [HarmonyPatch(typeof(VerbProperties))]
         [HarmonyPatch(nameof(VerbProperties.AdjustedArmorPenetration))]
         [HarmonyPatch(new Type[] { typeof(Tool), typeof(Pawn), typeof(Thing), typeof(HediffComp_VerbGiver) })]
-        public static class Patch_AdjustedArmorPenetration
+        public static class AdjustedArmorPenetration
         {
 
             public static void Postfix(VerbProperties __instance, Tool tool, Pawn attacker, Thing equipment, HediffComp_VerbGiver hediffCompSource, ref float __result)

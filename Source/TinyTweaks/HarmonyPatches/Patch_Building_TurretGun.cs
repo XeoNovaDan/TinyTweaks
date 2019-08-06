@@ -17,13 +17,13 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(Building_TurretGun))]
         [HarmonyPatch(nameof(Building_TurretGun.GetGizmos))]
-        public static class Patch_GetGizmos
+        public static class GetGizmos
         {
 
             public static void Postfix(Building_TurretGun __instance, ref IEnumerable<Gizmo> __result)
             {
                 // If the turret's gun has CompChangeableProjectile and is controlled by the player, add copy/paste storage setting gizmos for the comp
-                if (__instance.gun?.TryGetComp<CompChangeableProjectile>() is CompChangeableProjectile changeableProjectileComp && ReflectedProperties.Building_TurretGun_get_PlayerControlled(__instance))
+                if (__instance.gun?.TryGetComp<CompChangeableProjectile>() is CompChangeableProjectile changeableProjectileComp && NonPublicProperties.Building_TurretGun_get_PlayerControlled(__instance))
                     __result = __result.Concat(StorageSettingsClipboard.CopyPasteGizmosFor(changeableProjectileComp.GetStoreSettings()));
             }
 
@@ -31,7 +31,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(Building_TurretGun))]
         [HarmonyPatch("TryStartShootSomething")]
-        public static class Patch_TryStartShootSomething
+        public static class TryStartShootSomething
         {
 
             public static void Postfix(Building_TurretGun __instance, ref int ___burstWarmupTicksLeft)

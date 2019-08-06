@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(OverlayDrawHandler))]
         [HarmonyPatch(nameof(OverlayDrawHandler.ShouldDrawPowerGrid), MethodType.Getter)]
-        public static class Patch_ShouldDrawPowerGrid_Getter
+        public static class ShouldDrawPowerGrid_Getter
         {
 
             public static void Postfix(ref bool __result)

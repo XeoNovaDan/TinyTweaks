@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(PlaySettings))]
         [HarmonyPatch(nameof(PlaySettings.DoPlaySettingsGlobalControls))]
-        public static class Patch_AllRecipes_Getter
+        public static class AllRecipes_Getter
         {
 
             public static void Postfix(WidgetRow row, bool worldView)
@@ -33,7 +33,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(PlaySettings))]
         [HarmonyPatch(nameof(PlaySettings.ExposeData))]
-        public static class Patch_ExposeData
+        public static class ExposeData
         {
 
             public static void Postfix()

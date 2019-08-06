@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(ThingDef))]
         [HarmonyPatch(nameof(ThingDef.AllRecipes), MethodType.Getter)]
-        public static class Patch_AllRecipes_Getter
+        public static class AllRecipes_Getter
         {
 
             public static void Postfix(ref List<RecipeDef> __result)
@@ -31,7 +31,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(ThingDef))]
         [HarmonyPatch(nameof(ThingDef.SpecialDisplayStats))]
-        public static class Patch_SpecialDisplayStats
+        public static class SpecialDisplayStats
         {
 
             public static void Postfix(ThingDef __instance, StatRequest req, ref IEnumerable<StatDrawEntry> __result)
@@ -59,13 +59,13 @@ namespace TinyTweaks
                         {
                             var gun = ((Building_TurretGun)req.Thing).gun;
                             gunStatList.AddRange(gun.def.SpecialDisplayStats(StatRequest.For(gun)));
-                            gunStatList.AddRange(ReflectedMethods.StatsReportUtility_StatsToDraw_thing(gun));
+                            gunStatList.AddRange(NonPublicMethods.StatsReportUtility_StatsToDraw_thing(gun));
                         }
                         else
                         {
                             var defaultStuff = GenStuff.DefaultStuffFor(buildingProps.turretGunDef);
                             gunStatList.AddRange(buildingProps.turretGunDef.SpecialDisplayStats(StatRequest.For(buildingProps.turretGunDef, defaultStuff)));
-                            gunStatList.AddRange(ReflectedMethods.StatsReportUtility_StatsToDraw_def_stuff(buildingProps.turretGunDef, defaultStuff));
+                            gunStatList.AddRange(NonPublicMethods.StatsReportUtility_StatsToDraw_def_stuff(buildingProps.turretGunDef, defaultStuff));
                         }
 
                         // Replace gun warmup and cooldown with turret warmup and cooldown
@@ -95,7 +95,7 @@ namespace TinyTweaks
             private static float TurretCooldown(StatRequest req, BuildingProperties buildingProps)
             {
                 if (req.HasThing)
-                    return ReflectedMethods.Building_TurretGun_BurstCooldownTime((Building_TurretGun)req.Thing);
+                    return NonPublicMethods.Building_TurretGun_BurstCooldownTime((Building_TurretGun)req.Thing);
                 else if (buildingProps.turretBurstCooldownTime >= 0)
                     return buildingProps.turretBurstCooldownTime;
                 else

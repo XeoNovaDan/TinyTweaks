@@ -57,6 +57,7 @@
     <Compile Include="Dialogs\Dialog_AssignCaravanFoodRestrictions.cs" />
     <Compile Include="HarmonyPatches\Patch_Dialog_AdvancedGameConfig.cs" />
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
+    <Compile Include="HarmonyPatches\Patch_Alert_ColonistNeedsTend.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
     <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
     <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
@@ -71,12 +72,13 @@
     <Compile Include="HarmonyPatches\Patch_QualityUtility.cs" />
     <Compile Include="HarmonyPatches\Patch_RaceProperties.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
+    <Compile Include="HarmonyPatches\TurretExtensions\Patch_TurretExtensions_Patch_StatsReportUtility.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />
     <Compile Include="PlaySettings\ExtraPlaySettings.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />
-    <None Include="Reflection\ReflectedFields.cs" />
-    <Compile Include="Reflection\ReflectedMethods.cs" />
-    <Compile Include="Reflection\ReflectedProperties.cs" />
+    <None Include="Reflection\NonPublicFields.cs" />
+    <Compile Include="Reflection\NonPublicMethods.cs" />
+    <Compile Include="Reflection\NonPublicProperties.cs" />
     <Compile Include="StatParts\StatPart_MannedReplace.cs" />
     <Compile Include="TinyTweaksUtility.cs" />
     <Compile Include="TinyTweaks.cs" />

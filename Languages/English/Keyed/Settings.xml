@@ -23,6 +23,9 @@
     <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>Automatically remove finished moisture pumps</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>
     <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>Moisture pumps that have finished pumping will be automatically designated to be uninstalled or deconstructed, whichever is appropriate.</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>
 
+    <TinyTweaks.QoLChanges.MedBedMedicalAlert>Show 'colonist needs treatment' alerts for pawns in medical beds</TinyTweaks.QoLChanges.MedBedMedicalAlert>
+    <TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>If a pawn has injuries or diseases that need tending and they are resting in a medical bed, still show the 'colonist needs treatment' alert for them.</TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>
+
     <TinyTweaks.QoLChanges.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.QoLChanges.AlphabeticalBillList>
     <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>The drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
 

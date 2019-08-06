@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(CompTerrainPump))]
         [HarmonyPatch(nameof(CompTerrainPump.CompTickRare))]
-        public static class Patch_CompTickRare
+        public static class CompTickRare
         {
 
             public static void Prefix(CompTerrainPump __instance, int ___progressTicks, ref bool __state)

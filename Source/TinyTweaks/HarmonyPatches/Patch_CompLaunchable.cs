@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(CompLaunchable))]
         [HarmonyPatch(nameof(CompLaunchable.TryLaunch))]
-        public static class Patch_TryLaunch
+        public static class TryLaunch
         {
 
             public static void Postfix(CompLaunchable __instance)

@@ -15,9 +15,7 @@ namespace TinyTweaks
     public static class Patch_Pawn_PlayerSettings
     {
 
-        //[HarmonyPatch(typeof(Pawn_PlayerSettings))]
-        //[HarmonyPatch(new Type[] { typeof(Pawn) })]
-        public static class ManualPatch_Ctor
+        public static class manual_Ctor
         {
 
             public static void Postfix(Pawn_PlayerSettings __instance, Pawn pawn)

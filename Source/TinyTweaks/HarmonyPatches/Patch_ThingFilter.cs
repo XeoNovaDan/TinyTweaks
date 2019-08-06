@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(ThingFilter))]
         [HarmonyPatch(nameof(ThingFilter.SetFromPreset))]
-        public static class Patch_SetFromPreset
+        public static class SetFromPreset
         {
 
             public static void Postfix(ThingFilter __instance, StorageSettingsPreset preset)

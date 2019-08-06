@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(RaceProperties))]
         [HarmonyPatch(nameof(RaceProperties.SpecialDisplayStats))]
-        public static class Patch_SpecialDisplayStats
+        public static class SpecialDisplayStats
         {
 
             public static void Postfix(ThingDef parentDef, ref IEnumerable<StatDrawEntry> __result)

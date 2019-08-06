@@ -18,7 +18,7 @@ namespace TinyTweaks
         [HarmonyPatch(typeof(QualityUtility))]
         [HarmonyPatch(nameof(QualityUtility.GenerateQualityCreatedByPawn))]
         [HarmonyPatch(new Type[] { typeof(int), typeof(bool) })]
-        public static class Patch_GenerateQualityCreatedByPawn
+        public static class GenerateQualityCreatedByPawn
         {
 
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -41,7 +41,7 @@ namespace TinyTweaks
                             // When found, add some IL before that which modifies 'num' (the central quality level in numeric form)
                             yield return instruction; // num
                             yield return new CodeInstruction(OpCodes.Ldarg_0); // relevantSkillLevel
-                            yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Patch_GenerateQualityCreatedByPawn), nameof(ChangeBaseQuality))); // ChangeBaseQuality(num, relevantSkillLevel)
+                            yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(GenerateQualityCreatedByPawn), nameof(ChangeBaseQuality))); // ChangeBaseQuality(num, relevantSkillLevel)
                             yield return new CodeInstruction(OpCodes.Stloc_0); // num = ChangeBaseQuality(num, relevantSkillLevel)
                             instruction = new CodeInstruction(instruction.opcode, instruction.operand);
                             done = true;

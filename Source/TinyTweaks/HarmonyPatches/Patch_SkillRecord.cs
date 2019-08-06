@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(SkillRecord))]
         [HarmonyPatch(nameof(SkillRecord.Interval))]
-        public static class Patch_Interval
+        public static class Interval
         {
 
             public static bool Prefix(SkillRecord __instance, Pawn ___pawn)
@@ -32,7 +32,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(SkillRecord))]
         [HarmonyPatch(nameof(SkillRecord.Learn))]
-        public static class Patch_Learn
+        public static class Learn
         {
 
             public static void Postfix(SkillRecord __instance, Pawn ___pawn, float xp)

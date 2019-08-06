@@ -17,7 +17,7 @@ namespace TinyTweaks
 
         [HarmonyPatch(typeof(Dialog_AdvancedGameConfig))]
         [HarmonyPatch(nameof(Dialog_AdvancedGameConfig.DoWindowContents))]
-        public static class Patch_DoWindowContents
+        public static class DoWindowContents
         {
 
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -33,7 +33,7 @@ namespace TinyTweaks
                     {
                         var clone = instruction.Clone();
                         instruction.opcode = OpCodes.Call; 
-                        instruction.operand = AccessTools.Method(typeof(Patch_DoWindowContents), nameof(DoRandomStartingSeasonButton));
+                        instruction.operand = AccessTools.Method(typeof(DoWindowContents), nameof(DoRandomStartingSeasonButton));
                         yield return instruction; // DoRandomStartingSeasonButton(listing_Standard)
                         yield return new CodeInstruction(OpCodes.Ldloc_0); // listing_Standard
                         instruction = clone; // "MapStartSeasonDefault"
