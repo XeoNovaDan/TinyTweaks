@@ -26,6 +26,9 @@
     <TinyTweaks.QoLChanges.MedBedMedicalAlert>Show 'colonist needs treatment' alerts for pawns in medical beds</TinyTweaks.QoLChanges.MedBedMedicalAlert>
     <TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>If a pawn has injuries or diseases that need tending and they are resting in a medical bed, still show the 'colonist needs treatment' alert for them.</TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>
 
+    <TinyTweaks.QoLChanges.SmarterForcedTurretTargeting>Smarter forced turret targeting</TinyTweaks.QoLChanges.SmarterForcedTurretTargeting>
+    <TinyTweaks.QoLChanges.SmarterForcedTurretTargeting_ToolTip>When forcing a manned or automatic turret to target a pawn, when the targeted pawn goes down, the turret will automaically select a new target instead of continuously trying to shoot the downed pawn. This does not apply to mortars.</TinyTweaks.QoLChanges.SmarterForcedTurretTargeting_ToolTip>
+
     <TinyTweaks.QoLChanges.AlphabeticalBillList>Sort workbench bill list alphabetically</TinyTweaks.QoLChanges.AlphabeticalBillList>
     <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>The drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
 
@@ -45,6 +48,15 @@
 
     <TinyTweaks.BugFixes.MeleeArmourPenetration>Melee armour penetration</TinyTweaks.BugFixes.MeleeArmourPenetration>
     <TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>Preset armour penetration values for melee weapons such as spears will scale with the weapon's quality and stuff it's made out of.</TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>
+
+    <TinyTweaks.BugFixes.Sieges>Sieges</TinyTweaks.BugFixes.Sieges>
+    <TinyTweaks.BugFixes.Sieges_ToolTip>Note: This fix will only be noticeable when running mods that add mortars with high construction skill requirements, or mods that make objects such as stone chunks function as shells.\n\nFixes various potential bugs with sieges including raiders loading inappropriate things into their artillery, not receiving shells when they run out and not having a high enough construction skill to construct artillery.</TinyTweaks.BugFixes.Sieges_ToolTip>
+
+    <TinyTweaks.BugFixes.SpecialThingFilter>Special thing filter matching</TinyTweaks.BugFixes.SpecialThingFilter>
+    <TinyTweaks.BugFixes.SpecialThingFilter_ToolTip>When disabling a special thing filter that's within a certain category (e.g. allow non-smeltable within Tools from Survival Tools), it won't affect other non-smeltable items.</TinyTweaks.BugFixes.SpecialThingFilter_ToolTip>
+
+    <TinyTweaks.BugFixes.TurretRotation>Turret rotation</TinyTweaks.BugFixes.TurretRotation>
+    <TinyTweaks.BugFixes.TurretRotation_ToolTip>Weapons on rotatable turrets will now be rotated correctly when the turret is built, and drafted pawns manning turrets will face the correct direction.</TinyTweaks.BugFixes.TurretRotation_ToolTip>
 
     <!-- Balance Changes -->
 
@@ -94,8 +106,11 @@
     <TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality>Override manned turrets functionality</TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality>
     <TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip>All manned turrets will use the manning pawn's shooting accuracy, rather than just those that have been patched for Turret Extensions.</TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip>
 
+    <TinyTweaks.ModTweaks.TurretExtensions.SmarterForcedTargeting>Override smarter forced targeting</TinyTweaks.ModTweaks.TurretExtensions.SmarterForcedTargeting>
+    <TinyTweaks.ModTweaks.TurretExtensions.SmarterForcedTargeting_Tooltip>This mod's implementation of smarter forced targeting will be favoured over Turret Extensions' implementation.</TinyTweaks.ModTweaks.TurretExtensions.SmarterForcedTargeting_Tooltip>
+
     <TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality>Override stat display functionality</TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality>
-    <TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip>When viewing the stats of a turret, use this mod's code for doing so instead of Turret Extensions'. Do note that while Turret Extensions goes into more specifics (hence this being disabled by default), this mod has been more efficiently coded.</TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip>
+    <TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip>When viewing the stats of a turret, use this mod's code for doing so instead of Turret Extensions'. Do note that while Turret Extensions goes into more specifics (hence this being disabled by default), this mod's functionality has been more efficiently implemented.</TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip>
 
     <!-- Tiny Additions -->
 
@@ -103,5 +118,12 @@
 
     <TinyTweaks.TinyAdditions.RandomStartingSeason>Random starting season option</TinyTweaks.TinyAdditions.RandomStartingSeason>
     <TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>When opening the advanced settings upon generating a new planet, there will also be an option to have a random starting season.</TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>
+
+    <!-- Tiny Tools -->
+
+    <TinyTweaks.TinyToolsHeading>Tiny Tools</TinyTweaks.TinyToolsHeading>
+
+    <TinyTweaks.TinyTools.CombatTestingTools>Semi-automated combat testing</TinyTweaks.TinyTools.CombatTestingTools>
+    <TinyTweaks.TinyTools.CombatTestingTools_ToolTip>Adds toggles on the bottom-right corner which can be used to gather large amounts of combat data with ease.</TinyTweaks.TinyTools.CombatTestingTools_ToolTip>
 
 </LanguageData>

@@ -12,26 +12,15 @@ using Harmony;
 namespace TinyTweaks
 {
 
-    public static class Patch_TurretExtensions_Patch_StatsReportUtility
+    public static class Patch_TurretExtensions_Patch_Building_TurretGun
     {
 
-        public static class manual_Patch_StatsToDraw_Def_ThingDef_Postfix
+        public static class manual_Patch_Tick
         {
 
             public static bool Prefix()
             {
-                // If overrideTurretStatsFunctionality is true, return false on Turret Extensions' turret stat methods
-                return !TinyTweaksSettings.overrideTurretStatsFunctionality;
-            }
-
-        }
-
-        public static class manual_Patch_StatsToDraw_Thing_Postfix
-        {
-
-            public static bool Prefix()
-            {
-                return !TinyTweaksSettings.overrideTurretStatsFunctionality;
+                return !TinyTweaksSettings.overrideSmarterForcedTargeting;
             }
 
         }

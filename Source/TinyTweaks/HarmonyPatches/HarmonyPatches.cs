@@ -48,7 +48,18 @@ namespace TinyTweaks
                 }
                 else
                     Log.Error("Could not find type TurretExtensions.Patch_StatsReportUtility in Turret Extensions");
-                
+
+                var patchBuldingTurretGun = GenTypes.GetTypeInAnyAssemblyNew("TurretExtensions.Patch_Building_TurretGun", "TurretExtensions");
+                if (patchBuldingTurretGun != null)
+                {
+                    var patchTick = patchBuldingTurretGun.GetNestedType("Patch_Tick", BindingFlags.Public | BindingFlags.Static);
+                    if (patchTick != null)
+                        TinyTweaks.HarmonyInstance.Patch(AccessTools.Method(patchTick, "Prefix"), new HarmonyMethod(typeof(Patch_TurretExtensions_Patch_Building_TurretGun.manual_Patch_Tick), "Prefix"));
+                    else
+                        Log.Error("Could not find type TurretExtensions.Patch_Building_TurretGun.Patch_Tick in Turret Extensions");
+                }
+                else
+                    Log.Error("Could not find type TurretExtensions.Patch_Building_TurretGun in Turret Extensions");
             }
         }
 

@@ -52,19 +52,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompSmarterTurretTargeting.cs" />
     <Compile Include="Comps\CompSkillTrackerCache.cs" />
     <Compile Include="Comps\CompLaunchableAutoRebuild.cs" />
     <Compile Include="Dialogs\Dialog_AssignCaravanFoodRestrictions.cs" />
     <Compile Include="HarmonyPatches\Patch_Dialog_AdvancedGameConfig.cs" />
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
     <Compile Include="HarmonyPatches\Patch_Alert_ColonistNeedsTend.cs" />
+    <Compile Include="HarmonyPatches\Patch_JobDriver_ManTurret.cs" />
+    <Compile Include="HarmonyPatches\Patch_LordToil_Siege.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
+    <Compile Include="HarmonyPatches\Patch_Pawn_RotationTracker.cs" />
     <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
     <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
     <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
     <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingFilter.cs" />
     <Compile Include="HarmonyPatches\Patch_VerbProperties.cs" />
+    <Compile Include="HarmonyPatches\Patch_Dialog_DebugActionsMenu.cs" />
     <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Items.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingDef.cs" />
     <Compile Include="HarmonyPatches\Patch_CompLaunchable.cs" />
@@ -72,6 +77,7 @@
     <Compile Include="HarmonyPatches\Patch_QualityUtility.cs" />
     <Compile Include="HarmonyPatches\Patch_RaceProperties.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
+    <Compile Include="HarmonyPatches\TurretExtensions\Patch_TurretExtensions_Patch_StatsReportUtility - Copy.cs" />
     <Compile Include="HarmonyPatches\TurretExtensions\Patch_TurretExtensions_Patch_StatsReportUtility.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />
     <Compile Include="PlaySettings\ExtraPlaySettings.cs" />

@@ -38,6 +38,7 @@ namespace TinyTweaks
         public static bool autoAssignAnimalFollowSettings = true;
         public static bool autoRemoveMoisturePumps = true;
         public static bool medBedMedicalAlert = true;
+        public static bool smarterTurretTargeting = true;
         public static bool alphabeticalBillList = true;
         public static bool viewableTurretStats = true;
 
@@ -48,6 +49,9 @@ namespace TinyTweaks
 
         #region Bug Fixes
         public static bool meleeArmourPenetrationFix = true;
+        public static bool siegeFix = true;
+        public static bool specialThingFilterMatchFix = true;
+        public static bool turretRotationFix = true;
         #endregion
 
         #region Balance Changes
@@ -71,7 +75,8 @@ namespace TinyTweaks
 
         // Turret Extensions
         public static bool overrideMannedTurretFunctionality = true;
-        public static bool overrideTurretStatsFunctionality;
+        public static bool overrideSmarterForcedTargeting = false;
+        public static bool overrideTurretStatsFunctionality = false;
 
         // Subheadings
         private static bool showDubsBadHygieneSettings;
@@ -124,171 +129,170 @@ namespace TinyTweaks
             listing.Label("TinyTweaks.GameRestartRequired".Translate());
         }
 
-        public void DoWindowContents(Rect wrect)
+        private void DoQualityOfLifeChanges(Listing_Standard options)
         {
-            var options = new Listing_Standard();
-            var defaultColor = GUI.color;
-            options.Begin(wrect);
-            GUI.color = defaultColor;
-            Text.Font = GameFont.Small;
-            Text.Anchor = TextAnchor.UpperLeft;
+            // 'Game restart not required' note
+            GameRestartNotRequired(options);
 
-            DoHeading(options, Text.Font);
+            // Assign food restrictions for caravans
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.CaravanFoodRestrictions".Translate(), ref caravanFoodRestrictions, "TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip".Translate());
 
-            #region QoL Changes
-            if (PageIndex == QoLPageIndex)
+            // Automatically assign animals to follow their master
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings".Translate(), ref autoAssignAnimalFollowSettings, "TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip".Translate());
+
+            // Automatically remove finished moisture pumps
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip".Translate());
+
+            // Show 'colonist needs treatment' alerts for pawns in medical beds
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.MedBedMedicalAlert".Translate(), ref medBedMedicalAlert, "TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip".Translate());
+
+            // Sort workbench bill list alphabetically
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip".Translate());
+
+            // Viewable turret weapon stats
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.ViewableTurretStats".Translate(), ref viewableTurretStats, "TinyTweaks.QoLChanges.ViewableTurretStats_ToolTip".Translate());
+
+            // 'Game restart required' note
+            options.GapLine(24);
+            GameRestartRequired(options);
+
+            // Change architect menu tabs
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories".Translate(), ref changeBuildableDefDesignationCategories, "TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip".Translate());
+
+            // Consistent label casing
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.ChangeDefLabels".Translate(), ref changeDefLabels, "TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip".Translate());
+        }
+
+        private void DoBugFixes(Listing_Standard options)
+        {
+            // 'Game restart not required' note
+            GameRestartNotRequired(options);
+
+            // Melee weapon AP fix
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BugFixes.MeleeArmourPenetration".Translate(), ref meleeArmourPenetrationFix, "TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip".Translate());
+
+            // Sieges
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BugFixes.Sieges".Translate(), ref siegeFix, "TinyTweaks.BugFixes.Sieges_ToolTip".Translate());
+
+            // Special thing filter match fixing
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BugFixes.SpecialThingFilter".Translate(), ref specialThingFilterMatchFix, "TinyTweaks.BugFixes.SpecialThingFilter_ToolTip".Translate());
+
+            // Turret rotation
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BugFixes.TurretRotation".Translate(), ref siegeFix, "TinyTweaks.BugFixes.TurretRotation_ToolTip".Translate());
+        }
+
+        private void DoBalanceChanges(Listing_Standard options)
+        {
+            // 'Game restart not required' note
+            GameRestartNotRequired(options);
+
+            // Blood pumping affects bleeding
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding".Translate(), ref bloodPumpingAffectsBleeding, "TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip".Translate());
+
+            // Change quality distribution
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BalanceChanges.ChangeQualityDistribution".Translate(), ref changeQualityDistribution, "TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip".Translate());
+
+            // Delayed skill decay
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BalanceChanges.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip".Translate());
+
+            // Manned turrets use the pawn's stats
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats".Translate(), ref mannedTurretsUsePawnStats, "TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats_ToolTip".Translate());
+
+            // 'Game restart required' note
+            options.GapLine(24);
+            GameRestartRequired(options);
+
+            // Normalise construction speed
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.BalanceChanges.NormaliseConstructionSpeed".Translate(), ref normaliseConstructionSpeed, "TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip".Translate());
+        }
+
+        private void DoModTweaks(Listing_Standard options)
+        {
+            #region Dubs Bad Hygiene
+            options.Gap();
+            options.CollapsibleSubheading("TinyTweaks.ModTweaks.DubsBadHygiene".Translate(), ref showDubsBadHygieneSettings);
+            if (showDubsBadHygieneSettings)
             {
-                // 'Game restart not required' note
-                GameRestartNotRequired(options);
-
-                // Assign food restrictions for caravans
+                // Dumping stockpiles automatically accept 'Waste' items
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.CaravanFoodRestrictions".Translate(), ref caravanFoodRestrictions, "TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste_Tooltip".Translate());
 
-                // Automatically assign animals to follow their master
+                // Cheaper log boilers
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings".Translate(), ref autoAssignAnimalFollowSettings, "TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers_Tooltip".Translate());
 
-                // Automatically remove finished moisture pumps
+                // Nerf fixture beauty values
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip".Translate());
-
-                // Show 'colonist needs treatment' alerts for pawns in medical beds
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.MedBedMedicalAlert".Translate(), ref medBedMedicalAlert, "TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip".Translate());
-
-                // Sort workbench bill list alphabetically
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip".Translate());
-
-                // Viewable turret weapon stats
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.ViewableTurretStats".Translate(), ref viewableTurretStats, "TinyTweaks.QoLChanges.ViewableTurretStats_ToolTip".Translate());
-
-                // 'Game restart required' note
-                options.GapLine(24);
-                GameRestartRequired(options);
-
-                // Change architect menu tabs
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories".Translate(), ref changeBuildableDefDesignationCategories, "TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip".Translate());
-
-                // Consistent label casing
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.QoLChanges.ChangeDefLabels".Translate(), ref changeDefLabels, "TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip".Translate());
-
+                options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty".Translate(), ref nerfFixtureBeauty, "TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty_Tooltip".Translate());
             }
             #endregion
 
-            #region Bug Fixes
-            else if (PageIndex == BugFixPageIndex)
+            #region Fertile Fields
+            options.Gap();
+            options.CollapsibleSubheading("TinyTweaks.ModTweaks.FertileFields".Translate(), ref showFertileFieldsSettings);
+            if (showFertileFieldsSettings)
             {
-                // 'Game restart not required' note
-                GameRestartNotRequired(options);
-
-                // Melee weapon AP fix
+                // Dumping stockpiles automatically accept 'Waste' items
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BugFixes.MeleeArmourPenetration".Translate(), ref meleeArmourPenetrationFix, "TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip".Translate());
-
+                options.CheckboxLabeled("TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw".Translate(), ref compostBillsExcludeRaw, "TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip".Translate());
             }
             #endregion
 
-            #region Balance Changes
-            else if (PageIndex == BalancePageIndex)
+            #region Turret Extensions
+            options.Gap();
+            options.CollapsibleSubheading("TinyTweaks.ModTweaks.TurretExtensions".Translate(), ref showTurretExtensionsSettings);
+            if (showTurretExtensionsSettings)
             {
-                // 'Game restart not required' note
-                GameRestartNotRequired(options);
-
-                // Blood pumping affects bleeding
+                // Override manned turrets functionality
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding".Translate(), ref bloodPumpingAffectsBleeding, "TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality".Translate(), ref overrideMannedTurretFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip".Translate());
 
-                // Change quality distribution
+                // Override stat display functionality
                 options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BalanceChanges.ChangeQualityDistribution".Translate(), ref changeQualityDistribution, "TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip".Translate());
-
-                // Delayed skill decay
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BalanceChanges.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip".Translate());
-
-                // Manned turrets use the pawn's stats
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats".Translate(), ref mannedTurretsUsePawnStats, "TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats_ToolTip".Translate());
-
-                // 'Game restart required' note
-                options.GapLine(24);
-                GameRestartRequired(options);
-
-                // Normalise construction speed
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.BalanceChanges.NormaliseConstructionSpeed".Translate(), ref normaliseConstructionSpeed, "TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip".Translate());
+                options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality".Translate(), ref overrideTurretStatsFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip".Translate());
             }
             #endregion
+        }
 
-            #region Mod Tweaks
-            else if (PageIndex == ModPageIndex)
-            {
-                #region Dubs Bad Hygiene
-                options.Gap();
-                options.CollapsibleSubheading("TinyTweaks.ModTweaks.DubsBadHygiene".Translate(), ref showDubsBadHygieneSettings);
-                if (showDubsBadHygieneSettings)
-                {
-                    // Dumping stockpiles automatically accept 'Waste' items
-                    options.Gap();
-                    options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste_Tooltip".Translate());
+        private void DoAdditions(Listing_Standard options)
+        {
+            // 'Game restart not required' note
+            GameRestartNotRequired(options);
 
-                    // Cheaper log boilers
-                    options.Gap();
-                    options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers_Tooltip".Translate());
+            // Random season button
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.TinyAdditions.RandomStartingSeason".Translate(), ref randomStartingSeason, "TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip".Translate());
+        }
 
-                    // Nerf fixture beauty values
-                    options.Gap();
-                    options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty".Translate(), ref nerfFixtureBeauty, "TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty_Tooltip".Translate());
-                }
-                #endregion
+        private void DoTools(Listing_Standard options)
+        {
+            // 'Game restart not required' note
+            GameRestartNotRequired(options);
 
-                #region Fertile Fields
-                options.Gap();
-                options.CollapsibleSubheading("TinyTweaks.ModTweaks.FertileFields".Translate(), ref showFertileFieldsSettings);
-                if (showFertileFieldsSettings)
-                {
-                    // Dumping stockpiles automatically accept 'Waste' items
-                    options.Gap();
-                    options.CheckboxLabeled("TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw".Translate(), ref compostBillsExcludeRaw, "TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip".Translate());
-                }
-                #endregion
+            // Random season button
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.TinyAdditions.RandomStartingSeason".Translate(), ref randomStartingSeason, "TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip".Translate());
+        }
 
-                #region Turret Extensions
-                options.Gap();
-                options.CollapsibleSubheading("TinyTweaks.ModTweaks.TurretExtensions".Translate(), ref showTurretExtensionsSettings);
-                if (showTurretExtensionsSettings)
-                {
-                    // Override manned turrets functionality
-                    options.Gap();
-                    options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality".Translate(), ref overrideMannedTurretFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip".Translate());
-
-                    // Override stat display functionality
-                    options.Gap();
-                    options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality".Translate(), ref overrideTurretStatsFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip".Translate());
-                }
-                #endregion
-            }
-            #endregion
-
-            #region Tiny Additions
-            else if (PageIndex == AdditionsPageIndex)
-            {
-                // 'Game restart not required' note
-                GameRestartNotRequired(options);
-
-                // Melee weapon AP fix
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.TinyAdditions.RandomStartingSeason".Translate(), ref randomStartingSeason, "TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip".Translate());
-
-            }
-            #endregion
-
-            #region Page Buttons
+        private void DoPageButtons(Rect wrect)
+        {
             float halfRectWidth = wrect.width / 2;
             float xOffset = (halfRectWidth - PageButtonWidth) / 2;
             var leftButtonRect = new Rect(xOffset + PageButtonPosOffsetFromCentre, wrect.height - PageButtonHeight, PageButtonWidth, PageButtonHeight);
@@ -296,7 +300,7 @@ namespace TinyTweaks
             {
                 SoundDefOf.Click.PlayOneShot(null);
                 PageIndex--;
-            }  
+            }
 
             var rightButtonRect = new Rect(halfRectWidth + xOffset - PageButtonPosOffsetFromCentre, wrect.height - PageButtonHeight, PageButtonWidth, PageButtonHeight); ;
             if (Widgets.ButtonText(rightButtonRect, "TinyTweaks.NextPage".Translate()))
@@ -309,7 +313,37 @@ namespace TinyTweaks
             var pageNumberRect = new Rect(0, wrect.height - PageButtonHeight, wrect.width, PageButtonHeight);
             Widgets.Label(pageNumberRect, $"{PageIndex} / {MaxPageIndex}");
             Text.Anchor = TextAnchor.UpperLeft;
+        }
+
+        public void DoWindowContents(Rect wrect)
+        {
+            var options = new Listing_Standard();
+            var defaultColor = GUI.color;
+            options.Begin(wrect);
+            GUI.color = defaultColor;
+            Text.Font = GameFont.Small;
+            Text.Anchor = TextAnchor.UpperLeft;
+
+            DoHeading(options, Text.Font);
+
+            #region DoContents
+            if (PageIndex == QoLPageIndex)
+                DoQualityOfLifeChanges(options);
+
+            else if (PageIndex == BugFixPageIndex)
+                DoBugFixes(options);
+
+            else if (PageIndex == BalancePageIndex)
+                DoBalanceChanges(options);
+
+            else if (PageIndex == ModPageIndex)
+                DoModTweaks(options);
+
+            else if (PageIndex == AdditionsPageIndex)
+                DoAdditions(options);
             #endregion
+
+            DoPageButtons(wrect);
 
             // Finish
             options.End();
@@ -324,6 +358,7 @@ namespace TinyTweaks
             Scribe_Values.Look(ref autoAssignAnimalFollowSettings, "autoAssignAnimalFollowSettings", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
             Scribe_Values.Look(ref medBedMedicalAlert, "medBedMedicalAlert", true);
+            Scribe_Values.Look(ref smarterTurretTargeting, "smarterTurretTargeting", true);
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
             Scribe_Values.Look(ref viewableTurretStats, "viewableTurretStats", true);
 
@@ -334,6 +369,9 @@ namespace TinyTweaks
 
             #region Bug Fixes
             Scribe_Values.Look(ref meleeArmourPenetrationFix, "meleeArmourPenetrationFix", true);
+            Scribe_Values.Look(ref siegeFix, "siegeFix", true);
+            Scribe_Values.Look(ref specialThingFilterMatchFix, "specialThingFilterMatchFix", true);
+            Scribe_Values.Look(ref turretRotationFix, "turretRotationFix", true);
             #endregion
 
             #region Balance Changes
@@ -357,7 +395,8 @@ namespace TinyTweaks
 
             // Turret Extensions
             Scribe_Values.Look(ref overrideMannedTurretFunctionality, "overrideMannedTurretFunctionality", true);
-            Scribe_Values.Look(ref overrideTurretStatsFunctionality, "overrideTurretStatsFunctionality");
+            Scribe_Values.Look(ref overrideSmarterForcedTargeting, "overrideSmarterForcedTargeting", false);
+            Scribe_Values.Look(ref overrideTurretStatsFunctionality, "overrideTurretStatsFunctionality", false);
             #endregion
 
             #region Tiny Additions

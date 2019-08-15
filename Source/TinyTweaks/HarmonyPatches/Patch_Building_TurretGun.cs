@@ -29,6 +29,45 @@ namespace TinyTweaks
 
         }
 
+        [HarmonyPatch(typeof(Building_TurretGun), nameof(Building_TurretGun.SpawnSetup))]
+        public static class SpawnSetup
+        {
+
+            public static void Postfix(Building_TurretGun __instance, TurretTop ___top)
+            {
+                // Set the turret gun's initial rotation to be identical to the turret's rotation
+                if (TinyTweaksSettings.turretRotationFix)
+                    NonPublicProperties.TurretTop_set_CurRotation(___top, __instance.Rotation.AsAngle);
+            }
+
+        }
+
+        [HarmonyPatch(typeof(Building_TurretGun), nameof(Building_TurretGun.Tick))]
+        public static class Patch_Tick
+        {
+
+            public static void Postfix(Building_TurretGun __instance, LocalTargetInfo ___forcedTarget)
+            {
+                // If the turret has CompSmartForcedTarget and is attacking a pawn that just got downed, automatically make it target something else
+                if (TinyTweaksSettings.smarterTurretTargeting && (!ModCompatibilityCheck.TurretExtensions || TinyTweaksSettings.overrideSmarterForcedTargeting))
+                {
+                    var smartTargetComp = __instance.TryGetComp<CompSmarterTurretTargeting>();
+                    if (smartTargetComp != null && ___forcedTarget.Thing is Pawn pawn)
+                    {
+                        if (!pawn.Downed && !smartTargetComp.attackingNonDownedPawn)
+                            smartTargetComp.attackingNonDownedPawn = true;
+
+                        else if (pawn.Downed && smartTargetComp.attackingNonDownedPawn)
+                        {
+                            smartTargetComp.attackingNonDownedPawn = false;
+                            NonPublicMethods.Building_TurretGun_ResetForcedTarget(__instance);
+                        }
+                    }
+                }
+            }
+
+        }
+
         [HarmonyPatch(typeof(Building_TurretGun))]
         [HarmonyPatch("TryStartShootSomething")]
         public static class TryStartShootSomething

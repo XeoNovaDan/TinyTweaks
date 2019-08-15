@@ -37,6 +37,10 @@ namespace TinyTweaks
                 // If the def has RaceProps and RaceProps are humanlike, add CompSkillTrackerCache to it
                 if (tDef.race != null && tDef.race.Humanlike)
                     tDef.AddComp(typeof(CompSkillRecordCache));
+
+                // If the def is a turret but not a mortar, add CompSmarterTurretTargeting to it
+                if (tDef.IsBuildingArtificial && tDef.building.IsTurret && !tDef.building.IsMortar)
+                    tDef.AddComp(typeof(CompSmarterTurretTargeting));
             }
         }
 

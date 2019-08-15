@@ -15,7 +15,6 @@ namespace TinyTweaks
     public static class Patch_Alert_ColonistNeedsTend
     {
 
-        // [HarmonyPatch(typeof(Alert_ColonistNeedsTend), "NeedingColonists", MethodType.Getter)]
         public static class manual_get_NeedingColonists
         {
 
