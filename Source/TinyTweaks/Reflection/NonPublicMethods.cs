@@ -11,7 +11,7 @@ using Verse;
 using Verse.Sound;
 using RimWorld;
 using RimWorld.Planet;
-using Harmony;
+using HarmonyLib;
 
 namespace TinyTweaks
 {

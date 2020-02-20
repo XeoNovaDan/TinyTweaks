@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
     <name>[XND] Tiny Tweaks</name>
+    <packageId>XeoNovaDan.TinyTweaks</packageId>
     <author>XeoNovaDan</author>
     <url></url>
     <description>Work in progress.</description>
     <supportedVersions>
-        <li>1.0</li>
+        <li>1.1</li>
     </supportedVersions>
 </ModMetaData>

@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
 using RimWorld;
-using Harmony;
+using HarmonyLib;
 
 namespace TinyTweaks
 {
@@ -15,7 +15,9 @@ namespace TinyTweaks
     public static class Patch_Pawn_PlayerSettings
     {
 
-        public static class manual_Ctor
+
+        [HarmonyPatch(typeof(Pawn_PlayerSettings), MethodType.Constructor, new Type[] { typeof(Pawn) })]
+        public static class Ctor
         {
 
             public static void Postfix(Pawn_PlayerSettings __instance, Pawn pawn)

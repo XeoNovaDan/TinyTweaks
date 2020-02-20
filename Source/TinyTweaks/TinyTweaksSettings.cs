@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using UnityEngine;
 using Verse;
@@ -37,10 +38,10 @@ namespace TinyTweaks
         public static bool caravanFoodRestrictions = true;
         public static bool autoAssignAnimalFollowSettings = true;
         public static bool autoRemoveMoisturePumps = true;
+        public static bool autoOwl = true;
         public static bool medBedMedicalAlert = true;
         public static bool smarterTurretTargeting = true;
         public static bool alphabeticalBillList = true;
-        public static bool viewableTurretStats = true;
 
         // Restart
         public static bool changeDefLabels = true;
@@ -50,7 +51,6 @@ namespace TinyTweaks
         #region Bug Fixes
         public static bool meleeArmourPenetrationFix = true;
         public static bool siegeFix = true;
-        public static bool specialThingFilterMatchFix = true;
         public static bool turretRotationFix = true;
         #endregion
 
@@ -58,10 +58,6 @@ namespace TinyTweaks
         public static bool changeQualityDistribution = true;
         public static bool bloodPumpingAffectsBleeding = true;
         public static bool delayedSkillDecay = true;
-        public static bool mannedTurretsUsePawnStats = true;
-
-        // Restart
-        public static bool normaliseConstructionSpeed = true;
         #endregion
 
         #region Mod Tweaks
@@ -146,17 +142,22 @@ namespace TinyTweaks
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry".Translate(), ref autoRemoveMoisturePumps, "TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip".Translate());
 
+            // Automatically set night owl timetables
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.AutoOwl".Translate(), ref autoOwl, "TinyTweaks.QoLChanges.AutoOwl_ToolTip".Translate());
+
             // Show 'colonist needs treatment' alerts for pawns in medical beds
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.QoLChanges.MedBedMedicalAlert".Translate(), ref medBedMedicalAlert, "TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip".Translate());
+
+            // Smarter forced turret targeting
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.SmarterForcedTurretTargeting".Translate(), ref smarterTurretTargeting, "TinyTweaks.QoLChanges.SmarterForcedTurretTargeting_ToolTip".Translate());
 
             // Sort workbench bill list alphabetically
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.QoLChanges.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip".Translate());
 
-            // Viewable turret weapon stats
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.QoLChanges.ViewableTurretStats".Translate(), ref viewableTurretStats, "TinyTweaks.QoLChanges.ViewableTurretStats_ToolTip".Translate());
 
             // 'Game restart required' note
             options.GapLine(24);
@@ -184,10 +185,6 @@ namespace TinyTweaks
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.BugFixes.Sieges".Translate(), ref siegeFix, "TinyTweaks.BugFixes.Sieges_ToolTip".Translate());
 
-            // Special thing filter match fixing
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.BugFixes.SpecialThingFilter".Translate(), ref specialThingFilterMatchFix, "TinyTweaks.BugFixes.SpecialThingFilter_ToolTip".Translate());
-
             // Turret rotation
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.BugFixes.TurretRotation".Translate(), ref siegeFix, "TinyTweaks.BugFixes.TurretRotation_ToolTip".Translate());
@@ -210,17 +207,9 @@ namespace TinyTweaks
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.BalanceChanges.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip".Translate());
 
-            // Manned turrets use the pawn's stats
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats".Translate(), ref mannedTurretsUsePawnStats, "TinyTweaks.BalanceChanges.MannedTurretsUsePawnStats_ToolTip".Translate());
-
             // 'Game restart required' note
             options.GapLine(24);
             GameRestartRequired(options);
-
-            // Normalise construction speed
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.BalanceChanges.NormaliseConstructionSpeed".Translate(), ref normaliseConstructionSpeed, "TinyTweaks.BalanceChanges.NormaliseConstructionSpeed_ToolTip".Translate());
         }
 
         private void DoModTweaks(Listing_Standard options)
@@ -357,10 +346,10 @@ namespace TinyTweaks
             Scribe_Values.Look(ref caravanFoodRestrictions, "caravanFoodRestrictions", true);
             Scribe_Values.Look(ref autoAssignAnimalFollowSettings, "autoAssignAnimalFollowSettings", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
+            Scribe_Values.Look(ref autoOwl, "autoOwl", true);
             Scribe_Values.Look(ref medBedMedicalAlert, "medBedMedicalAlert", true);
             Scribe_Values.Look(ref smarterTurretTargeting, "smarterTurretTargeting", true);
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
-            Scribe_Values.Look(ref viewableTurretStats, "viewableTurretStats", true);
 
             // Restart
             Scribe_Values.Look(ref changeDefLabels, "changeDefLabels", true);
@@ -370,7 +359,6 @@ namespace TinyTweaks
             #region Bug Fixes
             Scribe_Values.Look(ref meleeArmourPenetrationFix, "meleeArmourPenetrationFix", true);
             Scribe_Values.Look(ref siegeFix, "siegeFix", true);
-            Scribe_Values.Look(ref specialThingFilterMatchFix, "specialThingFilterMatchFix", true);
             Scribe_Values.Look(ref turretRotationFix, "turretRotationFix", true);
             #endregion
 
@@ -378,10 +366,6 @@ namespace TinyTweaks
             Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", true);
             Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", true);
             Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", true);
-            Scribe_Values.Look(ref mannedTurretsUsePawnStats, "mannedTurretsUsePawnStats", true);
-
-            // Restart
-            Scribe_Values.Look(ref normaliseConstructionSpeed, "normaliseConstructionSpeed", true);
             #endregion
 
             #region Mod Tweaks

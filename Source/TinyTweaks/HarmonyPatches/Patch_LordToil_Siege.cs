@@ -9,7 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using RimWorld;
-using Harmony;
+using HarmonyLib;
 
 namespace TinyTweaks
 {
@@ -53,7 +53,7 @@ namespace TinyTweaks
             private static bool IsActuallyValidShell(bool isShell, Thing thing, LordToilData_Siege data, LordToil_Siege instance)
             {
                 // Make the game count shells better for the purpose of sending more
-                if (TinyTweaksSettings.siegeFix)
+                if (isShell && TinyTweaksSettings.siegeFix)
                 {
                     var raiderFaction = instance.lord.faction;
                     var listerThings = instance.Map.listerThings;
@@ -61,9 +61,8 @@ namespace TinyTweaks
                     var validFrameAndBlueprintEntities = ((IEnumerable<Thing>)listerThings.ThingsInGroup(ThingRequestGroup.BuildingFrame)).Concat(listerThings.ThingsInGroup(ThingRequestGroup.Blueprint)).
                         Where(f => f.Faction == raiderFaction).Select(f => f.def.entityDefToBuild).Where(e => e is ThingDef t && TurretGunUtility.NeedsShells(t)).Cast<ThingDef>();
 
-                    return isShell &&
-                        (validArtillery.Any(a => ((Building_TurretGun)a).gun.TryGetComp<CompChangeableProjectile>().allowedShellsSettings.AllowedToAccept(thing)) ||
-                        validFrameAndBlueprintEntities.Any(t => t.building.turretGunDef.building.defaultStorageSettings.AllowedToAccept(thing)));
+                    return validArtillery.Any(a => ((Building_TurretGun)a).gun.TryGetComp<CompChangeableProjectile>().allowedShellsSettings.AllowedToAccept(thing)) ||
+                        validFrameAndBlueprintEntities.Any(t => t.building.turretGunDef.building.defaultStorageSettings.AllowedToAccept(thing));
                 }
 
                 return isShell;

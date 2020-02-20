@@ -6,3 +6,7 @@ E:\Documents\GitHub\TinyTweaks\1.0\Assemblies\TinyTweaks.dll
 E:\Documents\GitHub\TinyTweaks\Source\TinyTweaks\obj\Debug\TinyTweaks.csprojAssemblyReference.cache
 E:\Documents\GitHub\TinyTweaks\Source\TinyTweaks\obj\Debug\TinyTweaks.csproj.CoreCompileInputs.cache
 E:\Documents\GitHub\TinyTweaks\Source\TinyTweaks\obj\Debug\TinyTweaks.dll
+D:\Documents\GitHub\TinyTweaks\Source\TinyTweaks\obj\Debug\TinyTweaks.csprojAssemblyReference.cache
+D:\Documents\GitHub\TinyTweaks\Source\TinyTweaks\obj\Debug\TinyTweaks.dll
+D:\Documents\GitHub\TinyTweaks\1.1\Assemblies\TinyTweaks.dll
+D:\Documents\GitHub\TinyTweaks\Source\TinyTweaks\obj\Debug\TinyTweaks.csproj.CopyComplete

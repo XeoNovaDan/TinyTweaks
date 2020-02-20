@@ -79,46 +79,46 @@ namespace TinyTweaks
             var mod = bDef.modContentPack;
 
             // Furniture+ => Furniture
-            if (TT_DesignationCategoryDefOf.ANON2MF != null && bDef.designationCategory == TT_DesignationCategoryDefOf.ANON2MF)
-                bDef.designationCategory = TT_DesignationCategoryDefOf.Furniture;
+            if (DesignationCategoryDefOf.ANON2MF != null && bDef.designationCategory == DesignationCategoryDefOf.ANON2MF)
+                bDef.designationCategory = DesignationCategoryDefOf.Furniture;
 
             // More Floors => Floors
-            else if (TT_DesignationCategoryDefOf.MoreFloors != null && bDef.designationCategory == TT_DesignationCategoryDefOf.MoreFloors)
-                bDef.designationCategory = TT_DesignationCategoryDefOf.Floors;
+            else if (DesignationCategoryDefOf.MoreFloors != null && bDef.designationCategory == DesignationCategoryDefOf.MoreFloors)
+                bDef.designationCategory = DesignationCategoryDefOf.Floors;
 
             // Dubs Bad Hygiene
             else if (mod.Name == "Dubs Bad Hygiene")
             {
                 // Temperature stuff gets moved to Temperature category
                 if (bDef.researchPrerequisites?.Any(r => r.defName == "CentralHeating" || r.defName == "PoweredHeating" || r.defName == "MultiSplitAirCon") ?? false)
-                    bDef.designationCategory = TT_DesignationCategoryDefOf.Temperature;
+                    bDef.designationCategory = DesignationCategoryDefOf.Temperature;
 
                 // Rest gets moved from Hygiene/Misc => Hygiene
-                else if (bDef.designationCategory == TT_DesignationCategoryDefOf.HygieneMisc)
-                        bDef.designationCategory = TT_DesignationCategoryDefOf.Hygiene;
+                else if (bDef.designationCategory == DesignationCategoryDefOf.HygieneMisc)
+                        bDef.designationCategory = DesignationCategoryDefOf.Hygiene;
             }  
 
             // Furniture => Storage (Deep Storage)
             else if (mod.Name == "LWM's Deep Storage")
-                bDef.designationCategory = TT_DesignationCategoryDefOf.Storage;
+                bDef.designationCategory = DesignationCategoryDefOf.Storage;
 
             // Defenses => Security
-            else if (TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null && bDef.designationCategory == TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory)
-                bDef.designationCategory = DesignationCategoryDefOf.Security;
+            else if (DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null && bDef.designationCategory == DesignationCategoryDefOf.DefensesExpanded_CustomCategory)
+                bDef.designationCategory = RimWorld.DesignationCategoryDefOf.Security;
         }
 
         private static IEnumerable<DesignationCategoryDef> CategoriesToRemove
         {
             get
             {
-                if (TT_DesignationCategoryDefOf.ANON2MF != null)
-                    yield return TT_DesignationCategoryDefOf.ANON2MF;
-                if (TT_DesignationCategoryDefOf.MoreFloors != null)
-                    yield return TT_DesignationCategoryDefOf.MoreFloors;
-                if (TT_DesignationCategoryDefOf.HygieneMisc != null)
-                    yield return TT_DesignationCategoryDefOf.HygieneMisc;
-                if (TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null)
-                    yield return TT_DesignationCategoryDefOf.DefensesExpanded_CustomCategory;
+                if (DesignationCategoryDefOf.ANON2MF != null)
+                    yield return DesignationCategoryDefOf.ANON2MF;
+                if (DesignationCategoryDefOf.MoreFloors != null)
+                    yield return DesignationCategoryDefOf.MoreFloors;
+                if (DesignationCategoryDefOf.HygieneMisc != null)
+                    yield return DesignationCategoryDefOf.HygieneMisc;
+                if (DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null)
+                    yield return DesignationCategoryDefOf.DefensesExpanded_CustomCategory;
             }
         }
 

@@ -11,7 +11,7 @@ namespace TinyTweaks
 {
 
     [DefOf]
-    public static class TT_DesignationCategoryDefOf
+    public static class DesignationCategoryDefOf
     {
 
         // Vanilla defs
