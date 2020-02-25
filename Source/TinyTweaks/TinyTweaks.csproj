@@ -34,8 +34,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.0.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Lib.Harmony.2.0.0.5\lib\net472\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.0.0.6\lib\net472\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -78,8 +78,6 @@
     <Compile Include="HarmonyPatches\Patch_Dialog_AdvancedGameConfig.cs" />
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
     <Compile Include="HarmonyPatches\Patch_Alert_ColonistNeedsTend.cs" />
-    <Compile Include="HarmonyPatches\Patch_JobDriver_ManTurret.cs" />
-    <Compile Include="HarmonyPatches\Patch_LordToil_Siege.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
     <Compile Include="HarmonyPatches\Patch_PawnGenerator.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_RotationTracker.cs" />
