@@ -1,4 +1,0 @@
-E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelling\1.0\Assemblies\ConsistentLabelling.dll
-E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelling\Source\ConsistentLabelling\obj\Debug\ConsistentLabelling.csprojAssemblyReference.cache
-E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelling\Source\ConsistentLabelling\obj\Debug\ConsistentLabelling.csproj.CoreCompileInputs.cache
-E:\Documents\My RimWorld Mods\Prototypes\ConsistentLabelling\Source\ConsistentLabelling\obj\Debug\ConsistentLabelling.dll

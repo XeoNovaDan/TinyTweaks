@@ -35,7 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.0.0.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Lib.Harmony.2.0.0.6\lib\net472\0Harmony.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\818773962\v1.1\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -80,7 +82,6 @@
     <Compile Include="HarmonyPatches\Patch_Alert_ColonistNeedsTend.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
     <Compile Include="HarmonyPatches\Patch_PawnGenerator.cs" />
-    <Compile Include="HarmonyPatches\Patch_Pawn_RotationTracker.cs" />
     <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
     <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
     <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
@@ -91,14 +92,12 @@
     <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Items.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingDef.cs" />
     <Compile Include="HarmonyPatches\Patch_CompLaunchable.cs" />
-    <Compile Include="HarmonyPatches\Patch_Building_TurretGun.cs" />
     <Compile Include="HarmonyPatches\Patch_QualityUtility.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <None Include="HarmonyPatches\TurretExtensions\Patch_TurretExtensions_Patch_StatsReportUtility.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />
     <Compile Include="PlaySettings\ExtraPlaySettings.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />
-    <None Include="packages.config" />
     <None Include="Reflection\NonPublicFields.cs" />
     <Compile Include="Reflection\NonPublicMethods.cs" />
     <Compile Include="Reflection\NonPublicProperties.cs" />

@@ -40,7 +40,6 @@ namespace TinyTweaks
         public static bool autoRemoveMoisturePumps = true;
         public static bool autoOwl = true;
         public static bool medBedMedicalAlert = true;
-        public static bool smarterTurretTargeting = true;
         public static bool alphabeticalBillList = true;
 
         // Restart
@@ -50,8 +49,6 @@ namespace TinyTweaks
 
         #region Bug Fixes
         public static bool meleeArmourPenetrationFix = true;
-        public static bool siegeFix = true;
-        public static bool turretRotationFix = true;
         #endregion
 
         #region Balance Changes
@@ -150,10 +147,6 @@ namespace TinyTweaks
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.QoLChanges.MedBedMedicalAlert".Translate(), ref medBedMedicalAlert, "TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip".Translate());
 
-            // Smarter forced turret targeting
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.QoLChanges.SmarterForcedTurretTargeting".Translate(), ref smarterTurretTargeting, "TinyTweaks.QoLChanges.SmarterForcedTurretTargeting_ToolTip".Translate());
-
             // Sort workbench bill list alphabetically
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.QoLChanges.AlphabeticalBillList".Translate(), ref alphabeticalBillList, "TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip".Translate());
@@ -180,14 +173,6 @@ namespace TinyTweaks
             // Melee weapon AP fix
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.BugFixes.MeleeArmourPenetration".Translate(), ref meleeArmourPenetrationFix, "TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip".Translate());
-
-            // Sieges
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.BugFixes.Sieges".Translate(), ref siegeFix, "TinyTweaks.BugFixes.Sieges_ToolTip".Translate());
-
-            // Turret rotation
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.BugFixes.TurretRotation".Translate(), ref siegeFix, "TinyTweaks.BugFixes.TurretRotation_ToolTip".Translate());
         }
 
         private void DoBalanceChanges(Listing_Standard options)
@@ -348,7 +333,6 @@ namespace TinyTweaks
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
             Scribe_Values.Look(ref autoOwl, "autoOwl", true);
             Scribe_Values.Look(ref medBedMedicalAlert, "medBedMedicalAlert", true);
-            Scribe_Values.Look(ref smarterTurretTargeting, "smarterTurretTargeting", true);
             Scribe_Values.Look(ref alphabeticalBillList, "alphabeticalBillList", true);
 
             // Restart
@@ -358,8 +342,6 @@ namespace TinyTweaks
 
             #region Bug Fixes
             Scribe_Values.Look(ref meleeArmourPenetrationFix, "meleeArmourPenetrationFix", true);
-            Scribe_Values.Look(ref siegeFix, "siegeFix", true);
-            Scribe_Values.Look(ref turretRotationFix, "turretRotationFix", true);
             #endregion
 
             #region Balance Changes
