@@ -19,10 +19,10 @@ namespace TinyTweaks
         public TinyTweaks(ModContentPack content) : base(content)
         {
             settings = GetSettings<TinyTweaksSettings>();
-            HarmonyInstance = new Harmony("XeoNovaDan.TinyTweaks");
+            harmonyInstance = new Harmony("XeoNovaDan.TinyTweaks");
         }
 
-        public static Harmony HarmonyInstance;
+        public static Harmony harmonyInstance;
 
         public override string SettingsCategory() => "TinyTweaks.SettingsCategory".Translate();
 

@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_ThingDef
     {
 
-        [HarmonyPatch(typeof(ThingDef))]
-        [HarmonyPatch(nameof(ThingDef.AllRecipes), MethodType.Getter)]
+        [HarmonyPatch(typeof(ThingDef), nameof(ThingDef.AllRecipes), MethodType.Getter)]
         public static class AllRecipes_Getter
         {
 

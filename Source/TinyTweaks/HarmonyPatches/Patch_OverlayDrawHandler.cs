@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_OverlayDrawHandler
     {
 
-        [HarmonyPatch(typeof(OverlayDrawHandler))]
-        [HarmonyPatch(nameof(OverlayDrawHandler.ShouldDrawPowerGrid), MethodType.Getter)]
+        [HarmonyPatch(typeof(OverlayDrawHandler), nameof(OverlayDrawHandler.ShouldDrawPowerGrid), MethodType.Getter)]
         public static class ShouldDrawPowerGrid_Getter
         {
 

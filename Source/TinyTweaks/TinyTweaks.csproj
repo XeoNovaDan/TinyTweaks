@@ -88,13 +88,11 @@
     <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingFilter.cs" />
     <Compile Include="HarmonyPatches\Patch_VerbProperties.cs" />
-    <None Include="HarmonyPatches\Patch_Dialog_DebugActionsMenu.cs" />
     <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Items.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingDef.cs" />
     <Compile Include="HarmonyPatches\Patch_CompLaunchable.cs" />
     <Compile Include="HarmonyPatches\Patch_QualityUtility.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
-    <None Include="HarmonyPatches\TurretExtensions\Patch_TurretExtensions_Patch_StatsReportUtility.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />
     <Compile Include="PlaySettings\ExtraPlaySettings.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />

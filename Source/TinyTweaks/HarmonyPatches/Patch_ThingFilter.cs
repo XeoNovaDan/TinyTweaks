@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_ThingFilter
     {
 
-        [HarmonyPatch(typeof(ThingFilter))]
-        [HarmonyPatch(nameof(ThingFilter.SetFromPreset))]
+        //[HarmonyPatch(typeof(ThingFilter), nameof(ThingFilter.SetFromPreset))]
         public static class SetFromPreset
         {
 
@@ -29,9 +28,7 @@ namespace TinyTweaks
 
                 else
                 {
-                    // Automatically accept 'Waste' from Dubs Bad Hygiene
-                    if (TinyTweaksSettings.dumpingStockpilesAcceptWaste && ModCompatibilityCheck.DubsBadHygiene)
-                        __instance.SetAllow(ThingCategoryDef.Named("Waste"), true);
+
                 }
                 
             }

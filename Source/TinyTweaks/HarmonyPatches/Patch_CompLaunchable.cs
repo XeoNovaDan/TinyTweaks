@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_CompLaunchable
     {
 
-        [HarmonyPatch(typeof(CompLaunchable))]
-        [HarmonyPatch(nameof(CompLaunchable.TryLaunch))]
+        [HarmonyPatch(typeof(CompLaunchable), nameof(CompLaunchable.TryLaunch))]
         public static class TryLaunch
         {
 

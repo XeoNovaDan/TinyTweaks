@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_SkillRecord
     {
 
-        [HarmonyPatch(typeof(SkillRecord))]
-        [HarmonyPatch(nameof(SkillRecord.Interval))]
+        [HarmonyPatch(typeof(SkillRecord), nameof(SkillRecord.Interval))]
         public static class Interval
         {
 
@@ -30,8 +29,7 @@ namespace TinyTweaks
 
         }
 
-        [HarmonyPatch(typeof(SkillRecord))]
-        [HarmonyPatch(nameof(SkillRecord.Learn))]
+        [HarmonyPatch(typeof(SkillRecord), nameof(SkillRecord.Learn))]
         public static class Learn
         {
 

@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_HediffSet
     {
 
-        [HarmonyPatch(typeof(HediffSet))]
-        [HarmonyPatch("CalculateBleedRate")]
+        [HarmonyPatch(typeof(HediffSet), "CalculateBleedRate")]
         public static class CalculateBleedRate
         {
 

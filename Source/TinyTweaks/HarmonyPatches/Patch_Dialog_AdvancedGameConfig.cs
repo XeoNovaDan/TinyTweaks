@@ -15,8 +15,8 @@ namespace TinyTweaks
     public static class Patch_Dialog_AdvancedGameConfig
     {
 
-        [HarmonyPatch(typeof(Dialog_AdvancedGameConfig))]
-        [HarmonyPatch(nameof(Dialog_AdvancedGameConfig.DoWindowContents))]
+        [HarmonyPatch(typeof(Dialog_AdvancedGameConfig), nameof(Dialog_AdvancedGameConfig.DoWindowContents))]
+        [HarmonyPatch()]
         public static class DoWindowContents
         {
 

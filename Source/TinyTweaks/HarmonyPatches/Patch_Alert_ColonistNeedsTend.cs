@@ -31,7 +31,7 @@ namespace TinyTweaks
                     var instruction = instructionList[i];
 
                     // Look for the part of the code that returns false if the pawn's bed is medical; have it return true instead if our settings allow
-                    if (instruction.opcode == OpCodes.Callvirt && instruction.operand == getMedicalInfo)
+                    if (instruction.opcode == OpCodes.Callvirt && instruction.OperandIs(getMedicalInfo))
                     {
                         yield return instruction; // !curBed.Medical
                         instruction = new CodeInstruction(OpCodes.Call, allowIfMedicalInfo);

@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_CompTerrainPump
     {
 
-        [HarmonyPatch(typeof(CompTerrainPump))]
-        [HarmonyPatch(nameof(CompTerrainPump.CompTickRare))]
+        [HarmonyPatch(typeof(CompTerrainPump), nameof(CompTerrainPump.CompTickRare))]
         public static class CompTickRare
         {
 

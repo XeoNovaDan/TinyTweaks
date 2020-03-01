@@ -15,8 +15,7 @@ namespace TinyTweaks
     public static class Patch_PlaySettings
     {
 
-        [HarmonyPatch(typeof(PlaySettings))]
-        [HarmonyPatch(nameof(PlaySettings.DoPlaySettingsGlobalControls))]
+        [HarmonyPatch(typeof(PlaySettings), nameof(PlaySettings.DoPlaySettingsGlobalControls))]
         public static class AllRecipes_Getter
         {
 
@@ -31,8 +30,7 @@ namespace TinyTweaks
 
         }
 
-        [HarmonyPatch(typeof(PlaySettings))]
-        [HarmonyPatch(nameof(PlaySettings.ExposeData))]
+        [HarmonyPatch(typeof(PlaySettings), nameof(PlaySettings.ExposeData))]
         public static class ExposeData
         {
 

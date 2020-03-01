@@ -15,9 +15,7 @@ namespace TinyTweaks
     public static class Patch_QualityUtility
     {
 
-        [HarmonyPatch(typeof(QualityUtility))]
-        [HarmonyPatch(nameof(QualityUtility.GenerateQualityCreatedByPawn))]
-        [HarmonyPatch(new Type[] { typeof(int), typeof(bool) })]
+        [HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn), new Type[] { typeof(int), typeof(bool) })]
         public static class GenerateQualityCreatedByPawn
         {
 
@@ -36,7 +34,7 @@ namespace TinyTweaks
                         var thirdInstructionAhead = instructionList[i + 3];
 
                         // Looking for 'int num2 = (int)Rand.GaussianAsymmetric(num, 0.6f, 0.8f);'
-                        if (thirdInstructionAhead.opcode == OpCodes.Call && thirdInstructionAhead.operand == AccessTools.Method(typeof(Rand), nameof(Rand.GaussianAsymmetric)))
+                        if (thirdInstructionAhead.opcode == OpCodes.Call && thirdInstructionAhead.OperandIs(AccessTools.Method(typeof(Rand), nameof(Rand.GaussianAsymmetric))))
                         {
                             // When found, add some IL before that which modifies 'num' (the central quality level in numeric form)
                             yield return instruction; // num

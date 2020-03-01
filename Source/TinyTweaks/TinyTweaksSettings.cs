@@ -22,8 +22,7 @@ namespace TinyTweaks
         private const int QoLPageIndex = 1;
         private const int BugFixPageIndex = 2;
         private const int BalancePageIndex = 3;
-        private const int ModPageIndex = 4;
-        private const int AdditionsPageIndex = 5;
+        private const int AdditionsPageIndex = 4;
 
         private const int MaxPageIndex = AdditionsPageIndex;
         private static int _pageIndex = 1;
@@ -57,26 +56,6 @@ namespace TinyTweaks
         public static bool delayedSkillDecay = true;
         #endregion
 
-        #region Mod Tweaks
-        // Dubs Bad Hygiene
-        public static bool dumpingStockpilesAcceptWaste = true;
-        public static bool cheaperLogBoilers = true;
-        public static bool nerfFixtureBeauty = true;
-
-        // Fertile fields
-        public static bool compostBillsExcludeRaw = true;
-
-        // Turret Extensions
-        public static bool overrideMannedTurretFunctionality = true;
-        public static bool overrideSmarterForcedTargeting = false;
-        public static bool overrideTurretStatsFunctionality = false;
-
-        // Subheadings
-        private static bool showDubsBadHygieneSettings;
-        private static bool showFertileFieldsSettings;
-        private static bool showTurretExtensionsSettings;
-        #endregion
-
         #region Tiny Additions
         public static bool randomStartingSeason = true;
         #endregion
@@ -95,9 +74,6 @@ namespace TinyTweaks
                     goto WriteHeader;
                 case BalancePageIndex:
                     headingTranslationKey += "BalanceChangesHeading";
-                    goto WriteHeader;
-                case ModPageIndex:
-                    headingTranslationKey += "ModTweaksHeading";
                     goto WriteHeader;
                 case AdditionsPageIndex:
                     headingTranslationKey += "TinyAdditionsHeading";
@@ -197,54 +173,6 @@ namespace TinyTweaks
             GameRestartRequired(options);
         }
 
-        private void DoModTweaks(Listing_Standard options)
-        {
-            #region Dubs Bad Hygiene
-            options.Gap();
-            options.CollapsibleSubheading("TinyTweaks.ModTweaks.DubsBadHygiene".Translate(), ref showDubsBadHygieneSettings);
-            if (showDubsBadHygieneSettings)
-            {
-                // Dumping stockpiles automatically accept 'Waste' items
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.DumpingStockpilesAcceptWaste_Tooltip".Translate());
-
-                // Cheaper log boilers
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers".Translate(), ref cheaperLogBoilers, "TinyTweaks.ModTweaks.DubsBadHygiene.CheaperLogBoilers_Tooltip".Translate());
-
-                // Nerf fixture beauty values
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty".Translate(), ref nerfFixtureBeauty, "TinyTweaks.ModTweaks.DubsBadHygiene.NerfFixtureBeauty_Tooltip".Translate());
-            }
-            #endregion
-
-            #region Fertile Fields
-            options.Gap();
-            options.CollapsibleSubheading("TinyTweaks.ModTweaks.FertileFields".Translate(), ref showFertileFieldsSettings);
-            if (showFertileFieldsSettings)
-            {
-                // Dumping stockpiles automatically accept 'Waste' items
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw".Translate(), ref compostBillsExcludeRaw, "TinyTweaks.ModTweaks.FertileFields.CompostBillsExcludeRaw_Tooltip".Translate());
-            }
-            #endregion
-
-            #region Turret Extensions
-            options.Gap();
-            options.CollapsibleSubheading("TinyTweaks.ModTweaks.TurretExtensions".Translate(), ref showTurretExtensionsSettings);
-            if (showTurretExtensionsSettings)
-            {
-                // Override manned turrets functionality
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality".Translate(), ref overrideMannedTurretFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideMannedTurretsFunctionality_Tooltip".Translate());
-
-                // Override stat display functionality
-                options.Gap();
-                options.CheckboxLabeled("TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality".Translate(), ref overrideTurretStatsFunctionality, "TinyTweaks.ModTweaks.TurretExtensions.OverrideStatDisplayFunctionality_Tooltip".Translate());
-            }
-            #endregion
-        }
-
         private void DoAdditions(Listing_Standard options)
         {
             // 'Game restart not required' note
@@ -310,9 +238,6 @@ namespace TinyTweaks
             else if (PageIndex == BalancePageIndex)
                 DoBalanceChanges(options);
 
-            else if (PageIndex == ModPageIndex)
-                DoModTweaks(options);
-
             else if (PageIndex == AdditionsPageIndex)
                 DoAdditions(options);
             #endregion
@@ -348,21 +273,6 @@ namespace TinyTweaks
             Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", true);
             Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", true);
             Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", true);
-            #endregion
-
-            #region Mod Tweaks
-            // Dubs Bad Hygiene
-            Scribe_Values.Look(ref dumpingStockpilesAcceptWaste, "dumpingStockpilesAcceptWaste", true);
-            Scribe_Values.Look(ref cheaperLogBoilers, "cheaperLogBoilers", true);
-            Scribe_Values.Look(ref nerfFixtureBeauty, "nerfFixtureBeauty", true);
-
-            // Fertile Fields
-            Scribe_Values.Look(ref compostBillsExcludeRaw, "compostBillsExcludeRaw", true);
-
-            // Turret Extensions
-            Scribe_Values.Look(ref overrideMannedTurretFunctionality, "overrideMannedTurretFunctionality", true);
-            Scribe_Values.Look(ref overrideSmarterForcedTargeting, "overrideSmarterForcedTargeting", false);
-            Scribe_Values.Look(ref overrideTurretStatsFunctionality, "overrideTurretStatsFunctionality", false);
             #endregion
 
             #region Tiny Additions

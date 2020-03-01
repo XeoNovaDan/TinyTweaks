@@ -28,8 +28,11 @@ namespace TinyTweaks
 
         private static void PatchThingDefs()
         {
-            foreach (var tDef in DefDatabase<ThingDef>.AllDefs)
+            var allThingDefs = DefDatabase<ThingDef>.AllDefsListForReading;
+            for (int i = 0; i < allThingDefs.Count; i++)
             {
+                var tDef = allThingDefs[i];
+
                 // If the def has CompLaunchable, add CompLaunchableAutoRebuild to it
                 if (tDef.HasComp(typeof(CompLaunchable)))
                     tDef.AddComp(typeof(CompLaunchableAutoRebuild));
@@ -125,22 +128,28 @@ namespace TinyTweaks
         private static void ChangeDefLabels()
         {
             // Go through every appropriate def that has a label
-            foreach (var defType in GenDefDatabase.AllDefTypesWithDatabases().Where(t => ShouldChangeDefTypeLabel(t)))
+            var changeableDefTypes = GenDefDatabase.AllDefTypesWithDatabases().Where(t => ShouldChangeDefTypeLabel(t)).ToList();
+            for (int i = 0; i < changeableDefTypes.Count; i++)
             {
-                foreach (var def in GenDefDatabase.GetAllDefsInDatabaseForDef(defType).Where(d => !d.label.NullOrEmpty()))
+                var curDefs = GenDefDatabase.GetAllDefsInDatabaseForDef(changeableDefTypes[i]).ToList();
+                for (int j = 0; j < curDefs.Count; j++)
                 {
-                    // Update the def's label
-                    AdjustLabel(ref def.label);
-
-                    // If the def is a ThingDef...
-                    if (def is ThingDef tDef)
+                    var curDef = curDefs[j];
+                    if (!curDef.label.NullOrEmpty())
                     {
-                        // If the ThingDef is a stuff item
-                        if (tDef.stuffProps is StuffProperties stuffProps)
+                        // Update the def's label
+                        AdjustLabel(ref curDef.label);
+
+                        // If the def is a ThingDef...
+                        if (curDef is ThingDef tDef)
                         {
-                            // Update the stuff adjective if there is one
-                            if (!stuffProps.stuffAdjective.NullOrEmpty())
-                                AdjustLabel(ref stuffProps.stuffAdjective);
+                            // If the ThingDef is a stuff item
+                            if (tDef.stuffProps is StuffProperties stuffProps)
+                            {
+                                // Update the stuff adjective if there is one
+                                if (!stuffProps.stuffAdjective.NullOrEmpty())
+                                    AdjustLabel(ref stuffProps.stuffAdjective);
+                            }
                         }
                     }
                 }
@@ -149,7 +158,7 @@ namespace TinyTweaks
 
         public static bool ShouldChangeDefTypeLabel(Type defType)
         {
-            return defType != typeof(StorytellerDef) && defType != typeof(ResearchProjectDef) && defType != typeof(ResearchTabDef);
+            return defType != typeof(StorytellerDef) && defType != typeof(ResearchProjectDef) && defType != typeof(ResearchTabDef) && defType != typeof(ExpansionDef);
         }
 
         private static void AdjustLabel(ref string label)
