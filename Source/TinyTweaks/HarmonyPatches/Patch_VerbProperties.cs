@@ -21,6 +21,10 @@ namespace TinyTweaks
 
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
+                #if DEBUG
+                    Log.Message("Transpiler start: VerbProperties.AdjustedArmorPenetration (1 match)");
+                #endif
+
                 var instructionList = instructions.ToList();
 
                 var armourPenetrationInfo = AccessTools.Field(typeof(Tool), nameof(Tool.armorPenetration));
@@ -33,6 +37,10 @@ namespace TinyTweaks
                     // If a tool's AP is set, adjust it based on other factors (i.e. stuff and pawn age)
                     if (instruction.opcode == OpCodes.Ldfld && instruction.OperandIs(armourPenetrationInfo))
                     {
+                        #if DEBUG
+                            Log.Message("VerbProperties.AdjustedArmorPenetration match 1 of 1");
+                        #endif
+
                         yield return instruction; // tool.armorPenetration
                         yield return new CodeInstruction(OpCodes.Ldarg_0); // this
                         yield return new CodeInstruction(OpCodes.Ldarg_1); // tool 

@@ -18,6 +18,10 @@ namespace TinyTweaks
 
         public TinyTweaks(ModContentPack content) : base(content)
         {
+            #if DEBUG
+                Log.Error("XeoNovaDan left debugging enabled in Tiny Tweaks - please let him know!");
+            #endif
+
             settings = GetSettings<TinyTweaksSettings>();
             harmonyInstance = new Harmony("XeoNovaDan.TinyTweaks");
         }

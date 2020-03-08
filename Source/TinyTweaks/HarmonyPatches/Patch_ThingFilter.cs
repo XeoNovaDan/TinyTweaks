@@ -15,7 +15,7 @@ namespace TinyTweaks
     public static class Patch_ThingFilter
     {
 
-        //[HarmonyPatch(typeof(ThingFilter), nameof(ThingFilter.SetFromPreset))]
+        [HarmonyPatch(typeof(ThingFilter), nameof(ThingFilter.SetFromPreset))]
         public static class SetFromPreset
         {
 

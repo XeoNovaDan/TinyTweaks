@@ -21,6 +21,10 @@ namespace TinyTweaks
 
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
+                #if DEBUG
+                    Log.Message("Transpiler start: QualityUtility.GenerateQualityCreatedByPawn (1 match)");
+                #endif
+
                 var instructionList = instructions.ToList();
                 bool done = false;
 
@@ -36,6 +40,10 @@ namespace TinyTweaks
                         // Looking for 'int num2 = (int)Rand.GaussianAsymmetric(num, 0.6f, 0.8f);'
                         if (thirdInstructionAhead.opcode == OpCodes.Call && thirdInstructionAhead.OperandIs(AccessTools.Method(typeof(Rand), nameof(Rand.GaussianAsymmetric))))
                         {
+                            #if DEBUG
+                                Log.Message("QualityUtility.GenerateQualityCreatedByPawn match 1 of 1");
+                            #endif
+
                             // When found, add some IL before that which modifies 'num' (the central quality level in numeric form)
                             yield return instruction; // num
                             yield return new CodeInstruction(OpCodes.Ldarg_0); // relevantSkillLevel

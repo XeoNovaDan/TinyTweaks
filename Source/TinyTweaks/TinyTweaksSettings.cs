@@ -167,23 +167,9 @@ namespace TinyTweaks
             // Delayed skill decay
             options.Gap();
             options.CheckboxLabeled("TinyTweaks.BalanceChanges.DelayedSkillDecay".Translate(), ref delayedSkillDecay, "TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip".Translate());
-
-            // 'Game restart required' note
-            options.GapLine(24);
-            GameRestartRequired(options);
         }
 
         private void DoAdditions(Listing_Standard options)
-        {
-            // 'Game restart not required' note
-            GameRestartNotRequired(options);
-
-            // Random season button
-            options.Gap();
-            options.CheckboxLabeled("TinyTweaks.TinyAdditions.RandomStartingSeason".Translate(), ref randomStartingSeason, "TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip".Translate());
-        }
-
-        private void DoTools(Listing_Standard options)
         {
             // 'Game restart not required' note
             GameRestartNotRequired(options);

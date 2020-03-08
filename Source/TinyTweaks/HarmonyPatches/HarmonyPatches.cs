@@ -18,6 +18,10 @@ namespace TinyTweaks
 
         static HarmonyPatches()
         {
+            #if DEBUG
+                Harmony.DEBUG = true;
+            #endif
+
             TinyTweaks.harmonyInstance.PatchAll();
         }
 

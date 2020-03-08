@@ -33,7 +33,7 @@
     <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>The drop-down list when clicking the 'Bills' button on any workbench will be sorted alphabetically.</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
 
 
-    <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>Change architect menu tabs</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>
+    <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>Condensed architect menu tabs</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>
     <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>Certain architect menu tabs from certain mods will be merged with vanilla architect tabs (e.g. 'Furniture+' from More Furniture merged into 'Furniture'). In some cases, new architect tabs may be added too (e.g. buildings from LWM Deep Storage will get their own 'Storage' tab).</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>
 
     <TinyTweaks.QoLChanges.ChangeDefLabels>Consistent label capitalisation</TinyTweaks.QoLChanges.ChangeDefLabels>
@@ -43,8 +43,9 @@
 
     <TinyTweaks.BugFixesHeading>Bug Fixes</TinyTweaks.BugFixesHeading>
 
-    <TinyTweaks.BugFixes.MeleeArmourPenetration>Melee armour penetration</TinyTweaks.BugFixes.MeleeArmourPenetration>
+    <TinyTweaks.BugFixes.MeleeArmourPenetration>Melee armour penetration scaling</TinyTweaks.BugFixes.MeleeArmourPenetration>
     <TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>Preset armour penetration values for melee weapons such as spears will scale with the weapon's quality and stuff it's made out of.</TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>
+    
     <!-- Balance Changes -->
 
     <TinyTweaks.BalanceChangesHeading>Balance Changes</TinyTweaks.BalanceChangesHeading>
@@ -52,7 +53,7 @@
     <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>Blood pumping affects bleeding</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>
     <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>Pawn bleed rates will be multiplied by their blood pumping capacities.</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>
 
-    <TinyTweaks.BalanceChanges.ChangeQualityDistribution>Change quality distribution</TinyTweaks.BalanceChanges.ChangeQualityDistribution>
+    <TinyTweaks.BalanceChanges.ChangeQualityDistribution>More skill-reliant quality distribution</TinyTweaks.BalanceChanges.ChangeQualityDistribution>
     <TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>Skill matters significantly more when producing items that have quality. Quality distribution is also centred around level 6 instead of level 4.</TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>
 
     <TinyTweaks.BalanceChanges.DelayedSkillDecay>Delayed skill decay</TinyTweaks.BalanceChanges.DelayedSkillDecay>

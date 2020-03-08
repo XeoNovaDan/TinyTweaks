@@ -19,7 +19,7 @@
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\1.1\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -85,7 +85,7 @@
     <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
     <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
     <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
-    <Compile Include="HarmonyPatches\Patch_ThingFilter.cs" />
+    <None Include="HarmonyPatches\Patch_ThingFilter.cs" />
     <Compile Include="HarmonyPatches\Patch_VerbProperties.cs" />
     <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Items.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingDef.cs" />
