@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Gizmos -->
+  <TinyTweaks.CommandAutoRebuild>自動再構成</TinyTweaks.CommandAutoRebuild>
+  <TinyTweaks.CommandAutoRebuild_Description>有効にすると、この{0}は再起動すると自動的に置き換えられます。</TinyTweaks.CommandAutoRebuild_Description>
+
+  <!-- WITabs -->
+  <TinyTweaks.AssignFoodRestrictions>食事制限割当て</TinyTweaks.AssignFoodRestrictions>
+
+  <!-- Play Settings -->
+  <TinyTweaks.PowerGridButton>電力線表示切替</TinyTweaks.PowerGridButton>
+
+  <!-- Messages -->
+  <TinyTweaks.TerrainPumpDryFinished>{0}が周囲地形からの脱水を完了しました。</TinyTweaks.TerrainPumpDryFinished>
+  <TinyTweaks.TerrainPumpDryFinished_Uninstall>アンインストールが予約されています。</TinyTweaks.TerrainPumpDryFinished_Uninstall>
+  <TinyTweaks.TerrainPumpDryFinished_Deconstruct>解体が予定されています。</TinyTweaks.TerrainPumpDryFinished_Deconstruct>
+
+</LanguageData>
