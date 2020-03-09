@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TinyTweaks.SettingsCategory>Tiny Tweaks</TinyTweaks.SettingsCategory>
+  <TinyTweaks.NextPage>次のページ</TinyTweaks.NextPage>
+  <TinyTweaks.PreviousPage>前のページ</TinyTweaks.PreviousPage>
+  <TinyTweaks.Expand>展開</TinyTweaks.Expand>
+  <TinyTweaks.Collapse>折り畳む</TinyTweaks.Collapse>
+
+  <TinyTweaks.GameRestartNotRequired>注意：この設定の変更はすぐに適用され、ゲームの再起動は必要はありません。</TinyTweaks.GameRestartNotRequired>
+  <TinyTweaks.GameRestartRequired>注意：この設定の変更を有効化するには、ゲームを再起動する必要があります。</TinyTweaks.GameRestartRequired>
+
+  <!-- QoL Changes -->
+
+  <TinyTweaks.QualityOfLifeChangesHeading>生活の質を変更</TinyTweaks.QualityOfLifeChangesHeading>
+
+  <TinyTweaks.QoLChanges.CaravanFoodRestrictions>キャラバンに食事制限を適用</TinyTweaks.QoLChanges.CaravanFoodRestrictions>
+  <TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>ワールドマップでキャラバンを選択して「アイテム一覧 」タブに移動すると、「薬物適用方針 」ボタンの横に「食事制限 」ボタンが表示されます。</TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>
+
+  <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>動物を主人に自動追従させる</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>
+  <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>従順を訓練された動物は、徴兵や屋外活動の際に自動的に主人に従うように割り当てられます。</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>
+
+  <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>改良が完了した土壌改良ポンプを自動的に解体</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>
+  <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>地形転換が完了した土壌改良ポンプは、自動的に取り外すか解体するよう指定されます。</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>
+
+  <TinyTweaks.QoLChanges.AutoOwl>よたかの時間割を自動設定する</TinyTweaks.QoLChanges.AutoOwl>
+  <TinyTweaks.QoLChanges.AutoOwl_ToolTip>新規に登場した「よたか」の特性を持つポーンは、自動的に制限で時間割が設定されて、日中は眠るようになります。</TinyTweaks.QoLChanges.AutoOwl_ToolTip>
+
+  <TinyTweaks.QoLChanges.MedBedMedicalAlert>医療用ベッドに入植者やポーンが居る時も「治療が必要 」警告を表示する</TinyTweaks.QoLChanges.MedBedMedicalAlert>
+  <TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>入植者やポーンに手当が必要な負傷や病気がある状態で、医療用ベッドで休んでいる場合でも、「治療が必要 」警告を表示します。</TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>
+
+  <TinyTweaks.QoLChanges.AlphabeticalBillList>作業台の加工リストをa-z順にソートする</TinyTweaks.QoLChanges.AlphabeticalBillList>
+  <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>任意の作業台で「加工 」ボタンをクリックすると、ドロップダウンの加工リストがアルファベット順にソートされます。</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
+
+
+  <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>アーキテクトメニューを統合する</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>
+  <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>特定Modのアーキテクトメニュータブは、標準のアーキテクトメニュータブ(例:MoreFurnitureの「家具+ 」が家具に統合)と統合されます。場合によっては、新しいアーキテクトメニュータブが追加される場合もあります。(例:LWM_Deep_Storageの建築物には独自の「ストレージ 」タブがある)</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>
+
+  <TinyTweaks.QoLChanges.ChangeDefLabels>表示の大文字と小文字を統一する</TinyTweaks.QoLChanges.ChangeDefLabels>
+  <TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>アイテムや加工レシピなどの表示に、バニラの大文字を使用します。(例:White-Composite-Water-TowerがWhite-composite-water-towerに。ただし日本語表記には意味がありません。アルファベット表記に適用)</TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>
+
+  <!-- Bug Fixes -->
+
+  <TinyTweaks.BugFixesHeading>バグ修正</TinyTweaks.BugFixesHeading>
+
+  <TinyTweaks.BugFixes.MeleeArmourPenetration>近接武器の装甲貫通率を変動</TinyTweaks.BugFixes.MeleeArmourPenetration>
+  <TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>スピアなどの近接戦闘武器の武器固有の値に固定されている装甲の貫通力は、武器の品質や素材に応じて調整されます。</TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>
+
+  <!-- Balance Changes -->
+
+  <TinyTweaks.BalanceChangesHeading>バランス調整</TinyTweaks.BalanceChangesHeading>
+
+  <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>心機能の効率で出血を変動させる</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>
+  <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>ポーンの出血の速さは、心機能の効率(％)によって乗算されます。</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>
+
+  <TinyTweaks.BalanceChanges.ChangeQualityDistribution>品質の分布をよりスキルLvに依存する</TinyTweaks.BalanceChanges.ChangeQualityDistribution>
+  <TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>品質の高いものを作るのにスキルレベルが重要です。品質の分布中心レベルをレベル4ではなく、レベル6を中心に設定します。</TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>
+
+  <TinyTweaks.BalanceChanges.DelayedSkillDecay>スキル経験値の減少を遅延する</TinyTweaks.BalanceChanges.DelayedSkillDecay>
+  <TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>スキル経験値の減少が始まるまで、ポーンが特定のスキルで少なくとも2000経験値を最後に獲得してから、ゲーム内で8時間以上経過する必要があります。</TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>
+
+  <!-- Tiny Additions -->
+
+  <TinyTweaks.TinyAdditionsHeading>小さなおまけ</TinyTweaks.TinyAdditionsHeading>
+
+  <TinyTweaks.TinyAdditions.RandomStartingSeason>開始時の季節にランダムを追加</TinyTweaks.TinyAdditions.RandomStartingSeason>
+  <TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>新しい惑星の生成時に「高度な設定」を開くと、ランダムに開始する季節を決定する「ランダム」ボタンが追加されます。</TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>
+
+</LanguageData>
