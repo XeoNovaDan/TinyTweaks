@@ -76,55 +76,41 @@ namespace TinyTweaks
 
         private static void ChangeDesignationCategory(BuildableDef bDef)
         {
-            int breakPoint = 1;
-            try
+            if (bDef.designationCategory == null)
+                return;
+
+            var mod = bDef.modContentPack;
+
+            // Furniture+ => Furniture
+            if (DesignationCategoryDefOf.ANON2MF != null && bDef.designationCategory == DesignationCategoryDefOf.ANON2MF)
+                bDef.designationCategory = DesignationCategoryDefOf.Furniture;
+
+            // More Floors => Floors
+            if (DesignationCategoryDefOf.MoreFloors != null && bDef.designationCategory == DesignationCategoryDefOf.MoreFloors)
+                bDef.designationCategory = DesignationCategoryDefOf.Floors;
+
+            if (mod != null)
             {
-                if (bDef.designationCategory == null)
-                    return;
-
-                breakPoint++;
-                var mod = bDef.modContentPack;
-
-                breakPoint++;
-                // Furniture+ => Furniture
-                if (DesignationCategoryDefOf.ANON2MF != null && bDef.designationCategory == DesignationCategoryDefOf.ANON2MF)
-                    bDef.designationCategory = DesignationCategoryDefOf.Furniture;
-
-                breakPoint++;
-                // More Floors => Floors
-                if (DesignationCategoryDefOf.MoreFloors != null && bDef.designationCategory == DesignationCategoryDefOf.MoreFloors)
-                    bDef.designationCategory = DesignationCategoryDefOf.Floors;
-
-                breakPoint++;
                 // Dubs Bad Hygiene
                 if (mod.PackageId.Equals("Dubwise.DubsBadHygiene", StringComparison.CurrentCultureIgnoreCase))
                 {
-                    if (bDef.researchPrerequisites != null)
-                    {
-                        // Temperature stuff gets moved to Temperature category
-                        if (bDef.researchPrerequisites.Any(r => r.defName == "CentralHeating" || r.defName == "PoweredHeating" || r.defName == "MultiSplitAirCon"))
-                            bDef.designationCategory = DesignationCategoryDefOf.Temperature;
+                    // Temperature stuff gets moved to Temperature category
+                    if (bDef.researchPrerequisites != null && bDef.researchPrerequisites.Any(r => r.defName == "CentralHeating" || r.defName == "PoweredHeating" || r.defName == "MultiSplitAirCon"))
+                        bDef.designationCategory = DesignationCategoryDefOf.Temperature;
 
-                        // Rest gets moved from Hygiene/Misc => Hygiene
-                        else if (bDef.designationCategory == DesignationCategoryDefOf.HygieneMisc)
-                            bDef.designationCategory = DesignationCategoryDefOf.Hygiene;
-                    }
+                    // Rest gets moved from Hygiene/Misc => Hygiene
+                    else if (bDef.designationCategory == DesignationCategoryDefOf.HygieneMisc)
+                        bDef.designationCategory = DesignationCategoryDefOf.Hygiene;
                 }
 
-                breakPoint++;
                 // Furniture => Storage (Deep Storage)
                 if (mod.PackageId.Equals("LWM.DeepStorage", StringComparison.CurrentCultureIgnoreCase))
                     bDef.designationCategory = DesignationCategoryDefOf.Storage;
+            }
 
-                breakPoint++;
-                // Defenses => Security
-                if (DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null && bDef.designationCategory == DesignationCategoryDefOf.DefensesExpanded_CustomCategory)
-                    bDef.designationCategory = RimWorld.DesignationCategoryDefOf.Security;
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"Exception in TinyTweaks.StartupPatches.ChangeDesignationCategory (breakPoint={breakPoint}): {ex.ToString()}");
-            }
+            // Defenses => Security
+            if (DesignationCategoryDefOf.DefensesExpanded_CustomCategory != null && bDef.designationCategory == DesignationCategoryDefOf.DefensesExpanded_CustomCategory)
+                bDef.designationCategory = RimWorld.DesignationCategoryDefOf.Security;
         }
 
         private static IEnumerable<DesignationCategoryDef> CategoriesToRemove
