@@ -11,10 +11,10 @@ namespace TinyTweaks
 {
 
     [StaticConstructorOnStartup]
-    public static class StaticConstructorClass
+    public static class StartupPatches
     {
 
-        static StaticConstructorClass()
+        static StartupPatches()
         {
             if (TinyTweaksSettings.changeDefLabels)
                 ChangeDefLabels();
@@ -92,13 +92,16 @@ namespace TinyTweaks
             // Dubs Bad Hygiene
             else if (mod.Name == "Dubs Bad Hygiene")
             {
-                // Temperature stuff gets moved to Temperature category
-                if (bDef.researchPrerequisites?.Any(r => r.defName == "CentralHeating" || r.defName == "PoweredHeating" || r.defName == "MultiSplitAirCon") ?? false)
-                    bDef.designationCategory = DesignationCategoryDefOf.Temperature;
+                if (bDef.researchPrerequisites != null) 
+                {
+                    // Temperature stuff gets moved to Temperature category
+                    if (bDef.researchPrerequisites.Any(r => r.defName == "CentralHeating" || r.defName == "PoweredHeating" || r.defName == "MultiSplitAirCon"))
+                        bDef.designationCategory = DesignationCategoryDefOf.Temperature;
 
-                // Rest gets moved from Hygiene/Misc => Hygiene
-                else if (bDef.designationCategory == DesignationCategoryDefOf.HygieneMisc)
-                        bDef.designationCategory = DesignationCategoryDefOf.Hygiene;
+                    // Rest gets moved from Hygiene/Misc => Hygiene
+                    else if (bDef.designationCategory == DesignationCategoryDefOf.HygieneMisc)
+                            bDef.designationCategory = DesignationCategoryDefOf.Hygiene;
+                }
             }  
 
             // Furniture => Storage (Deep Storage)

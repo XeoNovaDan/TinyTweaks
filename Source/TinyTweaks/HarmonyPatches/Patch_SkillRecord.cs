@@ -37,7 +37,13 @@ namespace TinyTweaks
             {
                 // Update the pawn's CompSkillTrackerCache
                 if (xp >= CompSkillRecordCache.MinExpToDelaySkillDecay || (xp > 0 && __instance.xpSinceMidnight >= CompSkillRecordCache.MinExpToDelaySkillDecay))
-                    ___pawn.GetComp<CompSkillRecordCache>().NotifySubstantialExperienceGainedFor(__instance.def);
+                {
+                    var skillRecordCache = ___pawn.GetComp<CompSkillRecordCache>();
+                    if (skillRecordCache != null)
+                        skillRecordCache.NotifySubstantialExperienceGainedFor(__instance.def);
+                    else
+                        Log.Warning($"{___pawn} has null CompSkillRecordCache (def={___pawn.def.defName})");
+                }
             }
 
         }

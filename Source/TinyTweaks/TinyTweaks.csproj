@@ -102,7 +102,7 @@
     <Compile Include="TinyTweaks.cs" />
     <Compile Include="TinyTweaksSettings.cs" />
     <Compile Include="DefOf\DesignationCategoryDefOf.cs" />
-    <Compile Include="StaticConstructorClass.cs" />
+    <Compile Include="StartupPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

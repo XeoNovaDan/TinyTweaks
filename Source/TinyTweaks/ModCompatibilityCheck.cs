@@ -14,10 +14,20 @@ namespace TinyTweaks
     public static class ModCompatibilityCheck
     {
 
-        private static bool ModLoaded(string name) => ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == name);
+        static ModCompatibilityCheck()
+        {
+            var loadedMods = ModsConfig.ActiveModsInLoadOrder.ToList();
 
-        public static bool DubsBadHygiene = ModLoaded("Dubs Bad Hygiene");
-        public static bool TurretExtensions = ModLoaded("[XND] Turret Extensions");
+            for (int i = 0; i < loadedMods.Count; i++)
+            {
+                var curMod = loadedMods[i];
+
+                if (curMod.PackageId.Equals("Dubwise.DubsBadHygiene", StringComparison.CurrentCultureIgnoreCase))
+                    DubsBadHygiene = true;
+            }
+        }
+
+        public static bool DubsBadHygiene;
 
     }
 
