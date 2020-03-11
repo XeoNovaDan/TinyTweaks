@@ -90,7 +90,7 @@ namespace TinyTweaks
                 bDef.designationCategory = DesignationCategoryDefOf.Floors;
 
             // Dubs Bad Hygiene
-            else if (mod.Name == "Dubs Bad Hygiene")
+            else if (mod.PackageId.Equals("Dubwise.DubsBadHygiene", StringComparison.CurrentCultureIgnoreCase))
             {
                 if (bDef.researchPrerequisites != null) 
                 {
@@ -105,7 +105,7 @@ namespace TinyTweaks
             }  
 
             // Furniture => Storage (Deep Storage)
-            else if (mod.Name == "LWM's Deep Storage")
+            else if (mod.PackageId.Equals("LWM.DeepStorage", StringComparison.CurrentCultureIgnoreCase))
                 bDef.designationCategory = DesignationCategoryDefOf.Storage;
 
             // Defenses => Security
