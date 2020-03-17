@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <TinyTweaks.SettingsCategory>[XND]游戏微调</TinyTweaks.SettingsCategory>
+    <TinyTweaks.NextPage>下一页</TinyTweaks.NextPage>
+    <TinyTweaks.PreviousPage>上一页</TinyTweaks.PreviousPage>
+    <TinyTweaks.Expand>展开</TinyTweaks.Expand>
+    <TinyTweaks.Collapse>收起</TinyTweaks.Collapse>
+ 
+    <TinyTweaks.GameRestartNotRequired>提示：以下设置更改后立即生效 - 无需重启游戏。</TinyTweaks.GameRestartNotRequired>
+    <TinyTweaks.GameRestartRequired>提示：以下设置更改后需重启游戏生效。</TinyTweaks.GameRestartRequired>
+
+    <!-- QoL Changes -->
+
+    <TinyTweaks.QualityOfLifeChangesHeading>游戏体验优化</TinyTweaks.QualityOfLifeChangesHeading>
+
+    <TinyTweaks.QoLChanges.CaravanFoodRestrictions>远征启用管理食物限制</TinyTweaks.QoLChanges.CaravanFoodRestrictions>
+    <TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>在世界地图中选中远征队并单击"物品"标签，你会看到"指定用药方针"旁有一个"管理食物限制"按钮。</TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>
+
+    <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>自动指派动物跟随其主人</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>
+    <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>已训练了"顺从"的动物会被自动指派跟随处于征召或从事野外活动的主人。</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>
+
+    <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>自动移除已完工的排水泵</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry>
+    <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>自动指派恰当的卸载或拆除命令到已完成排水作业的排水泵。</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>
+
+    <TinyTweaks.QoLChanges.AutoOwl>自动设置"夜猫子"的作息表</TinyTweaks.QoLChanges.AutoOwl>
+    <TinyTweaks.QoLChanges.AutoOwl_ToolTip>自动设置新加入/生成带有"夜猫子"特性的小人作息表，因此他们会在白天入睡。</TinyTweaks.QoLChanges.AutoOwl_ToolTip>
+
+    <TinyTweaks.QoLChanges.MedBedMedicalAlert>为医疗床的病人显示"殖民者需要治疗"警报</TinyTweaks.QoLChanges.MedBedMedicalAlert>
+    <TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>若医疗床上的病人有需要立即治疗的伤口或疾病，则仍然为他们显示"殖民者需要治疗"警报。</TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>
+
+    <TinyTweaks.QoLChanges.AlphabeticalBillList>按字母排序工作台清单</TinyTweaks.QoLChanges.AlphabeticalBillList>
+    <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>为工作台"清单"启用按字母排序。(译者注：留言区说该功能会导致游戏卡顿，推荐关闭。)</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
+
+
+    <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>合并建筑规划选项</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>
+    <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>将一些Mod的建筑规划选项合并到原版的建筑规划选项中(例子："家具+"合并到原版"家具"内)。但有时候，新的建筑规划选项仍会被添加。(例如：LWM Deep Storage(深度储存)则仍然拥有独立的建筑规划选项-"Storage")。</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>
+
+    <TinyTweaks.QoLChanges.ChangeDefLabels>统一物品名称</TinyTweaks.QoLChanges.ChangeDefLabels>
+    <TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>物品和清单的标签名使用游戏原版习惯。(例如：White Composite Water Tower => White composite water tower)(译者注：似乎只对英文生效，简体中文玩家推荐关闭)</TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>
+
+    <!-- Bug Fixes -->
+
+    <TinyTweaks.BugFixesHeading>修复游戏错误</TinyTweaks.BugFixesHeading>
+
+    <TinyTweaks.BugFixes.MeleeArmourPenetration>近战护甲穿透调整</TinyTweaks.BugFixes.MeleeArmourPenetration>
+    <TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>近战武器(例子：剑/矛)的护甲穿透现在基于武器的质量及材料计算。</TinyTweaks.BugFixes.MeleeArmourPenetration_ToolTip>
+    
+    <!-- Balance Changes -->
+
+    <TinyTweaks.BalanceChangesHeading>平衡性调整</TinyTweaks.BalanceChangesHeading>
+
+    <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>血液循环速度关联失血速度</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>
+    <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>生物的失血率与其血液循坏速度成正比。</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>
+
+    <TinyTweaks.BalanceChanges.ChangeQualityDistribution>技能关联质量</TinyTweaks.BalanceChanges.ChangeQualityDistribution>
+    <TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>制作具有质量等级的物品时，技能等级更明显的与质量成正比。质量关联的技能围绕6级而非4级。</TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>
+
+    <TinyTweaks.BalanceChanges.DelayedSkillDecay>推迟技能经验流失</TinyTweaks.BalanceChanges.DelayedSkillDecay>
+    <TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>技能经验只在以下情况流失：角色获得一个技能的2000经验或游戏时间过去了8小时。</TinyTweaks.BalanceChanges.DelayedSkillDecay_ToolTip>
+
+    <!-- Tiny Additions -->
+ 
+    <TinyTweaks.TinyAdditionsHeading>附加内容</TinyTweaks.TinyAdditionsHeading>
+
+    <TinyTweaks.TinyAdditions.RandomStartingSeason>开局随机季节</TinyTweaks.TinyAdditions.RandomStartingSeason>
+    <TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>在生成新世界后，点击"高级"设置，会看到以随机季节开局的选项。</TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>
+
+</LanguageData>
