@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Gizmos -->
+    <TinyTweaks.CommandAutoRebuild>自动重建</TinyTweaks.CommandAutoRebuild>
+    <TinyTweaks.CommandAutoRebuild_Description>若启用该选项，则该 {0} 在发射后将自动重建。</TinyTweaks.CommandAutoRebuild_Description>
+
+    <!-- WITabs -->
+    <TinyTweaks.AssignFoodRestrictions>管理食物限制</TinyTweaks.AssignFoodRestrictions>
+
+    <!-- Play Settings -->
+    <TinyTweaks.PowerGridButton>开关电路显示</TinyTweaks.PowerGridButton>
+
+    <!-- Messages -->
+    <TinyTweaks.TerrainPumpDryFinished>一个 {0} 已完成其附近地形的排水作业。</TinyTweaks.TerrainPumpDryFinished>
+    <TinyTweaks.TerrainPumpDryFinished_Uninstall>卸载命令已指派。</TinyTweaks.TerrainPumpDryFinished_Uninstall>
+    <TinyTweaks.TerrainPumpDryFinished_Deconstruct>拆除命令已指派。</TinyTweaks.TerrainPumpDryFinished_Deconstruct>
+
+</LanguageData>
