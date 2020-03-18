@@ -14,24 +14,24 @@ using UnityEngine;
 namespace TinyTweaks
 {
 
-    public static class Patch_PawnGenerator
+    public static class Patch_Pawn_TimetableTracker
     {
 
-        [HarmonyPatch(typeof(PawnGenerator), "GenerateNewPawnInternal")]
-        public static class GenerateNewPawnInternal
+        [HarmonyPatch(typeof(Pawn_TimetableTracker), MethodType.Constructor, new Type[] { typeof(Pawn) })]
+        public static class AddAndRemoveDynamicComponents
         {
 
-            public static void Postfix(Pawn __result)
+            public static void Postfix(Pawn_TimetableTracker __instance, Pawn pawn)
             {
                 // AutoOwl functionality
-                if (TinyTweaksSettings.autoOwl && __result != null && __result.timetable is Pawn_TimetableTracker timetable && __result.story?.traits?.HasTrait(TraitDefOf.NightOwl) == true)
+                if (TinyTweaksSettings.autoOwl && pawn.story?.traits?.HasTrait(TraitDefOf.NightOwl) == true)
                 {
                     for (int i = 0; i < GenDate.HoursPerDay; i++)
                     {
                         if (i >= 11 && i <= 18)
-                            timetable.times[i] = TimeAssignmentDefOf.Sleep;
+                            __instance.times[i] = TimeAssignmentDefOf.Sleep;
                         else
-                            timetable.times[i] = TimeAssignmentDefOf.Anything;
+                            __instance.times[i] = TimeAssignmentDefOf.Anything;
                     }
                 }
             }

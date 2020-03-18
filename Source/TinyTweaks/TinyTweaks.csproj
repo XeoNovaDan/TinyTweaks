@@ -80,12 +80,9 @@
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
     <Compile Include="HarmonyPatches\Patch_Alert_ColonistNeedsTend.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
-    <Compile Include="HarmonyPatches\Patch_PawnGenerator.cs" />
+    <Compile Include="HarmonyPatches\Patch_PawnComponentsUtility.cs" />
     <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
-    <None Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
-    <None Include="HarmonyPatches\Patch_PlaySettings.cs" />
     <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
-    <None Include="HarmonyPatches\Patch_ThingFilter.cs" />
     <Compile Include="HarmonyPatches\Patch_VerbProperties.cs" />
     <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Items.cs" />
     <Compile Include="HarmonyPatches\Patch_ThingDef.cs" />
