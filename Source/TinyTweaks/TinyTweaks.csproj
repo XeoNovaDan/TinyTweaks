@@ -80,7 +80,7 @@
     <Compile Include="HarmonyPatches\Patch_CompTerrainPump.cs" />
     <Compile Include="HarmonyPatches\Patch_Alert_ColonistNeedsTend.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
-    <Compile Include="HarmonyPatches\Patch_PawnComponentsUtility.cs" />
+    <Compile Include="HarmonyPatches\Patch_Pawn_TimetableTracker.cs" />
     <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
     <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
     <Compile Include="HarmonyPatches\Patch_VerbProperties.cs" />
