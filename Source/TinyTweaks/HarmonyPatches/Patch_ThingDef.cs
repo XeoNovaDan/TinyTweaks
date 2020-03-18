@@ -19,11 +19,15 @@ namespace TinyTweaks
         public static class AllRecipes_Getter
         {
 
-            public static void Postfix(ref List<RecipeDef> __result)
+            public static void Postfix(ThingDef __instance, ref List<RecipeDef> __result)
             {
                 // Sort the resulting list alphabetically
                 if (TinyTweaksSettings.alphabeticalBillList)
-                    __result = __result.OrderBy(r => r.label).ToList();
+                {
+                    if (!TinyTweaksUtility.cachedThingRecipesAlphabetical.ContainsKey(__instance))
+                        TinyTweaksUtility.cachedThingRecipesAlphabetical.Add(__instance, __result.OrderBy(r => r.label).ToList());
+                    __result = TinyTweaksUtility.cachedThingRecipesAlphabetical[__instance];
+                }
             }
 
         }

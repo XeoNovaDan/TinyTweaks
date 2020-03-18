@@ -82,8 +82,8 @@
     <Compile Include="HarmonyPatches\Patch_Pawn_PlayerSettings.cs" />
     <Compile Include="HarmonyPatches\Patch_PawnGenerator.cs" />
     <Compile Include="HarmonyPatches\Patch_SkillRecord.cs" />
-    <Compile Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
-    <Compile Include="HarmonyPatches\Patch_PlaySettings.cs" />
+    <None Include="HarmonyPatches\Patch_OverlayDrawHandler.cs" />
+    <None Include="HarmonyPatches\Patch_PlaySettings.cs" />
     <Compile Include="HarmonyPatches\Patch_HediffSet.cs" />
     <None Include="HarmonyPatches\Patch_ThingFilter.cs" />
     <Compile Include="HarmonyPatches\Patch_VerbProperties.cs" />
@@ -93,7 +93,7 @@
     <Compile Include="HarmonyPatches\Patch_QualityUtility.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="PatchOperationCheckModSetting.cs" />
-    <Compile Include="PlaySettings\ExtraPlaySettings.cs" />
+    <None Include="PlaySettings\ExtraPlaySettings.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />
     <None Include="Reflection\NonPublicFields.cs" />
     <Compile Include="Reflection\NonPublicMethods.cs" />

@@ -11,6 +11,7 @@ using RimWorld;
 namespace TinyTweaks
 {
 
+    [StaticConstructorOnStartup]
     public static class TinyTweaksUtility
     {
 
@@ -52,6 +53,8 @@ namespace TinyTweaks
                 }
             }
         }
+
+        public static Dictionary<ThingDef, List<RecipeDef>> cachedThingRecipesAlphabetical = new Dictionary<ThingDef, List<RecipeDef>>();
 
     }
 
