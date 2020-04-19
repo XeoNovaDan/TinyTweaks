@@ -21,9 +21,8 @@ namespace TinyTweaks
 
             public static bool Prefix(SkillRecord __instance, Pawn ___pawn)
             {
-                CompSkillRecordCache cache = ___pawn.GetComp<CompSkillRecordCache>();
                 // Delay skill decay
-                if (TinyTweaksSettings.delayedSkillDecay && cache != null && !cache.CanDecaySkill(__instance.def))
+                if (TinyTweaksSettings.delayedSkillDecay && ___pawn.GetComp<CompSkillRecordCache>() is CompSkillRecordCache cache && !cache.CanDecaySkill(__instance.def))
                     return false;
                 return true;
             }
