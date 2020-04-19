@@ -34,6 +34,7 @@ namespace TinyTweaks
         #endregion
 
         #region QoL Changes
+        public static bool animalMedicalAlerts = true;
         public static bool caravanFoodRestrictions = true;
         public static bool autoAssignAnimalFollowSettings = true;
         public static bool autoRemoveMoisturePumps = true;
@@ -51,9 +52,9 @@ namespace TinyTweaks
         #endregion
 
         #region Balance Changes
-        public static bool changeQualityDistribution = true;
-        public static bool bloodPumpingAffectsBleeding = true;
-        public static bool delayedSkillDecay = true;
+        public static bool changeQualityDistribution = false;
+        public static bool bloodPumpingAffectsBleeding = false;
+        public static bool delayedSkillDecay = false;
         #endregion
 
         #region Tiny Additions
@@ -102,6 +103,10 @@ namespace TinyTweaks
         {
             // 'Game restart not required' note
             GameRestartNotRequired(options);
+
+            // Animal medical alerts
+            options.Gap();
+            options.CheckboxLabeled("TinyTweaks.QoLChanges.AnimalMedicalAlerts".Translate(), ref animalMedicalAlerts, "TinyTweaks.QoLChanges.AnimalMedicalAlerts_ToolTip".Translate());
 
             // Assign food restrictions for caravans
             options.Gap();
@@ -239,6 +244,7 @@ namespace TinyTweaks
         public override void ExposeData()
         {
             #region QoL Changes
+            Scribe_Values.Look(ref animalMedicalAlerts, "animalMedicalAlerts", true);
             Scribe_Values.Look(ref caravanFoodRestrictions, "caravanFoodRestrictions", true);
             Scribe_Values.Look(ref autoAssignAnimalFollowSettings, "autoAssignAnimalFollowSettings", true);
             Scribe_Values.Look(ref autoRemoveMoisturePumps, "autoRemoveMoisturePumps", true);
@@ -256,9 +262,9 @@ namespace TinyTweaks
             #endregion
 
             #region Balance Changes
-            Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", true);
-            Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", true);
-            Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", true);
+            Scribe_Values.Look(ref changeQualityDistribution, "changeQualityDistribution", false);
+            Scribe_Values.Look(ref bloodPumpingAffectsBleeding, "bloodPumpingAffectsBleeding", false);
+            Scribe_Values.Look(ref delayedSkillDecay, "delayedSkillDecay", false);
             #endregion
 
             #region Tiny Additions

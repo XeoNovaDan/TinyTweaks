@@ -14,6 +14,9 @@
 
     <TinyTweaks.QualityOfLifeChangesHeading>Quality-of-Life Changes</TinyTweaks.QualityOfLifeChangesHeading>
 
+    <TinyTweaks.QoLChanges.AnimalMedicalAlerts>Animal medical alerts</TinyTweaks.QoLChanges.AnimalMedicalAlerts>
+    <TinyTweaks.QoLChanges.AnimalMedicalAlerts_ToolTip>Alerts will be shown when animals are injured, need rescuing or are in life-threatening condition, akin to colonist medical alerts.</TinyTweaks.QoLChanges.AnimalMedicalAlerts_ToolTip>
+
     <TinyTweaks.QoLChanges.CaravanFoodRestrictions>Assign food restrictions for caravans</TinyTweaks.QoLChanges.CaravanFoodRestrictions>
     <TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>When selecting one of your caravans on the world map and going to the 'Items' tab, there will be an 'assign food restrictions' button next to the 'assign drug policies' button.</TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>
 

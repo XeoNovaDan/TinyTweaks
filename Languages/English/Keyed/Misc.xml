@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
+    <!-- Alerts -->
+    <TinyTweaks.AnimalNeedsTreatment>Animal needs treatment</TinyTweaks.AnimalNeedsTreatment>
+    <TinyTweaks.AnimalsNeedTreatment>Animals need treatment</TinyTweaks.AnimalsNeedTreatment>
+    <TinyTweaks.AnimalNeedsTreatment_Desc>These animals need medical treatment. Without it, they may die of their wounds, or their wounds may become permanent.\n\n{0}</TinyTweaks.AnimalNeedsTreatment_Desc>
+
+    <TinyTweaks.AnimalNeedsRescue>Animal needs rescue</TinyTweaks.AnimalNeedsRescue>
+    <TinyTweaks.AnimalsNeedRescue>Animals need rescue</TinyTweaks.AnimalsNeedRescue>
+    <TinyTweaks.AnimalsNeedRescue_Desc>These animals are incapacitated on the ground:\n\n{0}\nSend a colonist to rescue them and carry them back to bed.\n\n(To rescue, select a colonist, then right click on the victim and select Rescue.)</TinyTweaks.AnimalsNeedRescue_Desc>
+
+    <TinyTweaks.AnimalsWithLifeThreateningDisease>Medical emergency (animals)</TinyTweaks.AnimalsWithLifeThreateningDisease>
+    <TinyTweaks.AnimalsWithLifeThreateningDiseaseAmputation_Desc>Animals are at risk of death because of severe illness:\n\n{0}\nIf possible, consider amputating or replacing infected limbs in order to keep animals alive.</TinyTweaks.AnimalsWithLifeThreateningDiseaseAmputation_Desc>
+    <TinyTweaks.AnimalsWithLifeThreateningDisease_Desc>Animals are at risk of death because of severe illness:\n\n{0}\nMake sure that they get the best medical care possible.</TinyTweaks.AnimalsWithLifeThreateningDisease_Desc>
+
+
     <!-- Gizmos -->
     <TinyTweaks.CommandAutoRebuild>Auto rebuild</TinyTweaks.CommandAutoRebuild>
     <TinyTweaks.CommandAutoRebuild_Description>If enabled, this {0} will automatically be replaced once it has been launched.</TinyTweaks.CommandAutoRebuild_Description>

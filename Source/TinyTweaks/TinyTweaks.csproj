@@ -71,6 +71,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_AnimalNeedsRescuing.cs" />
+    <Compile Include="Alerts\Alert_AnimalNeedsTend.cs" />
+    <Compile Include="Alerts\Alert_LifeThreateningHediffAnimal.cs" />
     <Compile Include="Comps\CompSmarterTurretTargeting.cs" />
     <Compile Include="Comps\CompSkillTrackerCache.cs" />
     <Compile Include="Comps\CompLaunchableAutoRebuild.cs" />
