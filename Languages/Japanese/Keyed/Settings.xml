@@ -14,8 +14,11 @@
 
   <TinyTweaks.QualityOfLifeChangesHeading>生活の質を変更</TinyTweaks.QualityOfLifeChangesHeading>
 
+  <TinyTweaks.QoLChanges.AnimalMedicalAlerts>動物の治療を警告する</TinyTweaks.QoLChanges.AnimalMedicalAlerts>
+  <TinyTweaks.QoLChanges.AnimalMedicalAlerts_ToolTip>動物が負傷したり救助が必要な場合や生命が危険な状態になると、入植者の治療/搬送と同じように警告メッセージが表示されます。</TinyTweaks.QoLChanges.AnimalMedicalAlerts_ToolTip>
+
   <TinyTweaks.QoLChanges.CaravanFoodRestrictions>キャラバンに食事制限を適用</TinyTweaks.QoLChanges.CaravanFoodRestrictions>
-  <TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>ワールドマップでキャラバンを選択して「アイテム一覧 」タブに移動すると、「薬物適用方針 」ボタンの横に「食事制限 」ボタンが表示されます。</TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>
+  <TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>ワールドマップでキャラバンを選択して｢アイテム一覧｣タブに移動すると\n｢薬物適用方針｣ボタンの横に｢食事制限｣ボタンが表示されます。</TinyTweaks.QoLChanges.CaravanFoodRestrictions_ToolTip>
 
   <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>動物を主人に自動追従させる</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings>
   <TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>従順を訓練された動物は、徴兵や屋外活動の際に自動的に主人に従うように割り当てられます。</TinyTweaks.QoLChanges.AutoAssignAnimalFollowSettings_ToolTip>
@@ -24,20 +27,20 @@
   <TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>地形転換が完了した土壌改良ポンプは、自動的に取り外すか解体するよう指定されます。</TinyTweaks.QoLChanges.AutoRemoveTerrainPumpDry_ToolTip>
 
   <TinyTweaks.QoLChanges.AutoOwl>よたかの時間割を自動設定する</TinyTweaks.QoLChanges.AutoOwl>
-  <TinyTweaks.QoLChanges.AutoOwl_ToolTip>新規に登場した「よたか」の特性を持つポーンは、自動的に制限で時間割が設定されて、日中は眠るようになります。</TinyTweaks.QoLChanges.AutoOwl_ToolTip>
+  <TinyTweaks.QoLChanges.AutoOwl_ToolTip>新規に登場した｢よたか｣の特性を持つポーンは、自動的に制限で時間割が設定されて、日中は眠るようになります。</TinyTweaks.QoLChanges.AutoOwl_ToolTip>
 
-  <TinyTweaks.QoLChanges.MedBedMedicalAlert>医療用ベッドに入植者やポーンが居る時も「治療が必要 」警告を表示する</TinyTweaks.QoLChanges.MedBedMedicalAlert>
-  <TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>入植者やポーンに手当が必要な負傷や病気がある状態で、医療用ベッドで休んでいる場合でも、「治療が必要 」警告を表示します。</TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>
+  <TinyTweaks.QoLChanges.MedBedMedicalAlert>医療用ベッドに入植者やポーンが居る時も｢治療が必要｣警告を表示する</TinyTweaks.QoLChanges.MedBedMedicalAlert>
+  <TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>入植者やポーンに手当が必要な負傷や病気がある状態で、医療用ベッドで休んでいる場合でも、｢治療が必要｣警告を表示します。</TinyTweaks.QoLChanges.MedBedMedicalAlert_ToolTip>
 
   <TinyTweaks.QoLChanges.AlphabeticalBillList>作業台の加工リストをa-z順にソートする</TinyTweaks.QoLChanges.AlphabeticalBillList>
-  <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>任意の作業台で「加工 」ボタンをクリックすると、ドロップダウンの加工リストがアルファベット順にソートされます。</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
+  <TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>任意の作業台で｢加工｣ボタンをクリックすると、ドロップダウンの加工リストがアルファベット順にソートされます。</TinyTweaks.QoLChanges.AlphabeticalBillList_ToolTip>
 
 
   <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>アーキテクトメニューを統合する</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories>
-  <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>特定Modのアーキテクトメニュータブは、標準のアーキテクトメニュータブ(例:MoreFurnitureの「家具+ 」が家具に統合)と統合されます。場合によっては、新しいアーキテクトメニュータブが追加される場合もあります。(例:LWM_Deep_Storageの建築物には独自の「ストレージ 」タブがある)</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>
+  <TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>特定Modのアーキテクトメニュータブは標準のアーキテクトメニュータブと統合されます。\n例:MoreFurnitureの｢家具+｣が家具に統合\n\n場合によっては、新しいアーキテクトメニュータブが追加される場合もあります\n例:LWM_Deep_Storageの建築物には独自の｢ストレージ｣タブがある</TinyTweaks.QoLChanges.ChangeBuildableDefDesignationCategories_ToolTip>
 
   <TinyTweaks.QoLChanges.ChangeDefLabels>表示の大文字と小文字を統一する</TinyTweaks.QoLChanges.ChangeDefLabels>
-  <TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>アイテムや加工レシピなどの表示に、バニラの大文字を使用します。(例:White-Composite-Water-TowerがWhite-composite-water-towerに。ただし日本語表記には意味がありません。アルファベット表記に適用)</TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>
+  <TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>アイテムや加工レシピなどの表示に、バニラの大文字を使用します。\n(例:White-Composite-Water-TowerがWhite-composite-water-towerに)\nただし日本語表記には意味がありませんアルファベット表記にだけ適用</TinyTweaks.QoLChanges.ChangeDefLabels_ToolTip>
 
   <!-- Bug Fixes -->
 
@@ -51,7 +54,7 @@
   <TinyTweaks.BalanceChangesHeading>バランス調整</TinyTweaks.BalanceChangesHeading>
 
   <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>心機能の効率で出血を変動させる</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding>
-  <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>ポーンの出血の速さは、心機能の効率(％)によって乗算されます。</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>
+  <TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>ポーンの出血の速さは、心機能の効率\n(％)によって乗算されます。</TinyTweaks.BalanceChanges.BloodPumpingAffectsBleeding_ToolTip>
 
   <TinyTweaks.BalanceChanges.ChangeQualityDistribution>品質の分布をよりスキルLvに依存する</TinyTweaks.BalanceChanges.ChangeQualityDistribution>
   <TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>品質の高いものを作るのにスキルレベルが重要です。品質の分布中心レベルをレベル4ではなく、レベル6を中心に設定します。</TinyTweaks.BalanceChanges.ChangeQualityDistribution_ToolTip>
@@ -64,6 +67,6 @@
   <TinyTweaks.TinyAdditionsHeading>小さなおまけ</TinyTweaks.TinyAdditionsHeading>
 
   <TinyTweaks.TinyAdditions.RandomStartingSeason>開始時の季節にランダムを追加</TinyTweaks.TinyAdditions.RandomStartingSeason>
-  <TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>新しい惑星の生成時に「高度な設定」を開くと、ランダムに開始する季節を決定する「ランダム」ボタンが追加されます。</TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>
+  <TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>新しい惑星の生成時に｢高度な設定｣を開くと、ランダムに開始する季節を決定する｢ランダム｣ボタンが追加されます。</TinyTweaks.TinyAdditions.RandomStartingSeason_ToolTip>
 
 </LanguageData>
